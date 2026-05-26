@@ -1,0 +1,21 @@
+.page {
+  padding-top: calc(var(--navbar-height) + var(--space-16));
+  padding-bottom: var(--space-32);
+}
+
+.header {
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 480px;
+}

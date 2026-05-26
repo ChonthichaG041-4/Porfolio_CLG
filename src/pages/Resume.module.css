@@ -1,0 +1,156 @@
+.page {
+  padding-top: calc(var(--navbar-height) + var(--space-16));
+  padding-bottom: var(--space-32);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-10);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.location {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Body */
+.body {
+  max-width: var(--container-md);
+}
+
+.section {
+  padding-bottom: var(--space-10);
+  margin-bottom: var(--space-10);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-6);
+}
+
+/* Entries */
+.entry {
+  margin-bottom: var(--space-8);
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.entryRole {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.entryCompany {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+}
+
+.entryPeriod {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.entryDesc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* Skills */
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skillGroup {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-body);
+}
+
+.skillList {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* Software chips */
+.softwareRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.softwareChip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.chipName {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+.chipLevel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Languages */
+.langRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.langChip {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}

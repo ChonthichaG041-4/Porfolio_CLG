@@ -1,0 +1,152 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── Left: Text ─── */
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-20) var(--space-6);
+  max-width: 640px;
+}
+
+@media (min-width: 768px)  { .inner { padding-inline: var(--space-10); } }
+@media (min-width: 1280px) { .inner { padding-inline: var(--space-16); } }
+
+.label {
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 100ms both;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: var(--weight-regular);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 200ms both;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-sm), 2vw, var(--text-base));
+  font-weight: var(--weight-light);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 300ms both;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-snug);
+  max-width: 480px;
+  margin-bottom: var(--space-12);
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 400ms both;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 500ms both;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  animation: fadeUp var(--duration-slow) var(--ease-smooth) 600ms both;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+}
+.dot[data-status="open"]     { background: var(--color-open); box-shadow: 0 0 8px var(--color-open); }
+.dot[data-status="closed"]   { background: var(--color-closed); }
+.dot[data-status="waitlist"] { background: var(--color-accent); }
+
+/* ─── Right: Key Visual ─── */
+.keyVisual {
+  display: none;
+  position: relative;
+  height: 100%;
+  min-height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .keyVisual {
+    display: flex;
+    padding: var(--space-12) var(--space-8) var(--space-12) 0;
+    animation: fadeIn 0.8s ease 0.4s both;
+  }
+}
+
+.kvFrame {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 3/4;
+}
+
+.kvImage {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kvOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(13,13,15,0.6) 100%
+  );
+}
+
+.kvGlow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse at center, var(--color-accent-glow) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ─── Decorative background ─── */
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 40%, rgba(201,169,110,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(126,184,212,0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
