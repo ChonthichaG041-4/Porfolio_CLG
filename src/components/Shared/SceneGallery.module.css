@@ -1,0 +1,156 @@
+/* ============================================================
+   SCENE GALLERY — full-width horizontal reveal for tall scenes
+============================================================ */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Viewport ─────────────────────────────────────────────── */
+.viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 70vh, 860px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #05010B;
+  border: 1px solid rgba(168,85,247,0.20);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
+  pointer-events: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168,85,247,0.3) transparent;
+}
+.scene::-webkit-scrollbar       { width: 4px; }
+.scene::-webkit-scrollbar-thumb { background: rgba(168,85,247,0.3); border-radius: 2px; }
+
+.sceneActive {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.sceneImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.sceneOverlay {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: var(--space-5) var(--space-6);
+  background: linear-gradient(to top, rgba(5,1,15,0.95) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.sceneTitle {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  background: linear-gradient(135deg, #fff 30%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-1);
+}
+
+.sceneCaption {
+  font-size: var(--text-sm);
+  color: rgba(179,179,195,0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Thumbnail nav strip ──────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navBtn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,85,247,0.28);
+  background: rgba(168,85,247,0.06);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBtn:hover {
+  border-color: rgba(192,132,252,0.55);
+  background: rgba(168,85,247,0.14);
+  color: #C084FC;
+}
+
+.thumbs {
+  display: flex;
+  gap: var(--space-3);
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.thumbs::-webkit-scrollbar { display: none; }
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  flex-shrink: 0;
+  width: 80px;
+  transition: transform 0.2s;
+}
+.thumb:hover { transform: translateY(-2px); }
+
+.thumbImg {
+  width: 80px;
+  height: 56px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  border: 1px solid rgba(168,85,247,0.15);
+  display: block;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.thumbActive .thumbImg {
+  border-color: rgba(192,132,252,0.6);
+  box-shadow: 0 0 12px rgba(168,85,247,0.3);
+}
+
+.thumbLabel {
+  font-size: 0.62rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.thumbActive .thumbLabel { color: #C084FC; }

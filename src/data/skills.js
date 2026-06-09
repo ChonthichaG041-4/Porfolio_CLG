@@ -20,7 +20,7 @@ export const software = [
   { name: 'Clip Studio',   icon: 'csp', proficiency: 'Expert',       years: 4 },
   { name: 'Blender',       icon: 'blender', proficiency: 'Intermediate', years: 2 },
   { name: 'Figma',         icon: 'figma', proficiency: 'Intermediate', years: 2 },
-  { name: 'PureRef',       icon: 'pureref', proficiency: 'Daily use', years: 4 },
+  { name: 'SketchUp',       icon: 'sketchup', proficiency: 'Daily use', years: 4 },
   { name: 'Procreate',     icon: 'procreate', proficiency: 'Proficient', years: 3 },
   { name: 'After Effects', icon: 'ae', proficiency: 'Basic',         years: 1 },
 ]

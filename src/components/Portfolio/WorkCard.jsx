@@ -4,12 +4,12 @@ import { cx } from '@/utils/helpers'
 import styles from './WorkCard.module.css'
 
 export function WorkCard({ work, className }) {
-  const { slug, title, category, tier, year, role, thumbnail, description } = work
+  const { slug, title, category, tier, year, role, thumbnail, description, customRoute } = work
   const { t } = useI18n()
 
   return (
     <Link
-      to={`/portfolio/${slug}`}
+      to={customRoute ?? `/portfolio/${slug}`}
       className={cx(styles.card, className)}
       aria-label={`${t.detail.viewProject.replace('→','').trim()}: ${title}`}
     >

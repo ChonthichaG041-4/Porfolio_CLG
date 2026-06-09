@@ -1,21 +1,12 @@
+import { useI18n } from '@/i18n/context'
 import { cx } from '@/utils/helpers'
 import styles from './Badge.module.css'
 
-/**
- * Badge — tier indicator (Professional / Personal / Fan Art / Practice)
- * tier: 'professional' | 'personal' | 'fanart' | 'practice'
- */
-const TIER_LABELS = {
-  professional: 'Professional',
-  personal:     'Personal',
-  fanart:       'Fan Art',
-  practice:     'Practice',
-}
-
 export function Badge({ tier, className }) {
+  const { t } = useI18n()
   return (
     <span className={cx(styles.badge, styles[tier], className)}>
-      {TIER_LABELS[tier] ?? tier}
+      {t.tiers?.[tier] ?? tier}
     </span>
   )
 }

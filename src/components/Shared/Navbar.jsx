@@ -1,38 +1,44 @@
-import { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import { profile } from '@/data/profile'
-import { useI18n } from '@/i18n/context'
-import { LanguageSwitcher } from '@/components/UI/LanguageSwitcher'
-import { cx } from '@/utils/helpers'
-import styles from './Navbar.module.css'
+import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { profile } from "@/data/profile";
+import { useI18n } from "@/i18n/context";
+import { LanguageSwitcher } from "@/components/UI/LanguageSwitcher";
+import { cx } from "@/utils/helpers";
+import styles from "./Navbar.module.css";
+import logoIcon from '@/assets/icons/G.svg'
 
 export function Navbar() {
-  const { t } = useI18n()
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const { t } = useI18n();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const NAV_LINKS = [
-    { to: '/',          label: t.nav.home      },
-    { to: '/portfolio', label: t.nav.portfolio  },
-    { to: '/about',     label: t.nav.about      },
-    { to: '/contact',   label: t.nav.contact    },
-    { to: '/resume',    label: t.nav.resume     },
-  ]
+    { to: "/", label: t.nav.home },
+    { to: "/portfolio", label: t.nav.portfolio },
+    { to: "/about", label: t.nav.about },
+    { to: "/contact", label: t.nav.contact },
+    { to: "/resume", label: t.nav.resume },
+  ];
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  useEffect(() => { setMenuOpen(false) }, [t]) // close menu on language change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [t]); // close menu on language change
 
   return (
     <header className={cx(styles.navbar, scrolled && styles.scrolled)}>
       <div className={styles.inner}>
         {/* Logo */}
-        <Link to="/" className={styles.logo} aria-label="Go to home">
+        {/* <Link to="/" className={styles.logo} aria-label="Go to home">
           {profile.nameDisplay}
+        </Link> */}
+        <Link to="/" className={styles.logo} aria-label="Go to home">
+          <img src={logoIcon} alt="Logo" className={styles.logoIcon} />
         </Link>
 
         {/* Desktop nav */}
@@ -41,8 +47,10 @@ export function Navbar() {
             <NavLink
               key={to}
               to={to}
-              end={to === '/'}
-              className={({ isActive }) => cx(styles.link, isActive && styles.active)}
+              end={to === "/"}
+              className={({ isActive }) =>
+                cx(styles.link, isActive && styles.active)
+              }
             >
               {label}
             </NavLink>
@@ -55,9 +63,9 @@ export function Navbar() {
 
           <button
             className={styles.burger}
-            onClick={() => setMenuOpen(v => !v)}
+            onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
-            aria-label="Toggle menu"
+            {...{}} aria-label={t.nav?.toggleMenu ?? "Toggle menu"}
           >
             <span className={cx(styles.bar, menuOpen && styles.bar1)} />
             <span className={cx(styles.bar, menuOpen && styles.bar2)} />
@@ -72,8 +80,10 @@ export function Navbar() {
           <NavLink
             key={to}
             to={to}
-            end={to === '/'}
-            className={({ isActive }) => cx(styles.drawerLink, isActive && styles.active)}
+            end={to === "/"}
+            className={({ isActive }) =>
+              cx(styles.drawerLink, isActive && styles.active)
+            }
             onClick={() => setMenuOpen(false)}
           >
             {label}
@@ -85,5 +95,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }

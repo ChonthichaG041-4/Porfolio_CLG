@@ -4,15 +4,15 @@
 // ============================================================
 
 export const profile = {
-  name: 'Cheso',
-  nameDisplay: 'Cheso',
+  name: 'Chonthicha Leepreecha',
+  nameDisplay: 'Chonthicha Leepreecha',
   title: '2D Artist / Character Concept Artist',
   tagline: 'Creating emotional fantasy worlds\nthrough stylized visual storytelling.',
   location: 'Bangkok, Thailand',
-  email: 'hello@cheso.art',
-  discord: 'cheso#0000',
-  website: 'https://cheso.art',
-  resumeUrl: '/resume-cheso.pdf',
+  email: 'hello@chonthicha.art',
+  discord: 'chonthicha#0000',
+  website: 'https://chonthicha.art',
+  resumeUrl: '/resume-chonthicha .pdf',
 
   // Commission status: 'open' | 'closed' | 'waitlist'
   commissionStatus: 'open',

@@ -1,14 +1,14 @@
+import { useI18n } from '@/i18n/context'
 import { WorkCard } from './WorkCard'
 import styles from './WorkGrid.module.css'
 
-/**
- * WorkGrid — masonry-style responsive grid of WorkCards
- */
 export function WorkGrid({ works }) {
+  const { t } = useI18n()
+
   if (!works.length) {
     return (
       <div className={styles.empty}>
-        <p>No works found in this category.</p>
+        <p>{t.portfolio.noResults}</p>
       </div>
     )
   }

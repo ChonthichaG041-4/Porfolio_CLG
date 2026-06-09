@@ -1,0 +1,194 @@
+/* ============================================================
+   CHAR DESIGN PANEL — Figma spec (1562 × 858 canvas)
+   Label + title rendered by ProjectDetail, not here.
+============================================================ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Panels container ─────────────────────────────────────── */
+/* preserves 1370:524 aspect ratio from Figma */
+.panels {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1370 / 524;
+  min-height: 260px;
+}
+
+/* ── boxcharacter — full-width border frame ──────────────── */
+.boxCharacter {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  border: 1px solid #6943FF;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+/* ── imgRow — centred in left 49.6% of panel ─────────────── */
+/* left half = 0 to 49.6%, we fill it and flex-center */
+.imgRow {
+  position: absolute;
+  left:   0;
+  top:    0;
+  bottom: 0;
+  right:  50.4%;          /* stops exactly where videoBox starts */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4.5%, 61px);
+  padding: 5% 4%;
+}
+
+.imgWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.designImg {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── videoBox — purple outer box (right ~50%) ────────────── */
+/* spec: left 776/1562 of full canvas → relative to panels:
+   (776-96)/1370 = 49.6% */
+.videoBox {
+  position: absolute;
+  left:   49.6%;
+  top:    0;
+  width:  50.4%;
+  height: 100%;
+  background: #6943FF;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* ── videoInner — inner rounded viewport ─────────────────── */
+/* spec: 18px inset from videoBox edges */
+.videoInner {
+  position: absolute;
+  inset: 16px 18px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #111018;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── animList — selector (floats over videoBox top-right) ─── */
+/* spec: left 1262 of 1562 canvas → (1262-96)/1370 = 85.1%
+   height 119px → 119/524 = 22.7% from top */
+.animList {
+  position: absolute;
+  left:     85.1%;
+  top:      4.6%;
+  width:    12.8%;
+  min-width: 128px;
+  box-sizing: border-box;
+  background: #1D1B20;
+  border: 1px solid #6943FF;
+  border-radius: 20px;
+  padding: 12px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.animItem {
+  width: 100%;
+  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: clamp(11px, 1.1vw, 15px);
+  line-height: 120%;
+  color: #4E4B61;
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.animItem:hover    { color: #9d8fff; }
+.animActive        { color: #635BFF !important; }
+
+.animDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #635BFF;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(99,91,255,0.8);
+}
+
+/* ── Note ────────────────────────────────────────────────── */
+.note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid rgba(105,67,255,0.40);
+  background: rgba(168,85,247,0.04);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .animList { min-width: 110px; }
+}
+
+@media (max-width: 640px) {
+  .panels {
+    aspect-ratio: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: static;
+  }
+  .boxCharacter { display: none; }
+  .imgRow {
+    position: static;
+    height: 200px;
+    right: auto;
+    border: 1px solid #6943FF;
+    border-radius: 20px;
+    padding: 16px;
+  }
+  .videoBox {
+    position: static;
+    width: 100%;
+    height: 260px;
+  }
+  .animList {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+    border-radius: 12px;
+    margin-top: -4px;
+  }
+}

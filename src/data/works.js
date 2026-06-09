@@ -5,15 +5,141 @@
 //  Format: https://picsum.photos/seed/[seed]/[width]/[height]
 // ============================================================
 
+// ── Knight of Swords real assets ───────────────────────────
+// CharacterBG — carousel card backgrounds
+import kosCSilver       from '@/assets/images/knight-of-swords/CharacterBG/char-silver-knight.jpg'
+import kosGold          from '@/assets/images/knight-of-swords/CharacterBG/char-gold-knight.jpg'
+import kosCPrince       from '@/assets/images/knight-of-swords/CharacterBG/char-prince.jpg'
+import kosCDemonCat     from '@/assets/images/knight-of-swords/CharacterBG/char-demon-cat.jpg'
+import kosCLilDemon     from '@/assets/images/knight-of-swords/CharacterBG/char-little-demon-cat.jpg'
+// Character — full art for popup
+import kosCharImgSilver   from '@/assets/images/knight-of-swords/Character/SilverKnight.PNG'
+import kosCharImgGold     from '@/assets/images/knight-of-swords/Character/GoldKnight.PNG'
+import kosCharImgPrince   from '@/assets/images/knight-of-swords/Character/Prince.PNG'
+import kosCharImgPrince2   from '@/assets/images/knight-of-swords/Character/Prince1.PNG'
+import kosCharImgDemon    from '@/assets/images/knight-of-swords/Character/DemonCat.PNG'
+import kosCharImgLilDemon from '@/assets/images/knight-of-swords/Character/LittleDemonCat.PNG'
+import kosProtoRef        from '@/assets/images/knight-of-swords/Character/knight-prototype-ref.jpg'
+// disassembled — bone layers for popup
+import kosDisSilver   from '@/assets/images/knight-of-swords/disassembled/knight-disassembled.png'
+import kosDisGold     from '@/assets/images/knight-of-swords/disassembled/golden-knight-sheet.png'
+import kosDisPrince   from '@/assets/images/knight-of-swords/disassembled/prince-disassembled.png'
+import kosDisDemon    from '@/assets/images/knight-of-swords/disassembled/demoncat-disassembled.png'
+import kosDisLilDemon from '@/assets/images/knight-of-swords/disassembled/littledemoncat-disassembled.png'
+// img-game — screenshots
+import kosGameStart   from '@/assets/images/knight-of-swords/img-game/game-start.png'
+import kosGameEnd     from '@/assets/images/knight-of-swords/img-game/game-ending.png'
+import kosMultiplayer from '@/assets/images/knight-of-swords/img-game/multiplayer-screenshot.png'
+// animetion — DragonBones animation previews
+import kosAnimWalk    from '@/assets/images/knight-of-swords/animetion/anim-walk.gif'
+import kosAnimStand   from '@/assets/images/knight-of-swords/animetion/anim-stand.gif'
+import kosAnimBreathe from '@/assets/images/knight-of-swords/animetion/anim-breathe.gif'
+import kosAnimJump    from '@/assets/images/knight-of-swords/animetion/anim-jump.gif'
+
+// ── Webtoon assets ──────────────────────────────────────────
+import wtCover        from '@/assets/images/webtoon/wt-cover.jpg'
+import wtCoverBg      from '@/assets/images/webtoon/wt-cover-bg.png'
+import wtConverbg     from '@/assets/images/webtoon/Wtconverbg.jpg'
+import wtMap          from '@/assets/images/webtoon/wt-map.jpg'
+import wtContinueDark from '@/assets/images/webtoon/wt-continue-dark.jpg'
+import wtContinueLight from '@/assets/images/webtoon/wt-continue-light.jpg'
+import wtChapterSapphire from '@/assets/images/webtoon/wt-chapter-sapphire.jpg'
+import wtIllus0       from '@/assets/images/webtoon/wt-illus-0.jpg'
+import wtIllus1       from '@/assets/images/webtoon/wt-illus-1.jpg'
+import wtIllus2       from '@/assets/images/webtoon/wt-illus-2.jpg'
+import wtIllus3       from '@/assets/images/webtoon/wt-illus-3.jpg'
+import wtIllus4       from '@/assets/images/webtoon/wt-illus-4.jpg'
+import wtIllus5       from '@/assets/images/webtoon/wt-illus-5.jpg'
+import wtStripTurmoil from '@/assets/images/webtoon/wt-strip-turmoil.webp'
+import wtStripDrowning  from '@/assets/images/webtoon/wt-strip-drowning.webp'
+import wtStripSapphire from '@/assets/images/webtoon/wt-chapter-sapphire.jpg'
+// webtoon characters
+import wtCharReiner    from '@/assets/images/webtoon/character/wt-char-reiner.png'
+import wtCharNemesis   from '@/assets/images/webtoon/character/wt-char-nemesis.jpg'
+import wtCharVerita    from '@/assets/images/webtoon/character/wt-char-verita.png'
+import wtCharDaraporn  from '@/assets/images/webtoon/character/wt-char-daraporn.png'
+import wtCharThamil    from '@/assets/images/webtoon/character/wt-char-thamil.png'
+import wtCharOrchkan   from '@/assets/images/webtoon/character/wt-char-orchkan.jpg'
+import wtCharLilil     from '@/assets/images/webtoon/character/wt-char-lilil.jpg'
+import wtCharKoin      from '@/assets/images/webtoon/character/wt-char-koin.jpg'
+import wtMapHD         from '@/assets/images/webtoon/map.png'
+
+// ── Creative / Logo assets ──────────────────────────────────
+// logo_light
+import logoLightGwriteMain          from '@/assets/images/Creative/logo/logo_light/GWRITE_main.svg'
+import logoLightGwriteDesignPublish from '@/assets/images/Creative/logo/logo_light/GWRITE_Design&Publish.svg'
+import logoLightGwriteSmartInsights from '@/assets/images/Creative/logo/logo_light/GWRITE_SmartInsights.svg'
+import logoLightGwriteStructured    from '@/assets/images/Creative/logo/logo_light/GWRITE_StructuredStoryPlanning.svg'
+import logoLightGwriteWriteAnywhere from '@/assets/images/Creative/logo/logo_light/GWRITE_WriteAnywhere.svg'
+import logoLightKkulMain            from '@/assets/images/Creative/logo/logo_light/KKUL_main.svg'
+import logoLightKkuAbout            from '@/assets/images/Creative/logo/logo_light/KKUAbout.svg'
+import logoLightKkuChatbot          from '@/assets/images/Creative/logo/logo_light/KKUChatbot.svg'
+import logoLightKkulPeople          from '@/assets/images/Creative/logo/logo_light/KKUL_people.svg'
+import logoLightKkulReadbook        from '@/assets/images/Creative/logo/logo_light/KKUL_readbook.svg'
+import logoLightKkuManual           from '@/assets/images/Creative/logo/logo_light/KKUManual.svg'
+// logo_dack
+import logoDarkGwriteMain           from '@/assets/images/Creative/logo/logo_dack/GWRITE_main.svg'
+import logoDarkGwriteDesignPublish  from '@/assets/images/Creative/logo/logo_dack/GWRITE_Design&Publish.svg'
+import logoDarkGwriteSmartInsights  from '@/assets/images/Creative/logo/logo_dack/GWRITE_SmartInsights.svg'
+import logoDarkGwriteStructured     from '@/assets/images/Creative/logo/logo_dack/GWRITE_StructuredStoryPlanning.svg'
+import logoDarkGwriteWriteAnywhere  from '@/assets/images/Creative/logo/logo_dack/GWRITE_WriteAnywhere.svg'
+import logoDarkKkulMain             from '@/assets/images/Creative/logo/logo_dack/KKUL_main.svg'
+import logoDarkKkuAbout             from '@/assets/images/Creative/logo/logo_dack/KKUAbout.svg'
+import logoDarkKkuChatbot           from '@/assets/images/Creative/logo/logo_dack/KKUChatbot.svg'
+import logoDarkKkulPeople           from '@/assets/images/Creative/logo/logo_dack/KKUL_people.svg'
+import logoDarkKkulReadbook         from '@/assets/images/Creative/logo/logo_dack/KKUL_readbook.svg'
+import logoDarkKkuManual            from '@/assets/images/Creative/logo/logo_dack/KKUManual.svg'
+
+// ── Cultural Design assets ──────────────────────────────────
+// accessories
+import accItem1        from '@/assets/images/Creative/accessories/Accessories (1).png'
+import accItem2        from '@/assets/images/Creative/accessories/Accessories (2).png'
+import accItem3        from '@/assets/images/Creative/accessories/Accessories (3).png'
+import accItem4        from '@/assets/images/Creative/accessories/Accessories (4).png'
+import accItem5        from '@/assets/images/Creative/accessories/Accessories (5).png'
+import accBeltBuckle   from '@/assets/images/Creative/accessories/BeltBuckle.png'
+import accEarring1     from '@/assets/images/Creative/accessories/Earring (1).png'
+import accEarring2     from '@/assets/images/Creative/accessories/Earring (2).png'
+import accEarring3     from '@/assets/images/Creative/accessories/Earring (3).png'
+import accEarring4     from '@/assets/images/Creative/accessories/Earring (4).png'
+import accSangwan1     from '@/assets/images/Creative/accessories/Sangwan (1).png'
+import accSangwan2     from '@/assets/images/Creative/accessories/Sangwan (2).png'
+import accSangwan6     from '@/assets/images/Creative/accessories/Sangwan (6).png'
+import accThap1        from '@/assets/images/Creative/accessories/ThapThruang (1).png'
+import accThap2        from '@/assets/images/Creative/accessories/ThapThruang (2).png'
+import accEarCuff      from '@/assets/images/Creative/accessories/Traditional-ear-cuff .png'
+import accCrown1       from '@/assets/images/Creative/accessories/crown.png'
+import accCrown2       from '@/assets/images/Creative/accessories/crown2.png'
+import accCrown3       from '@/assets/images/Creative/accessories/crown3.png'
+// linedrawings
+import lineBase1       from '@/assets/images/Creative/linedrawings/Object-line.jpg'
+import lineColor1      from '@/assets/images/Creative/linedrawings/Object-line-color.png'
+import lineBase2       from '@/assets/images/Creative/linedrawings/Object-line2.jpg'
+import lineColor2      from '@/assets/images/Creative/linedrawings/Object-line2-color.jpg'
+import lineBase3       from '@/assets/images/Creative/linedrawings/Object-line3.jpg'
+import lineBase4       from '@/assets/images/Creative/linedrawings/Object-line4.jpg'
+import lineColor4      from '@/assets/images/Creative/linedrawings/Object-line4-color.jpg'
+import lineBase5       from '@/assets/images/Creative/linedrawings/Object-line5.jpg'
+// flowers
+import flowerCaesa     from '@/assets/images/Creative/flowers/Flowers-Caesapiniodeae.png'
+import flowerRoses     from '@/assets/images/Creative/flowers/Flowers-roses .png'
+import flowerUnknown1  from '@/assets/images/Creative/flowers/Flowers-unknown.png'
+import flowerUnknown2  from '@/assets/images/Creative/flowers/Flowers-unknown2.png'
+
+// ── Commission assets ───────────────────────────────────────
+import cm3p           from '@/assets/images/commission/cm-3p.jpg'
+import cmAri          from '@/assets/images/commission/cm-ari.jpg'
+import cmAri2         from '@/assets/images/commission/cm-ari2.jpg'
+import cmUri          from '@/assets/images/commission/cm-uri.jpg'
+import cmMoon         from '@/assets/images/commission/cm-moon.jpg'
+import cmTung         from '@/assets/images/commission/cm-tung.jpg'
+import cmConverCm     from '@/assets/images/commission/conver_cm.jpg'
+
 export const CATEGORIES = [
   { id: 'all',          label: 'All' },
-  { id: 'character',    label: 'Character' },
-  { id: 'concept-art',  label: 'Concept Art' },
-  { id: 'illustration', label: 'Illustration' },
-  { id: 'webtoon',      label: 'Webtoon' },
-  { id: 'environment',  label: 'Environment' },
-  { id: 'prop-design',  label: 'Prop Design' },
-  { id: 'editorial',    label: 'Editorial' },
+  { id: 'game',         label: 'Project' },
+  { id: 'creative-art', label: 'Creative Art' },
+  { id: 'webtoon',      label: 'Storytelling' },
 ]
 
 export const TIERS = {
@@ -29,140 +155,349 @@ const img = (seed, w, h) => `https://picsum.photos/seed/${seed}/${w}/${h}`
 export const works = [
   // ────────────────────────────────────────────────────────
   {
-    id: '001',
-    slug: 'solaris-commander',
-    title: 'Solaris Commander',
-    category: 'character',
+    id: '007',
+    slug: 'knight-of-swords',
+    title: 'Knight of Swords',
+    category: 'game',
+    categories: ['game', 'character'],
+    tier: TIERS.PERSONAL,
+    role: 'Art Director · Character Animator · Background Designer',
+    client: 'Group Project — Game Design Class',
+    year: 2022,
+    featured: true,
+    thumbnail: kosGameStart,
+    banner:    kosGameStart,
+    description: '2D multiplayer browser platformer featuring DragonBones skeletal animation, real-time Socket.IO sync, and hand-crafted knight characters built in a group of four.',
+    mood: 'Action, Medieval, Playful',
+    software: ['DragonBones', 'Tiled', 'Paint.NET', 'Phaser 3', 'Node.js'],
+    tags: ['game', 'character', 'animation', '2d', 'multiplayer', 'phaser', 'socket-io'],
+
+    overview: `Knight of Swords is a 2D browser-based multiplayer platformer built for a game-design course in 2022.
+Players explore a side-scrolling world, collect coins, battle AI monsters, and see each other moving in real time — all through a standard web browser with no installation required.
+
+My responsibilities covered the entire visual layer: designing and rigging the Silver Knight and Golden Knight characters from scratch in DragonBones, drawing all tile art used for the platform maps, and directing the overall art style of the game.`,
+
+    worldbuilding: `A classic medieval world told through pixel-adjacent sprite art. Two rival knight factions — silver and gold — compete across castle ruins filled with coin hoards and wandering monsters. The "Silly Cat" playable character was added as a lighthearted wildcard: a cat in armour who somehow holds a sword.`,
+
+    techHighlights: [
+      {
+        label: 'Authoritative Server Physics',
+        text: 'Node.js runs the same Phaser game logic server-side using jsdom to simulate a DOM environment, so collision and gravity are calculated server-authoritatively — preventing cheating and keeping all clients in sync.',
+      },
+      {
+        label: 'Real-time Multiplayer',
+        text: 'Socket.IO broadcasts player positions, monster states, and coin pickups to every connected client at 60 fps. Joining a second browser tab immediately shows the second player as a live sprite.',
+      },
+      {
+        label: 'DragonBones Skeletal Animation',
+        text: 'All three playable characters use bone-and-mesh rigs exported as _ske.dbbin / _tex.json / _tex.png trios. Animations include idle, run, jump, attack, and death — blended at runtime by the Phaser DragonBones plugin.',
+      },
+      {
+        label: 'Tiled Map Pipeline',
+        text: 'Levels are designed in Tiled as .tmx files then exported to JSON for Phaser to load as tile layers. Custom tile properties flag collision, spawn zones, and hazard types.',
+      },
+      {
+        label: 'Cloud Deployment',
+        text: 'The game server is containerised via Docker and was originally deployed on Google Cloud Run — allowing anyone with a browser to join the same game session through a public URL.',
+      },
+    ],
+
+    sections: [
+      {
+        type: 'process',
+        title: 'Character Design — Silver Knight',
+        description: 'The Silver Knight is the default playable character. The design needed to read clearly at small game-sprite sizes while still looking detailed in close-up previews.',
+        images: [
+          kosCharImgSilver,
+          kosDisSilver,
+        ],
+        notes: 'Each body part is a separate PNG layer exported from DragonBones — head, torso, upper/lower arms, upper/lower legs, and prop (sword). This lets the engine rotate joints independently for smooth animation without distortion.',
+      },
+      {
+        type: 'process',
+        title: 'Character Design — Golden Knight & Little Demon Cat',
+        description: 'The Golden Knight serves as the rival faction — same rig structure as Silver Knight but with a warmer palette. Little Demon Cat is the recurring enemy with a simplified bone structure.',
+        images: [
+          kosCharImgGold,
+          kosCharImgLilDemon,
+        ],
+        notes: 'Artbreeder was used to generate the base head reference for the Gold Knight, then repainted in Paint.NET to fit the sprite style.',
+      },
+      {
+        type: 'process',
+        title: 'Environment — Game Screenshots',
+        description: 'The game world features side-scrolling levels with custom tile art. Players explore, collect coins, and battle enemies in real-time multiplayer.',
+        images: [
+          kosGameStart,
+          kosGameEnd,
+        ],
+        notes: 'The colour palette shifts from warm outdoor greens to cool cave blues as the player descends — a visual depth cue that required no extra coding.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Role Breakdown',
+        points: [
+          { label: 'Character Art',       text: 'Designed and rigged Silver Knight, Golden Knight, and Silly Cat from body-part PNGs to fully animated DragonBones skeletons.' },
+          { label: 'Background & Tiles',  text: 'Drew both tilesheets (tilesheet1 / tilesheet2) and assembled all game levels in Tiled.' },
+          { label: 'Animation Direction', text: 'Defined animation state machine: idle → run → jump → fall → attack → hit → death, with transition timing tuned to match Phaser arcade physics.' },
+          { label: 'Art Direction',       text: 'Set the overall colour palette, sprite resolution, and visual tone for the whole project, ensuring all external assets (Kenney monsters, GLSL shaders) matched the hand-made style.' },
+          { label: 'Asset Integration',   text: 'Exported DragonBones bundles (_ske.dbbin, _tex.json, _tex.png) and wired them into the Phaser scene alongside Socket.IO player-state payloads.' },
+        ],
+      },
+      {
+        type: 'techstack',
+        title: 'Technology Stack',
+        items: [
+          { icon: '⚔️',  name: 'Phaser 3',      role: 'Game engine — arcade physics, scene management, sprite rendering' },
+          { icon: '🦴',  name: 'DragonBones',   role: 'Skeletal animation system for all playable characters' },
+          { icon: '🗺️',  name: 'Tiled',         role: 'Tile-map editor — .tmx level design exported to JSON' },
+          { icon: '🔌',  name: 'Socket.IO',     role: 'Real-time bidirectional event transport for multiplayer sync' },
+          { icon: '🖥️',  name: 'Node.js + Express', role: 'Web server + authoritative game loop host' },
+          { icon: '🐳',  name: 'Docker',        role: 'Containerisation for consistent deployment' },
+          { icon: '☁️',  name: 'Google Cloud Run', role: 'Serverless container hosting — original public deployment' },
+        ],
+      },
+      {
+        type: 'characters',
+        title: 'Playable Characters',
+        characters: [
+          {
+            key: 'silver-knight',
+            name: 'Silver Knight',
+            role: 'Default Playable',
+            image: kosCSilver,
+            characterImg: kosCharImgSilver,
+            disassembledImg: kosDisSilver,
+            glowColor: '#90639e',
+            type: 'adapted',
+            sourceImage: kosProtoRef,
+            sourceLabel: 'KnightPrototypeImage (Reference)',
+            description: 'The default hero of Knight of Swords. The armour design, colour palette, and silhouette were adapted from a real reference image — then fully redrawn and split into 16 bone layers in DragonBones. Features a flowing back-cloth cape, eye highlights, and an animated sword swing.',
+          },
+          {
+            key: 'gold-knight',
+            name: 'Gold Knight',
+            role: 'Rival Faction',
+            image: kosGold,
+            characterImg: kosCharImgGold,
+            disassembledImg: kosDisGold,
+            glowColor: '#d4a017',
+            type: 'adapted',
+            sourceImage: kosProtoRef,
+            sourceLabel: 'KnightPrototypeImage (Reference)',
+            description: 'The Gold Knight is the rival faction counterpart — sharing the same skeletal rig as the Silver Knight but with a warmer gold palette and a distinct head redesigned in Paint.NET. Head reference was generated via Artbreeder.',
+          },
+          {
+            key: 'prince',
+            name: 'Prince',
+            role: 'Story Character',
+            image: kosCPrince,
+            characterImg: kosCharImgPrince,
+            disassembledImg: kosDisPrince,
+            glowColor: '#60c8f0',
+            type: 'custom',
+            description: "The Prince is a fully original character design created for the game's narrative — the kidnapped royal the players are tasked with rescuing. Designed with a lighter, regal colour scheme to contrast the armoured knight protagonists.",
+          },
+          {
+            key: 'demon-cat',
+            name: 'Demon Cat',
+            role: 'Boss Enemy',
+            image: kosCDemonCat,
+            characterImg: kosCharImgDemon,
+            disassembledImg: kosDisDemon,
+            glowColor: '#e03050',
+            type: 'custom',
+            description: 'The Demon Cat is an original boss enemy design. Dark silhouette with glowing eyes and demonic markings — created to serve as the main antagonist. Built as a DragonBones rig with a unique tail-whip attack animation.',
+          },
+          {
+            key: 'little-demon-cat',
+            name: 'Little Demon Cat',
+            role: 'Regular Enemy',
+            image: kosCLilDemon,
+            characterImg: kosCharImgLilDemon,
+            disassembledImg: kosDisLilDemon,
+            glowColor: '#d050a0',
+            type: 'custom',
+            description: 'The smaller version of the Demon Cat — a recurring enemy type that appears in groups. Designed to be visually related to the boss while being smaller and faster. Original character design made from scratch.',
+          },
+        ],
+      },
+      {
+        type: 'chardesign',
+        title: 'Character Design',
+        label: 'Design Process',
+        panels: [
+          {
+            label: 'การออกแบบ',
+            title: 'Character examples',
+            left: {
+              images: [
+                { src: kosCharImgPrince, caption: 'Final Design' },
+                { src: kosDisPrince,     caption: 'Bone Structure' },
+              ],
+            },
+            right: {
+              animations: [
+                { id: 'jump',            label: 'jump',            video: '/videos/anim-jump.mp4',    duration: '0.62s' },
+                { id: 'stand',           label: 'stand',           video: '/videos/anim-stand.mp4',   duration: '0.80s' },
+                { id: 'stand_to_breathe',label: 'stand_to_breathe',video: '/videos/anim-breathe.mp4', duration: '1.20s' },
+                { id: 'walk',            label: 'walk',            video: '/videos/anim-walk.mp4',    duration: '1.04s' },
+              ],
+            },
+            note: 'The Prince character was fully rigged in DragonBones with 4 animation states. Each bone layer is independently animated — switch between animations using the panel on the right.',
+          },
+        ],
+      },
+      {
+        type: 'gamescreens',
+        title: 'Game Screenshots',
+        images: [
+          { src: kosGameStart,    caption: 'Start Screen' },
+          { src: kosMultiplayer,  caption: 'Multiplayer — two players in the same level' },
+          { src: kosGameEnd,      caption: 'Ending Scene' },
+        ],
+      },
+    ],
+  },
+
+  // ────────────────────────────────────────────────────────
+  {
+    id: '011',
+    slug: 'logo-design',
+    title: 'Logo Design',
+    category: 'creative-art',
     tier: TIERS.PROFESSIONAL,
-    role: 'Character Concept Artist',
-    client: 'Indie Game Studio (NDA)',
+    role: 'Logo Designer · Brand Identity',
+    client: 'GWRITE · KKU Library',
     year: 2024,
     featured: true,
-    thumbnail: img('solaris-thumb',  800, 600),
-    banner:    img('solaris-banner', 1600, 900),
-    description: 'A military commander from a sun-powered empire. Designed for a strategy RPG with solar-punk themes.',
-    mood: 'Epic, Regal, Warm',
-    software: ['Photoshop', 'PureRef'],
-    tags: ['fantasy', 'character', 'armor', 'rpg', 'solar-punk'],
-
-    overview: `The brief called for a military leader who embodies the empire's solar-worship religion —
-power, warmth, and authority fused into a single silhouette. Every design element from the
-crown-like helmet to the layered pauldrons references the sun.`,
-
-    worldbuilding: `The Solaris Empire draws power from crystallised sunlight stored in
-amber-coloured conduits woven into their armour. Commanders are chosen via
-trials at high noon — only those who can "hold the light" ascend.`,
-
+    thumbnail: logoLightGwriteMain,
+    banner:    logoDarkGwriteMain,
+    description: 'Brand identity and logo design for GWRITE and KKU Library — covering main marks and sub-feature icons.',
+    mood: 'Clean, Modern, Purposeful',
+    software: ['Illustrator', 'Figma'],
+    tags: ['logo', 'branding', 'identity', 'vector'],
     sections: [
       {
-        type: 'process',
-        title: 'Silhouette Exploration',
-        description: 'Started with 12 silhouette variants to nail the read from a distance.',
-        images: [
-          img('solaris-sil-1', 1200, 800),
-          img('solaris-sil-2', 1200, 800),
-        ],
-        notes: 'Pushed the helmet to be more crown-like in iteration 8 — made the power status clearer.',
-      },
-      {
-        type: 'process',
-        title: 'Colour Exploration',
-        description: 'Tested warm golds vs cooler bronzes. Gold won — reads as "sun" immediately.',
-        images: [
-          img('solaris-col-1', 1200, 800),
-          img('solaris-col-2', 1200, 800),
-        ],
-        notes: 'Added deep amber shadow tones to avoid the character reading as a trophy rather than a person.',
-      },
-      {
-        type: 'breakdown',
-        title: 'Design Breakdown',
-        points: [
-          { label: 'Character Personality', text: 'Strict but honourable. Never retreats.' },
-          { label: 'Colour Theory',         text: 'Golden hour palette — warmth of command, not decoration.' },
-          { label: 'Costume Logic',         text: 'Solar conduits visible at shoulder joints for lore-accurate power routing.' },
-          { label: 'Cultural References',   text: 'Byzantine military dress, Aztec solar iconography, Japanese Mon crests.' },
-          { label: 'Shape Language',        text: 'Triangular silhouette — upward energy, strength, hierarchy.' },
-        ],
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('solaris-final-1', 1600, 900),
-          img('solaris-final-2', 800, 1000),
-          img('solaris-final-3', 800, 1000),
-        ],
-      },
-      {
-        type: 'gallery',
-        title: 'Deliverables',
-        images: [
-          img('solaris-sheet-1', 1200, 800),
-          img('solaris-sheet-2', 1200, 800),
-          img('solaris-sheet-3', 1200, 800),
+        type: 'logo-gallery',
+        title: 'Logo Collection',
+        groups: [
+          {
+            name: 'GWRITE',
+            logos: [
+              { name: 'Main',                     light: logoLightGwriteMain,          dark: logoDarkGwriteMain },
+              { name: 'Design & Publish',          light: logoLightGwriteDesignPublish, dark: logoDarkGwriteDesignPublish },
+              { name: 'Smart Insights',            light: logoLightGwriteSmartInsights, dark: logoDarkGwriteSmartInsights },
+              { name: 'Structured Story Planning', light: logoLightGwriteStructured,    dark: logoDarkGwriteStructured },
+              { name: 'Write Anywhere',            light: logoLightGwriteWriteAnywhere, dark: logoDarkGwriteWriteAnywhere },
+            ],
+          },
+          {
+            name: 'KKU',
+            logos: [
+              { name: 'About',   light: logoLightKkuAbout,   dark: logoDarkKkuAbout },
+              { name: 'Chatbot', light: logoLightKkuChatbot, dark: logoDarkKkuChatbot },
+              { name: 'Manual',  light: logoLightKkuManual,  dark: logoDarkKkuManual },
+            ],
+          },
+          {
+            name: 'KKUL',
+            logos: [
+              { name: 'Main',      light: logoLightKkulMain,     dark: logoDarkKkulMain },
+              { name: 'People',    light: logoLightKkulPeople,   dark: logoDarkKkulPeople },
+              { name: 'Read Book', light: logoLightKkulReadbook, dark: logoDarkKkulReadbook },
+            ],
+          },
         ],
       },
     ],
   },
 
   // ────────────────────────────────────────────────────────
+  // NEMESIS — dedicated webtoon portfolio page (/portfolio/nemesis)
   {
-    id: '002',
-    slug: 'void-garden',
-    title: 'Void Garden',
-    category: 'environment',
-    tier: TIERS.PERSONAL,
-    role: 'Environment Concept Artist',
+    id: '010',
+    slug: 'nemesis',
+    title: 'Love Ruined Beneath Revenge',
+    category: 'webtoon',
+    tier: 'personal',
+    role: 'Writer · Illustrator · Character Designer · World Designer',
     client: 'Personal Project',
     year: 2024,
     featured: true,
-    thumbnail: img('voidgarden-thumb',  800, 600),
-    banner:    img('voidgarden-banner', 1600, 900),
-    description: 'An abandoned temple garden where reality has started dissolving — bioluminescent flora grows through cracked stone.',
-    mood: 'Eerie, Serene, Mysterious',
-    software: ['Photoshop', 'Blender', 'PureRef'],
-    tags: ['environment', 'fantasy', 'bioluminescent', 'ruins'],
+    thumbnail: wtConverbg,
+    banner:    wtConverbg,
+    description: 'NEMESIS — เว็บตูนแฟนตาซีมืดต้นฉบับ ว่าด้วยความแค้น สายเลือดเทพ และอาณาจักรที่ปกคลุมด้วยพิษ',
+    mood: 'Dark Fantasy, Vengeance, Mythic',
+    software: ['Clip Studio Paint', 'Photoshop', 'SketchUp'],
+    tags: ['webtoon', 'dark-fantasy', 'original', 'vertical-scroll', 'character-design', 'world-building'],
+    // This entry links to the dedicated WebtoonPortfolio page instead of ProjectDetail
+    customRoute: '/portfolio/nemesis',
+  },
 
-    overview: `A personal project exploring the intersection of decay and growth —
-what happens when a sacred space is reclaimed not by nature, but by something
-that exists between dimensions?`,
-
+  // ────────────────────────────────────────────────────────
+  {
+    id: '012',
+    slug: 'cultural-design',
+    title: 'Cultural Design',
+    category: 'creative-art',
+    tier: TIERS.PERSONAL,
+    role: 'Illustrator · Accessory Designer',
+    client: 'Personal Project',
+    year: 2024,
+    featured: true,
+    thumbnail: accCrown1,
+    banner:    accCrown1,
+    description: 'A collection of cultural accessory design, line art environment studies, and decorative botanical illustration.',
+    mood: 'Cultural, Elegant, Detailed',
+    software: ['Clip Studio Paint', 'Illustrator'],
+    tags: ['cultural', 'accessory', 'lineart', 'illustration', 'botanical'],
     sections: [
       {
-        type: 'process',
-        title: 'Composition Studies',
-        description: '3-point perspective thumbnails to find the right camera angle.',
-        images: [
-          img('voidgarden-comp-1', 1200, 800),
-          img('voidgarden-comp-2', 1200, 800),
-        ],
-        notes: 'Low angle with foreground flora creates depth and makes the void portal feel imposing.',
-      },
-      {
-        type: 'process',
-        title: 'Lighting Pass',
-        description: 'Tested cool moonlight vs warm bioluminescent glow as the primary light source.',
-        images: [
-          img('voidgarden-light-1', 1200, 800),
-          img('voidgarden-light-2', 1200, 800),
-        ],
-        notes: 'Layering both sources — cold rim from above, warm fill from the ground — gave the best depth.',
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('voidgarden-final', 1600, 900),
+        type: 'accessories-gallery',
+        title: 'Accessory Design',
+        items: [
+          { src: accCrown1,     label: 'Crown I' },
+          { src: accCrown2,     label: 'Crown II' },
+          { src: accCrown3,     label: 'Crown III' },
+          { src: accEarring1,   label: 'Earring I' },
+          { src: accEarring2,   label: 'Earring II' },
+          { src: accEarring3,   label: 'Earring III' },
+          { src: accEarring4,   label: 'Earring IV' },
+          { src: accEarCuff,    label: 'Traditional Ear Cuff' },
+          { src: accSangwan1,   label: 'Sangwan I' },
+          { src: accSangwan2,   label: 'Sangwan II' },
+          { src: accSangwan6,   label: 'Sangwan VI' },
+          { src: accThap1,      label: 'Thap Thruang I' },
+          { src: accThap2,      label: 'Thap Thruang II' },
+          { src: accBeltBuckle, label: 'Belt Buckle' },
+          { src: accItem1,      label: 'Accessory I' },
+          { src: accItem2,      label: 'Accessory II' },
+          { src: accItem3,      label: 'Accessory III' },
+          { src: accItem4,      label: 'Accessory IV' },
+          { src: accItem5,      label: 'Accessory V' },
         ],
       },
       {
-        type: 'gallery',
-        title: 'Environment Variants',
-        images: [
-          img('voidgarden-var-day',   1200, 800),
-          img('voidgarden-var-night', 1200, 800),
-          img('voidgarden-var-rain',  1200, 800),
+        type: 'lineart-gallery',
+        title: 'Environment Design',
+        subtitle: 'Hover to reveal colour',
+        items: [
+          { base: lineBase1, color: lineColor1, label: 'Object Study I' },
+          { base: lineBase2, color: lineColor2, label: 'Object Study II' },
+          { base: lineBase3,                    label: 'Object Study III' },
+          { base: lineBase4, color: lineColor4, label: 'Object Study IV' },
+          { base: lineBase5,                    label: 'Object Study V' },
+        ],
+      },
+      {
+        type: 'accessories-gallery',
+        title: 'Decorative Illustration',
+        items: [
+          { src: flowerCaesa,    label: 'Caesalpinioideae' },
+          { src: flowerRoses,    label: 'Roses' },
+          { src: flowerUnknown1, label: 'Botanical Study I' },
+          { src: flowerUnknown2, label: 'Botanical Study II' },
         ],
       },
     ],
@@ -170,194 +505,44 @@ that exists between dimensions?`,
 
   // ────────────────────────────────────────────────────────
   {
-    id: '003',
-    slug: 'ironveil-rogue',
-    title: 'Ironveil Rogue',
-    category: 'character',
-    tier: TIERS.PERSONAL,
-    role: 'Character Design',
-    client: 'Personal Project',
+    id: '009',
+    slug: 'commission-collection',
+    title: 'Commission Collection',
+    category: 'creative-art',
+    tier: 'professional',
+    role: 'Illustrator · Character Artist',
+    client: 'Various Clients',
     year: 2023,
     featured: true,
-    thumbnail: img('ironveil-thumb',  800, 600),
-    banner:    img('ironveil-banner', 1600, 900),
-    description: 'A steampunk thief specialising in information brokerage. Designed for a personal game pitch.',
-    mood: 'Sharp, Cunning, Urban',
-    software: ['Clip Studio', 'Photoshop'],
-    tags: ['character', 'steampunk', 'rogue', 'game-pitch'],
+    thumbnail: cmConverCm,
+    banner:    cmConverCm,
+    description: 'A curated selection of commissioned character illustrations — from single-character portraits to multi-character group pieces across various art styles.',
+    mood: 'Varied — Warm, Energetic, Detailed',
+    software: ['Clip Studio Paint', 'Photoshop'],
+    tags: ['illustration', 'commission', 'character', 'portrait'],
 
-    overview: `A steampunk thief who trades in secrets. The design needed to balance practical
-thief gear with readable steampunk flair — without tipping into costume.`,
+    overview: `This collection brings together commissioned character artworks completed between 2022–2023. Each piece was created to the client's specifications — from reference sheets and character descriptions through to the finished illustration.
+
+The commissions range from single-character portrait pieces to multi-character group compositions, and cover a variety of styles from soft painterly to bold line-art.`,
 
     sections: [
       {
-        type: 'process',
-        title: 'Sketch Exploration',
-        description: 'Over 20 loose sketches to nail the asymmetric design language.',
-        images: [
-          img('ironveil-sk-1', 1200, 800),
-          img('ironveil-sk-2', 1200, 800),
-          img('ironveil-sk-3', 1200, 800),
-        ],
-        notes: 'Went through 20+ sketches — the key was finding the right balance between practical thief gear and readable steampunk flair.',
-      },
-      {
-        type: 'breakdown',
-        title: 'Design Breakdown',
-        points: [
-          { label: 'Personality',    text: 'Charismatic liar. Collects secrets, not gold.' },
-          { label: 'Shape Language', text: 'Asymmetric — one armoured arm vs one bare arm. Contradiction is the point.' },
-          { label: 'Colour',         text: 'Desaturated slate + warm copper accent. Competent, not flashy.' },
-          { label: 'Props',          text: 'Brass ear-horn amplifier doubles as a lock-pick. Every tool has two uses.' },
-        ],
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('ironveil-final-1', 1000, 1400),
-          img('ironveil-final-2', 1000, 1400),
-        ],
-      },
-      {
-        type: 'gallery',
-        title: 'Character Sheets',
-        images: [
-          img('ironveil-sheet-turn', 1400, 900),
-          img('ironveil-sheet-expr', 1400, 900),
-          img('ironveil-sheet-prop', 1400, 900),
-        ],
-      },
-    ],
-  },
-
-  // ────────────────────────────────────────────────────────
-  {
-    id: '004',
-    slug: 'lantern-festival',
-    title: 'Lantern Festival',
-    category: 'illustration',
-    tier: TIERS.PERSONAL,
-    role: 'Illustrator',
-    client: 'Personal',
-    year: 2023,
-    featured: false,
-    thumbnail: img('lantern-thumb',  800, 600),
-    banner:    img('lantern-banner', 1600, 900),
-    description: 'Atmospheric editorial illustration of a fantasy lantern festival at dusk.',
-    mood: 'Warm, Celebratory, Nostalgic',
-    software: ['Photoshop'],
-    tags: ['illustration', 'editorial', 'fantasy', 'atmosphere'],
-    sections: [
-      {
-        type: 'process',
-        title: 'Value Study',
-        description: 'Greyscale value pass before committing to colour.',
-        images: [
-          img('lantern-value-1', 1200, 800),
-          img('lantern-value-2', 1200, 800),
-        ],
-        notes: 'Kept the sky at mid-value to let the glowing lanterns read clearly as the lightest element.',
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('lantern-final', 1600, 1000),
-        ],
-      },
-    ],
-  },
-
-  // ────────────────────────────────────────────────────────
-  {
-    id: '005',
-    slug: 'ember-knight',
-    title: 'Ember Knight',
-    category: 'concept-art',
-    tier: TIERS.PROFESSIONAL,
-    role: 'Concept Artist',
-    client: 'Game Studio (NDA)',
-    year: 2024,
-    featured: false,
-    thumbnail: img('ember-thumb',  800, 600),
-    banner:    img('ember-banner', 1600, 900),
-    description: 'Paladin character designed around fire-and-ash aesthetics for a dark fantasy RPG.',
-    mood: 'Intense, Tragic, Heroic',
-    software: ['Photoshop', 'PureRef'],
-    tags: ['character', 'paladin', 'dark-fantasy', 'fire'],
-    sections: [
-      {
-        type: 'process',
-        title: 'Concept Sketches',
-        description: 'Early exploration of the ash-and-ember visual language.',
-        images: [
-          img('ember-sk-1', 1200, 800),
-          img('ember-sk-2', 1200, 800),
-        ],
-        notes: 'The cracked armour with embers visible underneath was chosen in round 2 — it tells the story of a falling hero.',
-      },
-      {
-        type: 'breakdown',
-        title: 'Design Breakdown',
-        points: [
-          { label: 'Personality',   text: 'A hero who lost their faith but kept fighting anyway.' },
-          { label: 'Colour',        text: 'Charcoal base with deep orange cracks — controlled burn.' },
-          { label: 'Silhouette',    text: 'Heavy, grounded — shoulders forward, weight-bearing stance.' },
-          { label: 'Story Detail',  text: 'The censer on the belt is shattered — faith broken but carried still.' },
-        ],
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('ember-final-1', 1000, 1400),
-          img('ember-final-2', 1000, 1400),
-        ],
-      },
-    ],
-  },
-
-  // ────────────────────────────────────────────────────────
-  {
-    id: '006',
-    slug: 'thornwood-witch',
-    title: 'Thornwood Witch',
-    category: 'character',
-    tier: TIERS.PERSONAL,
-    role: 'Character Design',
-    client: 'Personal Project',
-    year: 2023,
-    featured: false,
-    thumbnail: img('witch-thumb',  800, 600),
-    banner:    img('witch-banner', 1600, 900),
-    description: 'A forest witch whose magic grows from pain — thorns bloom from her wounds.',
-    mood: 'Dark, Melancholic, Wild',
-    software: ['Clip Studio', 'Photoshop'],
-    tags: ['character', 'witch', 'dark-fantasy', 'nature'],
-    sections: [
-      {
-        type: 'process',
-        title: 'Shape Exploration',
-        description: 'Silhouette pass focusing on integrating organic thorn shapes into clothing.',
-        images: [
-          img('witch-shape-1', 1200, 800),
-          img('witch-shape-2', 1200, 800),
-        ],
-        notes: 'The hair becoming branches was the breakthrough moment — it unified the character with her environment.',
-      },
-      {
-        type: 'final',
-        title: 'Final Artwork',
-        images: [
-          img('witch-final', 1000, 1400),
+        type: 'commission-gallery',
+        title: 'Commissions',
+        pieces: [
+          { src: cmAri,  title: 'Ari',        desc: 'Original character portrait commission. Soft lighting with detailed costume design.' },
+          { src: cmAri2, title: 'Ari (Alt)',   desc: 'Alternate colour variation of the Ari commission — warm evening palette.' },
+          { src: cmTung, title: 'Tung',        desc: 'Character portrait commission \u2014 warm tones with a traditional-inspired outfit and expressive lighting.' },
+          { src: cmUri,  title: 'Uri',         desc: 'Portrait commission featuring soft shading and detailed character design with expressive facial work.' },
+          { src: cmMoon, title: 'Moon',        desc: 'Atmospheric character commission \u2014 moonlit ambient lighting and a cool-toned cinematic palette.' },
+          { src: cm3p,   title: 'Group Piece', desc: 'Multi-character group commission \u2014 three characters composed together in a cohesive scene.' },
         ],
       },
     ],
   },
 ]
 
-// ─── Helpers ────────────────────────────────────────────────
+// \u2500 Helpers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 export const getFeaturedWorks   = ()      => works.filter(w => w.featured)
 export const getWorkBySlug      = (slug)  => works.find(w => w.slug === slug)
 export const getWorksByCategory = (categoryId, showAll = false) => {

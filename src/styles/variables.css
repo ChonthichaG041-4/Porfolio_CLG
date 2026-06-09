@@ -1,66 +1,85 @@
-/* ============================================
-   DESIGN TOKENS — Portfolio CLG
-   Dark theme optimised for Art Portfolio
-   ============================================ */
+/* ============================================================
+   DESIGN TOKENS — Cyberpunk / Futuristic Theme
+   Neon Purple · Violet · Dark Premium
+   ============================================================ */
 
 :root {
-  /* --- Palette --- */
-  --color-bg:           #0d0d0f;
-  --color-bg-secondary: #111115;
-  --color-bg-card:      #16161c;
-  --color-bg-overlay:   rgba(13, 13, 15, 0.85);
+  /* ── Backgrounds ────────────────────────────────────────── */
+  --color-bg: #07010f;
+  --color-bg-secondary: #0d0420;
+  --color-bg-deep: #12061f;
+  --color-bg-card: rgba(18, 6, 31, 0.75);
+  --color-bg-glass: rgba(168, 85, 247, 0.04);
+  --color-bg-glass-hover: rgba(168, 85, 247, 0.08);
+  --color-bg-overlay: rgba(7, 1, 15, 0.88);
 
-  --color-surface:      #1c1c24;
-  --color-border:       rgba(255, 255, 255, 0.07);
-  --color-border-hover: rgba(255, 255, 255, 0.15);
+  /* ── Neon Purple Palette ─────────────────────────────────── */
+  --color-purple: #a855f7;
+  --color-violet: #9333ea;
+  --color-glow: #c084fc;
+  --color-glow-light: #e9d5ff;
+  --color-glow-dim: #7c3aed;
 
-  --color-text-primary:   #f0ede8;
-  --color-text-secondary: #8c8a87;
-  --color-text-muted:     #55534f;
+  /* ── Aliases (used throughout existing code) ─────────────── */
+  --color-accent: #a855f7;
+  --color-accent-light: #c084fc;
+  --color-accent-dark: #7c3aed;
+  --color-accent-glow: rgba(168, 85, 247, 0.15);
 
-  /* Accent — warm amber for artist feel */
-  --color-accent:       #c9a96e;
-  --color-accent-light: #e8c99a;
-  --color-accent-dark:  #9a7840;
-  --color-accent-glow:  rgba(201, 169, 110, 0.15);
+  /* ── Borders ─────────────────────────────────────────────── */
+  --color-border: rgba(168, 85, 247, 0.15);
+  --color-border-hover: rgba(168, 85, 247, 0.45);
+  --color-border-glow: rgba(192, 132, 252, 0.7);
+  --color-border-glass: rgba(255, 255, 255, 0.06);
 
-  /* Status */
-  --color-open:   #6db87a;
-  --color-closed: #e06b6b;
+  /* ── Surfaces ─────────────────────────────────────────────── */
+  --color-surface: rgba(30, 10, 55, 0.6);
 
-  /* --- Typography --- */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  /* ── Text ─────────────────────────────────────────────────── */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3c3;
+  --color-text-muted: #6b6880;
 
-  --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.875rem;  /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg:   1.125rem;  /* 18px */
-  --text-xl:   1.25rem;   /* 20px */
-  --text-2xl:  1.5rem;    /* 24px */
-  --text-3xl:  1.875rem;  /* 30px */
-  --text-4xl:  2.25rem;   /* 36px */
-  --text-5xl:  3rem;      /* 48px */
-  --text-6xl:  3.75rem;   /* 60px */
-  --text-7xl:  4.5rem;    /* 72px */
+  /* ── Status ──────────────────────────────────────────────── */
+  --color-open: #34d399;
+  --color-closed: #f87171;
 
-  --weight-light:   300;
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-body: "Anuphan", "Teachers", "Noto Serif JP", sans-serif;
+  --font-display: "Teachers", "Anuphan", "Noto Serif JP", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+
+  --weight-light: 300;
   --weight-regular: 400;
-  --weight-medium:  500;
-  --weight-semi:    600;
+  --weight-medium: 500;
+  --weight-semi: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
 
-  --leading-tight:  1.2;
-  --leading-snug:   1.375;
-  --leading-normal: 1.6;
+  --leading-tight: 1.1;
+  --leading-snug: 1.35;
+  --leading-normal: 1.65;
 
-  /* --- Spacing --- */
-  --space-1:  0.25rem;
-  --space-2:  0.5rem;
-  --space-3:  0.75rem;
-  --space-4:  1rem;
-  --space-5:  1.25rem;
-  --space-6:  1.5rem;
-  --space-8:  2rem;
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
@@ -68,40 +87,43 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* --- Layout --- */
-  --container-sm:  640px;
-  --container-md:  768px;
-  --container-lg:  1024px;
-  --container-xl:  1280px;
+  /* ── Layout ──────────────────────────────────────────────── */
+  --container-xl: 1280px;
   --container-2xl: 1440px;
-
   --navbar-height: 72px;
 
-  /* --- Radius --- */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   12px;
-  --radius-xl:   16px;
+  /* ── Radius ──────────────────────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
   --radius-full: 9999px;
 
-  /* --- Shadows --- */
-  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 32px var(--color-accent-glow);
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.7);
+  --shadow-glow-sm: 0 0 12px rgba(168, 85, 247, 0.35);
+  --shadow-glow:
+    0 0 24px rgba(168, 85, 247, 0.45), 0 0 48px rgba(168, 85, 247, 0.18);
+  --shadow-glow-lg:
+    0 0 40px rgba(168, 85, 247, 0.55), 0 0 80px rgba(168, 85, 247, 0.25);
+  --shadow-card:
+    0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(168, 85, 247, 0.08);
 
-  /* --- Transitions --- */
+  /* ── Transitions ─────────────────────────────────────────── */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast:   150ms;
-  --duration-normal: 250ms;
-  --duration-slow:   400ms;
+  --duration-fast: 150ms;
+  --duration-normal: 280ms;
+  --duration-slow: 450ms;
 
-  /* --- Z-index --- */
-  --z-base:    0;
-  --z-card:    10;
+  /* ── Z-index ─────────────────────────────────────────────── */
+  --z-base: 0;
+  --z-card: 10;
   --z-overlay: 100;
-  --z-nav:     200;
-  --z-modal:   300;
-  --z-toast:   400;
+  --z-nav: 200;
+  --z-modal: 300;
+  --z-toast: 400;
 }
