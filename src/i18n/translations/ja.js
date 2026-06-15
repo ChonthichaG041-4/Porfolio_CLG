@@ -30,10 +30,13 @@ export const ja = {
   },
 
   skills: {
-    label:         'スキル',
-    title:         'スキル & ソフトウェア',
-    artisticTitle: 'アーティスティックスキル',
-    softwareTitle: 'ソフトウェア',
+    label:           'スキル',
+    title:           'スキル & ソフトウェア',
+    softwareTitle:   'ソフトウェア',
+    artTitle:        'アートスキル',
+    writingTitle:    '執筆スキル',
+    productionTitle: '制作スキル',
+    devTitle:        '開発スキル',
   },
 
   about: {
@@ -113,21 +116,99 @@ export const ja = {
   },
 
   aboutPage: {
-    label:          'プロフィール',
-    roleLabel:      '役割',
-    experience:     '経歴',
-    education:      '学歴',
-    skills:         'スキル',
-    software:       'ソフトウェア',
-    languages:      '言語',
-    artistic:       'アーティスティック',
-    technical:      'テクニカル / ワークフロー',
-    softSkills:     'ソフトスキル',
+    label:     'プロフィール',
+    subtitle:  '2Dアーティスト · キャラクターコンセプトアーティスト',
+    also:      'その他: フロントエンド開発者 · UX/UIデザイナー',
+    heroBio:   '想像力と意味あるデザインをつなぐビジュアルストーリーとデジタル体験を生み出します。アートがアイデアを生み、テクノロジーがそれを現実にします。',
+    chips:     ['キャラクターデザイン', 'コンセプトアート', 'イラスト', 'UX/UI', 'フロントエンド', 'コンケン大学'],
+
+    whoIAm: {
+      sectionLabel: '自己紹介',
+      heading:      '世界を',
+      headingItalic:'構築しながら育ったアーティスト',
+      body: '私はチョンティチャ — コンピューターサイエンスの学位を持つ2Dアーティスト兼キャラクターコンセプトデザイナーです。コンケン大学出身で、長年にわたってキャラクターを作り、ストーリーをデザインし、イラストとアニメーションで命を吹き込んできました。フロントエンド開発とUX/UIデザインの技術的な側面により、アートが製品の中でどのように生きるかを理解する稀な能力を持っています。',
+    },
+
+    inspires: {
+      sectionLabel: 'インスピレーションの源',
+      heading:      'キャラクターが担う',
+      headingItalic:'その世界の重さ',
+      cards: [
+        {
+          label: 'アートにおいて',
+          body:  'タイの文化的美学、民話、そしてキャラクターデザインにおける美と葛藤の緊張感。描くすべてのキャラクターには、読む前から感じられる歴史があります。',
+        },
+        {
+          label: 'ストーリーテリングにおいて',
+          body:  'Love Ruined Beneath RevengeやKnight of Swordsのようなプロジェクト — 執筆、イラスト、キャラクターデザインをゼロから手がけた作品 — は、私の北極星です。',
+        },
+        {
+          label: 'クラフトにおいて',
+          body:  'シルエットが最小サイズで明確に読める瞬間。この即時認識が、新しいキャラクターをデザインするたびの目標です。',
+        },
+        {
+          label: 'アートの向こう側',
+          body:  'ボランティア活動、大学でのAIワークショップ、そしてデジタル体験の両面を学ぶことで生まれるクリエイティブな規律。',
+        },
+      ],
+    },
+
+    philosophy: {
+      sectionLabel: 'クリエイティブ哲学',
+      heading:      'すべてのデザインの決断の',
+      headingItalic:'背後にある原則',
+      items: [
+        {
+          title: 'シルエットが先、細部は後',
+          body:  'キャラクターはまず影で読めなければなりません。複雑さは深みを加えるべきであり、弱い基盤を補うためではありません。',
+        },
+        {
+          title: 'デザインは個性を明かす',
+          body:  'コスチューム、姿勢、カラーパレット — すべての要素が、この人物が何者であるかを、一言発する前に伝えるべきです。',
+        },
+        {
+          title: 'コンテキストがコンセプトを形成する',
+          body:  'モバイルゲーム用にデザインされたキャラクターは、グラフィックノベルのものとは異なる生き方をします。私は常にメディアのためにデザインします。',
+        },
+        {
+          title: 'アートとコードは同じ言語を話す',
+          body:  '技術的な背景を持つ私は、デザインが実際にどのように構築されるかを理解しています。これにより、開発者とのコラボレーションが速く、クリーンになります。',
+        },
+      ],
+    },
+
+    career: {
+      sectionLabel: 'キャリア目標',
+      heading:      '次に',
+      headingItalic:'創りたい場所',
+      primary: {
+        tag:   'メインの道',
+        title: '2Dアーティスト / キャラクターコンセプトアーティスト',
+        body:  'ゲーム、ウェブトゥーン、またはアニメーションのためのキャラクターをデザインしたい — ビジュアルストーリーテリングが製品を駆動するチームで働きたいと思っています。',
+      },
+      secondary: {
+        tag:   'サブの道',
+        title: 'フロントエンド開発者 · UX/UIデザイナー',
+        body:  'ユーザー中心のデザインを重視する組織では、技術的とクリエイティブの両方の視点を持ち込みます。アートとインターフェースが交差するデジタル製品を構築するチームに特に適しています。',
+      },
+    },
+
+    process: {
+      sectionLabel: 'ワーキングプロセス',
+      heading:      '',
+      headingItalic:'ブリーフ',
+      headingEnd:   'から完成したキャラクターまで',
+      steps: [
+        { title: '世界を研究する',             body: '一本の線を引く前に、キャラクターの役割、設定、感情的な弧を理解する。' },
+        { title: 'サムネイルシルエット',       body: '素早い形の探索 — 最小スケールでの読みやすさと個性をテストする。' },
+        { title: 'コスチュームとカラー言語の開発', body: 'このキャラクターが誰であるか、ストーリーでの位置を強化するパレットとデザインシステムを選ぶ。' },
+        { title: '洗練と詳細化',              body: 'テクスチャ、表情シート、サブポーズを追加 — あらゆる角度からキャラクターを生き生きとさせる。' },
+        { title: 'メディアへの納品',          body: '実際に使用される方法でパッケージされた最終アセット — ゲームエンジン、ウェブトゥーンパネル、またはUIコンポーネント。' },
+      ],
+    },
+
     resumeNote:     '完全な概要については履歴書をダウンロードしてください。',
     downloadResume: '履歴書PDFをダウンロード',
-    freelance:      'フリーランス',
-    internship:     'インターンシップ',
-    present:        '現在',
   },
 
   contactPage: {
@@ -141,10 +222,12 @@ export const ja = {
     availability:   'フリーランス・正社員募集受付中',
     methods: {
       email:       'メール',
+      phone:       '電話番号',
       discord:     'Discord',
-      artstation:  'ArtStation',
-      instagram:   'Instagram',
+      discordJoin: 'Discordに参加 →',
       viewProfile: 'プロフィールを見る →',
+      address:     '住所',
+      facebook:    'Facebook',
     },
     infoTitle: '受付可能な業務',
     services: [
@@ -170,6 +253,38 @@ export const ja = {
     artistic:    'アーティスティック',
     technical:   'テクニカル',
     soft:        'ソフトスキル',
+  
+    eyebrowExperience:  '職歴',
+    eyebrowEducation:   '学歴',
+    eyebrowSkills:      'Development',
+    eyebrowProfSkills:  'スキル',
+    profSkillsHeading:  'Professional Skills',
+    eyebrowArtIllus:    'アーティスティック',
+    eyebrowWriting:     'ストーリーテリング',
+    skillCatArtDesign:  'Art & Design',
+    skillCatOther:      'その他',
+    skillsHeading1:     'Development',
+    skillsHeading2:     'Skills',
+    eyebrowSoftware:    'ツール',
+    eyebrowLanguages:   'コミュニケーション',
+    badgeArt:   'Art',
+    badgeDev:   'Dev',
+    badgeBoth:  'Design + Dev',
+    badgeAnim:  'Art + Animation',
+    badgeWrite: 'Art + Write',
+    levels: {
+      advanced:     '上級',
+      proficient:   '習熟',
+      intermediate: '中級',
+      basic:        '基礎',
+      beginner:     '初級',
+    },
+    skillCatArtIllus:   'Art & Illustration',
+    skillsArtIllus: ['キャラクターデザイン','コンセプトアート','ウェブトゥーンパネル','シーン構成','カラー & ライティング','表情シート'],
+    skillCatWriting:    'Writing & Story',
+    skillsWriting:  ['ナラティブライティング','ワールドビルディング','セリフ','ペーシング & 構造','感情アーク'],
+    skillCatProgramming: 'Programming',
+    skillsProgramming: ['HTML','CSS / SCSS','JavaScript','Python','React','Node.js','SQL','Java'],
   },
 
   carousel: {
@@ -216,41 +331,38 @@ export const ja = {
 
 
   webtoon: {
-    badge:    'ストーリーテリング · オリジナル · ダークファンタジー',
+    badge:    'ストーリーテリング · オリジナルIP · ファンタジードラマ',
     title:    'Love Ruined Beneath Revenge',
     titleSub: '愛は廃墟に沈み、復讐に眠る',
-    tagline:  '「復讐は決して死なない——ただ、その時を待つだけだ」',
+    tagline:  '「復讐は決して死なない——ただ、正しい瞬間を待つだけだ」',
     readLinks: [
       { label: 'Webtoonsで読む', url: 'https://www.webtoons.com/th/canvas/%E0%B8%9E%E0%B8%99%E0%B8%B2%E0%B8%A8%E0%B8%A3%E0%B8%81%E0%B8%9D%E0%B8%87%E0%B9%81%E0%B8%84%E0%B8%99/list?title_no=1055578' },
       { label: 'Tunwalaiで読む', url: 'https://www.tunwalai.com/story/852065' },
     ],
 
-    metaLabels: { role: '役割', year: '年', format: '形式' },
-    metaValues: { role: 'ライター · イラストレーター · キャラデザ · 世界観構築', year: '2024', format: 'ウェブトゥーン — 縦読み' },
-    roleChips: ['ライター','イラストレーター','キャラクターデザイン','世界観構築'],
+    metaLabels: { role: '役割', year: '年', format: '形式', focus: '注力領域' },
+    metaValues: { role: 'ライター · イラストレーター · デザイナー', year: '2024 – 現在', format: 'ウェブトゥーン · 小説', focus: 'ストーリーテリング · 執筆 · キャラクターデザイン · 世界観構築 · 物語構造' },
+    roleChips: ['ライター', 'イラストレーター', 'デザイナー'],
     sections: {
-      overview:     { num: '02', label: 'プロジェクト概要',       title: 'Love Ruined Beneath Revengeについて' },
-      typography:   { num: '03', label: 'タイポグラフィ',          title: 'タイトルデザイン＆ムード' },
-      characters:   { num: '04', label: 'キャラクターデザイン',    title: 'Love Ruined Beneath Revengeのキャスト' },
-      expressions:  { num: '05', label: '表情シート',              title: 'ネメシス — 感情の幅' },
-      world:        { num: '05', label: '世界観構築',              title: 'ネメシスの世界' },
-      environments: { num: '07', label: '環境デザイン',            title: '重要な場所' },
-      illustrations:{ num: '05', label: 'イラストショーケース',    title: '厳選作品' },
-      comic:        { num: '07', label: 'コミックサンプル',        title: 'ストーリーテリング＆フロー' },
-      pipeline:     { num: '05', label: '制作プロセス',            title: 'パイプライン: 脚本 → 完成コマ' },
-      skills:       { num: '07', label: 'スキル＆ツール',          title: 'ソフトウェア＆能力' },
-      contact:      { num: '05', label: '作品リンク',              title: '作品を読む' },
+      overview:     { num: '01', label: 'プロジェクト概要',       title: 'あらすじ' },
+      typography:   { num: '02', label: 'タイポグラフィシステム',  title: 'タイトルデザイン＆ビジュアルアイデンティティ' },
+      characters:   { num: '03', label: 'キャラクターデザイン',    title: 'Love Ruined Beneath Revengeのキャスト' },
+      world:        { num: '04', label: 'ワールドマップデザイン',  title: 'Love Ruined Beneath Revengeの世界' },
+      illustrations:{ num: '05', label: 'イラストショーケース',    title: '厳選イラスト' },
+      comic:        { num: '06', label: 'コミックサンプル',        title: '縦読みウェブトゥーンストーリーテリング' },
+      video:        { num: '07', label: 'ビデオショーケース',      title: 'モーション＆プロモーショナルメディア' },
+      skills:       { num: '08', label: 'スキル＆ツール',          title: 'ソフトウェア＆能力' },
+      contact:      { num: '09', label: 'シリーズを読む',          title: '対応プラットフォーム' },
     },
     info: [
-      { label: 'ジャンル',  value: 'ダークファンタジー・ロマンス・復讐' },
-      { label: 'テーマ',    value: '復讐・禁断の愛・転生' },
-      { label: '形式',      value: '縦読みウェブトゥーン' },
+      { label: 'ジャンル',  value: 'ダークファンタジー・ロマンス・復讐ドラマ' },
+      { label: 'テーマ',    value: '復讐・禁断の愛・転生・運命・贖罪' },
       { label: 'ステータス', value: '制作中' },
-      { label: '対象',      value: '16〜25歳・ファンタジー読者' },
+      { label: '対象',      value: '16〜25歳・ファンタジー、ドラマ、ロマンス、アクション読者' },
     ],
     overview: {
-      p1: '「愛は廃墟に沈み、復讐に眠る」は、ジェヌス帝国の皇太子候補チェゾを主人公とするオリジナルダークファンタジーウェブトゥーンです。前世で裏切られ殺された男チェリオとして転生した彼女は、神の影との契約に縛られています。スリヤン王家を滅ぼさなければ、自らの存在ごと消えてしまう——。',
-      p2: '「ネメシス」として宮廷に潜入したチェゾは、帝国の政治・戦争・そして滅ぼすべき相手である皇太子インタニルとの許されない絆に翻弄される。すべての章が問いかける——任務はどこで終わり、その人はどこから始まるのか？',
+      p1: 'チェリオ——献身的な恋人であり忠実な兵士——は愛した女に裏切られ、信じていた手によって生き埋めにされた。しかし死は彼を拒んだ。神の影の存在に蘇生させられた彼は、チェゾとして、ジャヌス帝国の皇女として生まれ変わる。前世の記憶と影との契約を抱えながら——スリヤン王家を滅ぼさなければ、蘇った魂ごとすべてを失う。',
+      p2: '「ネメシス」として宮廷に潜入したチェゾは、帝国の政治、古からの裏切り、そして滅ぼすべき皇太子インタニルとの許されない絆という網の中を歩む。しかし運命には復讐より多くの層がある。前へ進むたびに新たな真実が剥がれていく。そしてチェゾが最終的に向き合わなければならない人物は、鏡の中の自分かもしれない。',
     },
     typo: {
       whiteVersion: '☀ ホワイトバージョン',
@@ -276,72 +388,171 @@ export const ja = {
     expressions: {
       hint: '* 表情シートは主人公の感情の全範囲をカバーし、シリーズ全体の一貫性のためのリファレンスとして使用されます。',
       items: [
-        { label: '喜び',   note: '冷たい笑顔——温かさは瞳に届かない' },
-        { label: '怒り',   note: '燃える激怒——歯を食いしばり、拳を握る' },
-        { label: '悲しみ', note: '沈黙の悲嘆——彼女は泣かない' },
-        { label: '驚き',   note: 'まれに——目を見開き、反応前の静止' },
+        { label: '喜び',   note: '冷たい笑み——目は温かさを見せない' },
+        { label: '怒り',   note: '激しい怒り——顎をくいしばり、拳を握りしめる' },
+        { label: '悲しみ', note: '静かな悲嘆——彼女は泣かない' },
+        { label: '衝撃',   note: 'まれ——大きく見開いた目、反応の前の静寂' },
         { label: '冷笑',   note: '片側だけ——最も危険な表情' },
       ],
     },
     world: {
-      desc: '七つの帝国、それぞれが独自の文化と軍事教義の上に築かれている。物語の対立はジェヌス（モン・ロシア・中国の影響）とスリヤン（タイの影響）の間で燃え上がる——百年前のひとつの裏切りに端を発した二大勢力。',
-      worldMapLabel: '世界地図', politicalMapLabel: '政治地図',
+      desc: '世界は七つの大国にまたがり、それぞれ独自の文化・言語・軍事ドクトリンで築かれています。',
+      mapVariants: [
+        { label: '政治概観' },
+        { label: '戦線と領土' },
+        { label: '古文書スタイル' },
+        { label: '血の戦争版' },
+      ],
       factions: [
-        { name: 'ジェヌス帝国',    color: '#4b5563', desc: 'モン・ロシア・中国文化。チェゾの故郷。スリヤンの縁談を断った後、侵攻を受ける。' },
-        { name: 'スリヤン帝国',    color: '#b45309', desc: 'タイの影響。皇太子インタニルの領土。百年の確執の起源を隠している。' },
-        { name: 'フィーア帝国',    color: '#be185d', desc: 'ギリシャの影響。ヴェリタ王女の故郷——インタニルの正式な婚約者、政治の駒。' },
-        { name: 'シルヴァレン王国', color: '#1d4ed8', desc: '中世ヨーロッパ文化。アレン王子の故郷——チェゾの婚約者でメシアの恋人となる人物。' },
+        { name: 'スリヤン帝国',    symbol: '☀', color: '#f59e0b', desc: '太陽崇拝の王朝——三大陸にまたがる軍事超大国。' },
+        { name: 'ジェヌス帝国',    symbol: '◑', color: '#c084fc', desc: '影に連なる主権国家——ネメシスの故郷。' },
+        { name: '七大諸侯',        symbol: '✦', color: '#94a3b8', desc: '二帝国間の力の均衡を保つ中立王国の連合。' },
       ],
     },
-    environments: {
-      items: [
-        { title: '暁の神殿',    desc: '古代の柱が黄金の朝光を捉える——神聖で恐ろしい。パースの線が、かつて神が立っていた祭壇へと収束する。', tags: ['Perspective','Hard Light','Sacred Architecture'], placeholder: '環境 01 — 暁の神殿\n[env-temple.jpg]' },
-        { title: '毒の合流点', desc: '三つの川がかすかなエメラルドの光の中で合流する。毒の霧が低く漂い、すべての影を飲み込む——帝国の力が可視化された場所。', tags: ['Atmospheric','Night Scene','Volumetric Fog'], placeholder: '環境 02 — 毒の合流点\n[env-river.jpg]' },
-        { title: '王家の金庫室', desc: '何百もの毒の瓶が古代の石の上で輝く。深いパースが部屋を果てしなく感じさせる——帝国より大きな秘密。', tags: ['Interior','Bioluminescence','Deep Perspective'], placeholder: '環境 03 — 王家の金庫室\n[env-vault.jpg]' },
-      ],
-    },
+
     illustrations: {
       items: [
-        { type: 'キービジュアル',     title: 'Nemesis Rising'   },
-        { type: 'キャラクターアート', title: 'Portrait Study'   },
-        { type: '場面スプレッド',     title: 'The Convergence'  },
-        { type: 'カバーデザイン',     title: 'Chapter Art'      },
-        { type: 'アトモスフィア',     title: 'Before the Storm' },
-        { type: 'コンセプトアート',   title: 'The deadly poison of Daraporn' },
+        { title: 'ネメシス — キービジュアル',     type: 'Key Visual' },
+        { title: 'インタニル — キャラクターアート', type: 'Character Art' },
+        { title: '再会 — シーンイラスト',          type: 'Scene Illustration' },
+        { title: '影の契約',                       type: 'Concept Art' },
+        { title: 'ライバルポートレート',           type: 'Character Study' },
+        { title: 'オーラカン — 最後の瞬間',        type: 'Emotional Scene' },
       ],
     },
     comic: {
-      intro: 'このセクションでは実際のコミックページを紹介し、パネルフロー、ペーシング、ビジュアルストーリーテリングを実証します。',
-      hint: '* 形式: 縦読みストリップ · 幅800〜1000px · モバイル読書に最適化',
+      intro: 'シリーズの重要な3つのシーン——各ストリップは、セリフなしでパネル構成・テンポ・静寂によって感情を伝える手法を示しています。',
       strips: [
-        { ep: 'EP. 01', title: '動乱',   caption: '冒頭——王子が毒の川で目覚め、記憶が砕け散る。内なる混乱が帝国の崩壊を映し出す。' },
-        { ep: 'EP. 02', title: '溺れる', caption: '宮殿の毒の貯水池の下に沈む——毒が血流に入り、真実のビジョンが訪れる。' },
-        { ep: 'EP. 03', title: '墓場',   caption: '過去と現在が衝突する章——百年の確執の重さが一つのパネルに結晶化する。' },
+        { ep: '第03話', title: '激動',     caption: 'ネメシスが帝国の仮面の最初の亀裂を発見する。' },
+        { ep: '第07話', title: '溺れる心', caption: '記憶と感情の間で繰り広げられる静かな戦い。' },
+        { ep: '第12話', title: '墓',       caption: '最初の息から逃げ続けてきた対決。' },
       ],
+      hint: 'WebtoonとTunwalaiで全エピソードを読む。',
     },
-    pipeline: {
-      steps: [
-        { step: '01', label: '脚本',     icon: '✍', note: 'プロット構成 · セリフ · コマ割り' },
-        { step: '02', label: 'サムネイル', icon: '▭', note: 'ページ構成 · 読みの流れ · ペーシング' },
-        { step: '03', label: 'スケッチ', icon: '✏', note: 'キャラのポーズ · 表情 · 環境' },
-        { step: '04', label: '線画',     icon: '◈', note: 'クリーンな線 · 線の太さの変化' },
-        { step: '05', label: '着色',     icon: '◉', note: 'フラット → シェーディング → FX' },
-        { step: '06', label: '完成コマ', icon: '▣', note: 'テキスト · SFX · エクスポート' },
+    video: {
+      intro: 'モーションとプロモーションメディア——キャラクターアニメーション、シーントランジション、プロモクリップ。',
+      items: [
+        { label: 'キャラクターモーション', caption: 'ネメシスのアニメーション——動きと感情表現の研究。' },
+        { label: 'シーントランジション',   caption: 'タイトル表示付きのチャプターオープニングモーショングラフィック。' },
+        { label: 'プロモクリップ',         caption: 'シリーズ公開用の短いプロモーション動画。' },
       ],
     },
     skills: {
       softwareTitle: 'ソフトウェア',
-      artTitle:   'アートスキル',
-      writingTitle: '執筆スキル',
-      prodTitle:  '制作スキル',
-      art:     ['キャラクターデザイン','コンセプトアート','世界観構築','絵コンテ','色彩理論','タイポグラフィ','環境デザイン','表情シート'],
-      writing: ['Story Development','Plot Structuring','Character Writing','Dialogue Writing','Narrative Design','Worldbuilding','Script Writing','Story Planning'],
-      prod:    ['縦読み形式','コマ割り','ビジュアルストーリーテリング','スタイルガイド作成','制作パイプライン','プロジェクト文書化'],
+      artTitle:      'アート & イラスト',
+      writingTitle:  'ライティング & ストーリー',
+      prodTitle:     'プロダクション',
+      art:     ['キャラクターデザイン', 'コンセプトアート', 'ウェブトゥーンパネル', 'シーン構成', 'カラー & ライティング', '表情シート'],
+      writing: ['ナラティブライティング', 'ワールドビルディング', 'セリフ', 'ペーシング & 構造', '感情アーク'],
+      prod:    ['アセットパッケージング', 'パネルレイアウト', 'カバーデザイン', 'プロモーション素材'],
     },
-    contact: { intro: '以下のプラットフォームでフルシリーズをお読みください。', back: '← ポートフォリオに戻る' },
+    contact: {
+      intro: '以下のプラットフォームでシリーズをお読みください。',
+      back:  '← ポートフォリオに戻る',
+    },
   },
-
+  kkulMap: {
+    badge:    'UX/UIデザイン · フロントエンド開発 · フルスタック',
+    title:    'KKU図書館マップ',
+    subtitle: 'コンケン大学 · 2025',
+    lbHint:   'ダブルクリックまたはEscキーで閉じる',
+    back:     '← ポートフォリオに戻る',
+    meta: {
+      roleLabel:     '役割',
+      role:          'UX/UIデザイナー & フロントエンドデベロッパー',
+      orgLabel:      '組織',
+      org:           'コンケン大学図書館',
+      durationLabel: '期間',
+      duration:      '2025年 · 3ヶ月',
+    },
+    overview: {
+      label: 'プロジェクト概要',
+      title: 'KKU図書館マップとは？',
+      text:  'コンケン大学図書館のインタラクティブなデジタルマップ——学生とスタッフが8フロアをナビゲートし、自習室、特別コレクション、各種サービスをリアルタイムで確認できます。',
+    },
+    features: {
+      label: '主な機能',
+      title: '何ができるか',
+      items: [
+        { title: 'インタラクティブフロアマップ', desc: '全8フロアのSVGベースの間取り図——ゾーンをクリックして詳細を表示。' },
+        { title: 'リアルタイム空室状況',         desc: '予約APIから取得した自習室・グループスペースのリアルタイム空室状況。' },
+        { title: '検索 & フィルター',            desc: 'フロア・ゾーンタイプ・サービスで検索して目的地に直接ジャンプ。' },
+        { title: '特別コレクション',             desc: '貴重書・アーカイブ・制限付き研究エリア専用のビュー。' },
+        { title: 'モバイルファーストデザイン',   desc: '完全レスポンシブ——スマートフォンでのナビゲーションを想定して設計。' },
+        { title: '多言語対応',                   desc: '留学生や外国人スタッフ向けにタイ語・英語UIを提供。' },
+      ],
+    },
+    ps: {
+      label:          '課題と解決策',
+      title:          'チャレンジ',
+      problemsTitle:  '課題',
+      solutionsTitle: '解決策',
+      problems: [
+        'スタッフに聞かなければ自習室や特別コレクションを見つけられなかった。',
+        'デジタルマップが存在せず、各フロアに静的な紙の案内板しかなかった。',
+        '予約データが孤立しており、リアルタイムで利用者に見えなかった。',
+        '留学生はタイ語のみの案内に困惑していた。',
+      ],
+      solutions: [
+        'クリック可能なゾーン付きの全8フロアのインタラクティブSVGマップを構築。',
+        '図書館予約APIを統合してリアルタイムの空室状況を表示。',
+        'フロアとゾーンタイプのフィルター付き検索システムを設計。',
+        '言語切り替え付きの2言語UI（タイ語/英語）を実装。',
+      ],
+    },
+    highlights: {
+      label: 'デザインハイライト',
+      title: 'デザイン上の判断',
+      items: [
+        { title: 'SVGフロアプラン',     desc: '各フロアをベクターマップとして描画——スケーラブルでアクセシブル、クリックも正確。' },
+        { title: 'ゾーン別カラーコード', desc: 'ゾーンタイプ（自習・コレクション・サービス）に一貫したカラーシステムを使用して即認識できる。' },
+        { title: 'ミニマルUIオーバーレイ', desc: '情報パネルはマップをブロックせずスライドイン——ナビゲーションにフォーカスを維持。' },
+        { title: 'アクセシビリティ優先', desc: 'キーボード操作対応、スクリーンリーダーラベル付き、十分なカラーコントラスト。' },
+      ],
+    },
+    tech: {
+      label: '技術スタック',
+      title: '使用技術',
+      items: [
+        { icon: '⚛', name: 'React',      role: 'UIフレームワーク' },
+        { icon: '🗺', name: 'SVG Maps',   role: 'インタラクティブフロアプラン' },
+        { icon: '🎨', name: 'Figma',      role: 'UXデザイン & プロトタイピング' },
+        { icon: '🔗', name: 'REST API',   role: 'リアルタイム空室データ' },
+        { icon: '💨', name: 'Tailwind',   role: 'スタイリング' },
+        { icon: '☁', name: 'Vercel',     role: 'デプロイ' },
+      ],
+    },
+    results: {
+      label: '成果',
+      title: 'インパクト',
+      stats: [
+        { value: '8',    label: 'マップ済みフロア' },
+        { value: '200+', label: '自習ゾーン' },
+        { value: '2',    label: '言語' },
+        { value: '100%', label: 'モバイル対応' },
+      ],
+      outcomes: [
+        'KKU図書館ポータルに展開され、キャンパス全体の学生が利用。',
+        '初月のスタッフへのナビゲーション問い合わせが大幅に減少。',
+        '留学生から2言語インターフェースについて好意的なフィードバック。',
+        '大学の計算学部からの学生イノベーションプロジェクトとして表彰。',
+      ],
+    },
+    showcase: {
+      label: 'ショーケース',
+      title: 'スクリーンショット & デモ',
+    },
+    specialRoom: {
+      label:   '特別室',
+      title:   '特別コレクションフロア',
+      caption: 'アクセス制限付き貴重書アーカイブ——棚をタップしてコレクションのメタデータを表示。',
+    },
+    videos: [
+      { label: 'フルウォークスルー',  caption: 'マップナビゲーションと部屋予約フローのエンドツーエンドデモ。' },
+      { label: 'モバイルビュー',      caption: 'レスポンシブデザイン——スマートフォンでのマップナビゲーション。' },
+    ],
+  },
   footer: {
-    rights: '© {year} {name}. All rights reserved.',
+    rights: '© {year} {name}. 無断転載禁止.',
   },
 }

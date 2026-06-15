@@ -2,44 +2,111 @@
 //  SKILLS DATA
 // ============================================================
 
+// ── Legacy exports (used by About.jsx & Resume.jsx) ──────────
 export const artisticSkills = [
-  { name: 'Character Design',      level: 95 },
-  { name: 'Concept Art',           level: 92 },
-  { name: 'Environment Design',    level: 80 },
-  { name: 'Visual Development',    level: 85 },
-  { name: 'Storyboarding',         level: 75 },
-  { name: 'Color Theory',          level: 90 },
-  { name: 'Composition',           level: 88 },
-  { name: 'Anatomy & Figure',      level: 85 },
-  { name: 'UI Illustration',       level: 70 },
-  { name: 'Prop Design',           level: 78 },
+  { name: 'Character Design',   level: 95 },
+  { name: 'Concept Art',        level: 92 },
+  { name: 'Environment Design', level: 80 },
+  { name: 'Storyboarding',      level: 75 },
+  { name: 'Color Theory',       level: 90 },
+  { name: 'Typography Design',  level: 82 },
+  { name: 'Expression Sheet',   level: 88 },
+  { name: 'World Building',     level: 85 },
 ]
 
 export const software = [
-  { name: 'Photoshop',     icon: 'ps', proficiency: 'Expert',        years: 5 },
-  { name: 'Clip Studio',   icon: 'csp', proficiency: 'Expert',       years: 4 },
-  { name: 'Blender',       icon: 'blender', proficiency: 'Intermediate', years: 2 },
-  { name: 'Figma',         icon: 'figma', proficiency: 'Intermediate', years: 2 },
-  { name: 'SketchUp',       icon: 'sketchup', proficiency: 'Daily use', years: 4 },
-  { name: 'Procreate',     icon: 'procreate', proficiency: 'Proficient', years: 3 },
-  { name: 'After Effects', icon: 'ae', proficiency: 'Basic',         years: 1 },
+  { name: 'Procreate',       icon: 'pc',  proficiency: 'Expert',        years: 4 },
+  { name: 'Clip Studio Paint',icon: 'csp', proficiency: 'Expert',       years: 4 },
+  { name: 'Photoshop',       icon: 'ps',  proficiency: 'Expert',        years: 5 },
+  { name: 'SketchUp',        icon: 'skp', proficiency: 'Daily use',     years: 4 },
+  { name: 'Blender',         icon: 'blender', proficiency: 'Intermediate', years: 2 },
+  { name: 'Figma',           icon: 'figma', proficiency: 'Intermediate', years: 2 },
 ]
 
 export const technicalSkills = [
-  'Visual Development Pipeline',
+  'Vertical Scroll Format',
+  'Panel Composition',
+  'Visual Storytelling',
   'Style Guide Creation',
-  'Art Direction',
-  'Turnaround Sheets',
-  'Expression Sheets',
-  'Prop Design Sheets',
-  'Color Script',
-  'Moodboard & Reference Curation',
+  'Production Pipeline',
+  'Project Documentation',
 ]
 
 export const softSkills = [
-  'Feedback Integration',
-  'Remote Collaboration',
-  'Deadline Management',
-  'Art Direction Communication',
-  'Client Briefing',
+  'Story Development',
+  'Character Writing',
+  'Dialogue Writing',
+  'Narrative Design',
+  'Script Writing',
+]
+
+// ── New grouped export (used by SkillsSection on Home) ───────
+export const skillGroups = [
+  {
+    key: 'software',
+    items: [
+      'Procreate',
+      'Clip Studio Paint',
+      'Photoshop',
+      'SketchUp',
+      'Blender',
+      'Figma',
+      'Claude AI',
+    ],
+  },
+  {
+    key: 'art',
+    items: [
+      'Character Design',
+      'Concept Art',
+      'Environment Design',
+      'Storyboarding',
+      'Color Theory',
+      'Typography Design',
+      'Expression Sheet',
+      'World Building',
+    ],
+  },
+  {
+    key: 'writing',
+    items: [
+      'Story Development',
+      'Plot Structuring',
+      'Character Writing',
+      'Dialogue Writing',
+      'Narrative Design',
+      'Worldbuilding',
+      'Script Writing',
+      'Story Planning',
+    ],
+  },
+  {
+    key: 'production',
+    items: [
+      'Vertical Scroll Format',
+      'Panel Composition',
+      'Visual Storytelling',
+      'Style Guide Creation',
+      'Production Pipeline',
+      'Project Documentation',
+    ],
+  },
+  {
+    key: 'dev',
+    items: [
+      'Python',
+      'JavaScript',
+      'React',
+      'Vite',
+      'HTML5',
+      'CSS3',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'Phaser 3',
+      'DragonBones',
+      'Git',
+      'Docker',
+    ],
+  },
 ]

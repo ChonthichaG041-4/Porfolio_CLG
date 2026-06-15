@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "@/i18n/context";
 import styles from "./WebtoonPortfolio.module.css";
@@ -12,7 +13,13 @@ import iconFigma  from "@/assets/icons/figma_dack.svg";
 import wtCover        from "@/assets/images/webtoon/wt-cover.jpg";
 import wtCoverBg2     from "@/assets/images/webtoon/wtconverbg2.jpg";
 import wtMap          from "@/assets/images/webtoon/wt-map.jpg";
-import wtMapHD        from "@/assets/images/webtoon/map.png";
+import wtMapWar       from "@/assets/images/webtoon/wt-map-war.jpg";
+import wtMapPaper     from "@/assets/images/webtoon/wt-map-paper.jpg";
+import wtMapRed       from "@/assets/images/webtoon/wt-map-red.jpg";
+// ── Webtoon videos ──────────────────────────────────────────
+import wtVdo0         from "@/assets/images/webtoon/wt-vdo.mp4";
+import wtVdo1         from "@/assets/images/webtoon/wt-vdo1.mp4";
+import wtVdo2         from "@/assets/images/webtoon/wt-vdo2.mp4";
 import wtContinueDark from "@/assets/images/webtoon/wt-continue-dark.jpg";
 import wtContinueLight from "@/assets/images/webtoon/wt-continue-light.jpg";
 import wtIllus0       from "@/assets/images/webtoon/wt-illus-0.jpg";
@@ -47,10 +54,13 @@ const CHAR_META = [
 
 const ILLUS_IMAGES = [wtIllus0, wtIllus1, wtIllus2, wtIllus3, wtIllus4, wtIllus5];
 const STRIP_IMAGES = [wtStripTurmoil, wtStripDrowning, wtStripTomb];
+const MAP_IMAGES   = [wtMap, wtMapWar, wtMapPaper, wtMapRed];
+const VIDEO_SRCS   = [wtVdo0, wtVdo1, wtVdo2];
 
 const SOFTWARE = [
   { name: "Clip Studio Paint", icon: iconCsp,   role: "Line Art · Panel · Comic" },
   { name: "Photoshop",         icon: "PS",       role: "Painting · FX · Export"   },
+  { name: "Blender",           icon: "⬡",        role: "3D Reference · Scene Setup" },
   { name: "SketchUp",          icon: iconSkp,   role: "Reference Management"     },
   { name: "Procreate",         icon: iconPc,    role: "Thumbnail · Sketch"       },
   { name: "Figma",             icon: iconFigma, role: "Layout · Typography"      },
@@ -66,6 +76,29 @@ const CONTACTS = [
 // ─────────────────────────────────────────────────────────────────────────────
 // Sub-components
 // ─────────────────────────────────────────────────────────────────────────────
+
+function Lightbox({ item, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  if (!item) return null;
+  return (
+    <div className={styles.lbOverlay} onClick={onClose}>
+      <button className={styles.lbClose} onClick={onClose} aria-label="Close">✕</button>
+      <div className={styles.lbContent} onClick={e => e.stopPropagation()} onDoubleClick={e => { e.stopPropagation(); onClose(); }}>
+        {item.type === "video"
+          ? <video src={item.src} autoPlay loop muted playsInline controls className={styles.lbMedia} />
+          : <img src={item.src} alt={item.alt ?? ""} className={styles.lbMedia} />
+        }
+        {item.caption && <p className={styles.lbCaption}>{item.caption}</p>}
+      </div>
+      <p className={styles.lbHint}>ดับเบิลคลิกหรือกด Esc เพื่อปิด</p>
+    </div>
+  );
+}
 
 function ImgPlaceholder({ label, aspectRatio = "16/9", className = "" }) {
   return (
@@ -105,8 +138,14 @@ export default function WebtoonPortfolio() {
   const { t } = useI18n();
   const tw = t.webtoon;   // shorthand — all text comes from here
 
+  const [lbItem, setLbItem] = useState(null);
+  const open  = useCallback((item) => setLbItem(item), []);
+  const close = useCallback(() => setLbItem(null), []);
+
   return (
     <main className={styles.page}>
+
+      <Lightbox item={lbItem} onClose={close} />
 
       {/* ═══════════════════════════════════════════════════
           01 — COVER  (Thai Poison hero style)
@@ -281,7 +320,7 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          06 — WORLD BUILDING
+          04 — WORLD MAP DESIGN
       ═══════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionWorld}`} id="worldbuilding">
         <div className="container">
@@ -290,19 +329,23 @@ export default function WebtoonPortfolio() {
             <p>{tw.world.desc}</p>
           </div>
           <div className={styles.worldMaps}>
-            <div className={styles.worldMapCard}>
-              <p className={styles.worldMapLabel}>{tw.world.worldMapLabel}</p>
-              <Img src={wtMap} alt={tw.world.worldMapLabel} aspectRatio="16/10" className={styles.worldMapImg} />
-            </div>
-            <div className={styles.worldMapCard}>
-              <p className={styles.worldMapLabel}>{tw.world.politicalMapLabel}</p>
-              <Img src={wtMapHD} alt={tw.world.politicalMapLabel} aspectRatio="16/10" className={styles.worldMapImg} />
-            </div>
+            {tw.world.mapVariants.map((variant, i) => (
+              <div key={i} className={styles.worldMapCard}>
+                <p className={styles.worldMapLabel}>{variant.label}</p>
+                <div
+                  className={styles.zoomable}
+                  onDoubleClick={() => open({ type: "image", src: MAP_IMAGES[i], alt: variant.label })}
+                >
+                  <Img src={MAP_IMAGES[i]} alt={variant.label} aspectRatio="16/10" className={styles.worldMapImg} />
+                  <span className={styles.zoomHint}>⤢</span>
+                </div>
+              </div>
+            ))}
           </div>
           <div className={styles.factions}>
             {tw.world.factions.map((f) => (
               <div key={f.name} className={styles.factionCard}>
-                <span className={styles.factionDot} style={{ background: f.color }} />
+                <span className={styles.factionSymbol} style={{ color: f.color }}>{f.symbol}</span>
                 <div>
                   <span className={styles.factionName}>{f.name}</span>
                   <p className={styles.factionDesc}>{f.desc}</p>
@@ -315,7 +358,7 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          08 — ILLUSTRATION SHOWCASE
+          05 — ILLUSTRATION SHOWCASE
       ═══════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionIllus}`} id="illustrations">
         <div className="container">
@@ -344,7 +387,7 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          09 — COMIC SAMPLE
+          06 — COMIC SAMPLE
       ═══════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionComic}`} id="comic">
         <div className="container">
@@ -370,21 +413,30 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          10 — PRODUCTION PROCESS
+          07 — VIDEO SHOWCASE
       ═══════════════════════════════════════════════════ */}
-      <section className={`${styles.section} ${styles.sectionPipeline}`} id="process">
+      <section className={`${styles.section} ${styles.sectionVideo}`} id="video">
         <div className="container">
-          <SectionHead s={tw.sections.pipeline} />
-          <div className={styles.pipelineRow}>
-            {tw.pipeline.steps.map((step, i) => (
-              <div key={step.step} className={styles.pipelineStep}>
-                <div className={styles.pipelineStepTop}>
-                  <span className={styles.pipelineIcon}>{step.icon}</span>
-                  {i < tw.pipeline.steps.length - 1 && <span className={styles.pipelineArrow}>→</span>}
+          <SectionHead s={tw.sections.video} />
+          <p className={styles.videoIntro}>{tw.video.intro}</p>
+          <div className={styles.videoGrid}>
+            {tw.video.items.map((item, i) => (
+              <div key={i} className={styles.videoCard}>
+                <div
+                  className={`${styles.videoWrap} ${styles.zoomable}`}
+                  onDoubleClick={() => open({ type: "video", src: VIDEO_SRCS[i], caption: item.caption })}
+                >
+                  <video
+                    src={VIDEO_SRCS[i]}
+                    autoPlay loop muted playsInline
+                    className={styles.videoEl}
+                  />
+                  <div className={styles.videoOverlay}>
+                    <span className={styles.videoLabel}>{item.label}</span>
+                  </div>
+                  <span className={styles.zoomHint}>⤢</span>
                 </div>
-                <span className={styles.pipelineNum}>{step.step}</span>
-                <span className={styles.pipelineLabel}>{step.label}</span>
-                <p className={styles.pipelineNote}>{step.note}</p>
+                <p className={styles.videoCaption}>{item.caption}</p>
               </div>
             ))}
           </div>
@@ -393,7 +445,7 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          11 — SKILLS & TOOLS
+          08 — SKILLS & TOOLS
       ═══════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionSkills}`} id="skills">
         <div className="container">
@@ -449,7 +501,7 @@ export default function WebtoonPortfolio() {
 
 
       {/* ═══════════════════════════════════════════════════
-          12 — PORTFOLIO LINKS
+          09 — READ THE SERIES
       ═══════════════════════════════════════════════════ */}
       <section className={`${styles.section} ${styles.sectionContact}`} id="contact">
         <div className="container">

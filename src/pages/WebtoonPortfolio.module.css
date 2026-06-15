@@ -494,6 +494,7 @@
 
 .worldMaps { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-10); }
 @media (max-width: 640px) { .worldMaps { grid-template-columns: 1fr; } }
+.factionSymbol { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; filter: drop-shadow(0 0 6px currentColor); }
 .worldMapCard { display: flex; flex-direction: column; gap: var(--space-3); }
 .worldMapLabel { font-size: var(--text-sm); font-weight: var(--weight-semi); color: var(--color-glow); }
 .worldMapImg { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
@@ -660,7 +661,30 @@
 .skillPillProd:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); }
 
 /* ════════════════════════════════════════════════════════════
-   12 — CONTACT
+   07 — VIDEO SHOWCASE
+   ════════════════════════════════════════════════════════════ */
+.sectionVideo { }
+.videoIntro { font-size: var(--text-lg); color: var(--color-text-secondary); max-width: 720px; margin-bottom: var(--space-10); line-height: var(--leading-normal); }
+.videoGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+@media (max-width: 900px) { .videoGrid { grid-template-columns: 1fr; } }
+.videoCard { display: flex; flex-direction: column; gap: var(--space-4); }
+.videoWrap {
+  position: relative; border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid var(--color-border); aspect-ratio: 9/16;
+  background: var(--color-bg-card);
+}
+.videoEl { width: 100%; height: 100%; object-fit: cover; display: block; }
+.videoOverlay {
+  position: absolute; inset: 0; display: flex; align-items: flex-end;
+  padding: var(--space-4);
+  background: linear-gradient(to top, rgba(7,1,15,0.85) 0%, transparent 50%);
+  pointer-events: none;
+}
+.videoLabel { font-size: var(--text-sm); font-weight: var(--weight-semi); color: #fff; }
+.videoCaption { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--leading-normal); }
+
+/* ════════════════════════════════════════════════════════════
+   09 — CONTACT (was 12)
    ════════════════════════════════════════════════════════════ */
 .sectionContact { border-bottom: 1px solid rgba(168,85,247,0.1); padding-bottom: var(--space-32); }
 .contactIntro { font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-10); }
@@ -683,3 +707,49 @@
 .contactBack { padding-top: var(--space-4); }
 .backLink { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration-fast); }
 .backLink:hover { color: var(--color-glow); }
+
+/* ════════════════════════════════════════════════════════════
+   LIGHTBOX (maps & videos only)
+   ════════════════════════════════════════════════════════════ */
+.zoomable { position: relative; cursor: zoom-in; }
+.zoomHint {
+  position: absolute; top: var(--space-3); right: var(--space-3);
+  font-size: var(--text-lg); color: #fff; opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+.zoomable:hover .zoomHint { opacity: 1; }
+
+.lbOverlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(7,1,15,0.93);
+  backdrop-filter: blur(16px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  animation: lbFadeIn 0.2s ease;
+  cursor: pointer;
+}
+@keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.lbClose {
+  position: absolute; top: var(--space-5); right: var(--space-6);
+  background: none; border: none; color: rgba(255,255,255,0.6);
+  font-size: 1.5rem; cursor: pointer; line-height: 1;
+  transition: color var(--duration-fast);
+}
+.lbClose:hover { color: #fff; }
+
+.lbContent {
+  max-width: 92vw; max-height: 88vh;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-4);
+  animation: lbSlideUp 0.2s ease;
+  cursor: default;
+}
+@keyframes lbSlideUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.lbMedia { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: var(--radius-lg); }
+.lbCaption { font-size: var(--text-sm); color: rgba(255,255,255,0.6); text-align: center; max-width: 600px; }
+.lbHint { position: absolute; bottom: var(--space-5); font-size: var(--text-xs); color: rgba(255,255,255,0.3); pointer-events: none; }

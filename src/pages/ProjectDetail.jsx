@@ -29,6 +29,8 @@ export default function ProjectDetail() {
   const accessoriesSecs    = work.sections?.filter(s => s.type === 'accessories-gallery') ?? []
   const lineartSecs        = work.sections?.filter(s => s.type === 'lineart-gallery') ?? []
   const finalSection       = work.sections?.find(s => s.type === 'final')
+  const featureGridSec     = work.sections?.find(s => s.type === 'feature-grid')
+  const resultsSec         = work.sections?.find(s => s.type === 'results')
 
   return (
     <main className={styles.page}>
@@ -66,6 +68,23 @@ export default function ProjectDetail() {
       </section>
 
       <div className="container">
+
+        {/* ─── Feature Grid (web/app projects) ─── */}
+        {featureGridSec?.items?.length > 0 && (
+          <section className={styles.section}>
+            <p className="section-label">Features</p>
+            <h2 className={styles.sectionTitle}>{featureGridSec.title}</h2>
+            <div className={styles.featureGrid}>
+              {featureGridSec.items.map((item, i) => (
+                <div key={i} className={styles.featureCard}>
+                  <span className={styles.featureIcon}>{item.icon}</span>
+                  <span className={styles.featureLabel}>{item.label}</span>
+                  <p    className={styles.featureDesc}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ─── Overview ─── */}
         {work.overview && (
@@ -216,6 +235,31 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* ─── Results / Stats ─── */}
+        {resultsSec && (
+          <section className={styles.section}>
+            <p className="section-label">Results</p>
+            <h2 className={styles.sectionTitle}>{resultsSec.title}</h2>
+            {resultsSec.stats?.length > 0 && (
+              <div className={styles.statsRow}>
+                {resultsSec.stats.map((s, i) => (
+                  <div key={i} className={styles.statItem}>
+                    <span className={styles.statValue}>{s.value}</span>
+                    <span className={styles.statLabel}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {resultsSec.notes?.length > 0 && (
+              <ul className={styles.resultNotes}>
+                {resultsSec.notes.map((note, i) => (
+                  <li key={i} className={styles.resultNote}>{note}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        )}
+
         {/* ─── Episode Illustrations / Gallery ─── */}
         {gallerySection?.images?.length > 0 && (
           <section className={styles.section}>
@@ -321,11 +365,15 @@ function LogoGallery({ sec }) {
           <div className={styles.logoGrid}>
             {group.logos.map((logo) => (
               <div key={logo.name} className={styles.logoCard}>
-                <div className={cx(styles.logoImgWrap, bg === 'light' ? styles.logoImgWrapLight : styles.logoImgWrapDark)}>
+                <div className={cx(
+                  styles.logoImgWrap,
+                  bg === 'light' ? styles.logoImgWrapLight : styles.logoImgWrapDark,
+                  logo.fill && styles.logoImgWrapFill
+                )}>
                   <img
                     src={bg === 'light' ? logo.light : logo.dark}
                     alt={logo.name}
-                    className={styles.logoImg}
+                    className={logo.fill ? styles.logoImgFill : styles.logoImg}
                     loading="lazy"
                   />
                 </div>

@@ -30,10 +30,13 @@ export const en = {
   },
 
   skills: {
-    label:         'Capabilities',
-    title:         'Skills & Software',
-    artisticTitle: 'Artistic Skills',
-    softwareTitle: 'Software',
+    label:           'Capabilities',
+    title:           'Skills & Software',
+    softwareTitle:   'Software',
+    artTitle:        'Art Skills',
+    writingTitle:    'Writing Skills',
+    productionTitle: 'Production Skills',
+    devTitle:        'Development Skills',
   },
 
   about: {
@@ -113,21 +116,99 @@ export const en = {
   },
 
   aboutPage: {
-    label:          'About',
-    roleLabel:      'Role',
-    experience:     'Experience',
-    education:      'Education',
-    skills:         'Skills',
-    software:       'Software',
-    languages:      'Languages',
-    artistic:       'Artistic',
-    technical:      'Technical / Workflow',
-    softSkills:     'Soft Skills',
+    label:     'About Me',
+    subtitle:  '2D Artist · Character Concept Artist',
+    also:      'Also: Frontend Developer · UX/UI Designer',
+    heroBio:   'I create visual stories and digital experiences that connect imagination with meaningful design. Art fuels my ideas, and technology brings them to life.',
+    chips:     ['Character Design', 'Concept Art', 'Illustration', 'UX/UI', 'Frontend Dev', 'Khon Kaen University'],
+
+    whoIAm: {
+      sectionLabel: 'Who I Am',
+      heading:      'An artist who grew up',
+      headingItalic:'building worlds',
+      body: "I'm Chonthicha — a 2D artist and character concept designer with a Computer Science background from Khon Kaen University. I've spent years creating characters, designing their stories, and bringing them to life through illustration and animation. My technical side — frontend development and UX/UI design — gives me a rare ability to understand how art lives inside a product, not just on paper. From indie game art direction to commission collections, I create with intention and craft with care.",
+    },
+
+    inspires: {
+      sectionLabel: 'What Inspires Me',
+      heading:      'Characters that carry',
+      headingItalic:'the weight of their world',
+      cards: [
+        {
+          label: 'In Art',
+          body:  'Thai cultural aesthetics, folklore, and the tension between <strong>beauty and conflict</strong> in character design. Every character I draw has a history you can feel before you read it.',
+        },
+        {
+          label: 'In Storytelling',
+          body:  'Projects like <strong>Love Ruined Beneath Revenge</strong> and <strong>Knight of Swords</strong> — where I wrote, illustrated, and designed characters from scratch — are the work I return to as a north star.',
+        },
+        {
+          label: 'In Craft',
+          body:  'The moment a silhouette reads clearly at thumbnail size. That instant recognition is the goal every time I design a new character.',
+        },
+        {
+          label: 'Beyond Art',
+          body:  'Volunteer work, AI workshops at my college, and the creative discipline that comes from learning <strong>both sides</strong> of how digital experiences are made.',
+        },
+      ],
+    },
+
+    philosophy: {
+      sectionLabel: 'My Creative Philosophy',
+      heading:      'The principles behind',
+      headingItalic:'every design decision',
+      items: [
+        {
+          title: 'Silhouette before detail',
+          body:  'A character must read in shadow first. Complexity should add depth, not compensate for a weak foundation.',
+        },
+        {
+          title: 'Design reveals personality',
+          body:  'Costume, posture, color palette — every element should tell the audience who this person is before they speak a single line.',
+        },
+        {
+          title: 'Context shapes the concept',
+          body:  "A character designed for a mobile game lives differently than one for a graphic novel. I always design for the medium, not in spite of it.",
+        },
+        {
+          title: 'Art and code speak the same language',
+          body:  'My technical background means I understand how a design will actually be built — which makes collaboration with developers faster and cleaner.',
+        },
+      ],
+    },
+
+    career: {
+      sectionLabel: 'Career Goal',
+      heading:      'Where I want to',
+      headingItalic:'create next',
+      primary: {
+        tag:   'Primary Path',
+        title: '2D Artist / Character Concept Artist',
+        body:  "I want to design characters for games, webtoons, or animation — working in teams where visual storytelling drives the product. My goal is to grow a signature style that is distinctly mine while being adaptable to a studio's world.",
+      },
+      secondary: {
+        tag:   'Secondary Path',
+        title: 'Frontend Developer · UX/UI Designer',
+        body:  'In organizations that value user-centered design, I bring both the technical and creative lens. Especially suited for teams building design-forward digital products where art and interface intersect.',
+      },
+    },
+
+    process: {
+      sectionLabel: 'Working Process',
+      heading:      'From',
+      headingItalic:'brief',
+      headingEnd:   'to finished character',
+      steps: [
+        { title: 'Research the world',              body: "Understand the character's role, setting, and emotional arc before drawing a single line." },
+        { title: 'Thumbnail silhouettes',            body: 'Rough, fast shape exploration — testing readability and personality at the smallest scale.' },
+        { title: 'Develop costume & color language', body: 'Choose a palette and design system that reinforces who this character is and their place in the story.' },
+        { title: 'Refine and detail',                body: 'Add texture, expression sheets, and secondary poses — making the character feel alive from every angle.' },
+        { title: 'Deliver for the medium',           body: "Final assets packaged for how they'll actually be used — game engine, webtoon panel, or UI component." },
+      ],
+    },
+
     resumeNote:     'Download my full resume for a complete overview.',
     downloadResume: 'Download Resume PDF',
-    freelance:      'Freelance',
-    internship:     'Internship',
-    present:        'Present',
   },
 
   contactPage: {
@@ -141,10 +222,12 @@ export const en = {
     availability:   'Available for freelance & full-time roles',
     methods: {
       email:       'Email',
+      phone:       'Phone',
       discord:     'Discord',
-      artstation:  'ArtStation',
-      instagram:   'Instagram',
+      discordJoin: 'Join Discord →',
       viewProfile: 'View Profile →',
+      address:     'Address',
+      facebook:    'Facebook',
     },
     infoTitle:     "What I'm available for",
     services: [
@@ -170,6 +253,38 @@ export const en = {
     artistic:    'Artistic',
     technical:   'Technical',
     soft:        'Soft Skills',
+  
+    eyebrowExperience:  'Work history',
+    eyebrowEducation:   'Academic background',
+    eyebrowSkills:      'Development',
+    eyebrowProfSkills:  'Professional',
+    profSkillsHeading:  'Professional Skills',
+    eyebrowArtIllus:    'Artistic',
+    eyebrowWriting:     'Storytelling',
+    skillCatArtDesign:  'Art & Design',
+    skillCatOther:      'Other',
+    skillsHeading1:     'Development',
+    skillsHeading2:     'Skills',
+    eyebrowSoftware:    'Tools',
+    eyebrowLanguages:   'Communication',
+    badgeArt:   'Art',
+    badgeDev:   'Dev',
+    badgeBoth:  'Design + Dev',
+    badgeAnim:  'Art + Animation',
+    badgeWrite: 'Art + Write',
+    levels: {
+      advanced:     'Advanced',
+      proficient:   'Proficient',
+      intermediate: 'Intermediate',
+      basic:        'Basic',
+      beginner:     'Beginner',
+    },
+    skillCatArtIllus:   'Art & Illustration',
+    skillsArtIllus: ['Character Design','Concept Art','Webtoon Panels','Scene Composition','Color & Lighting','Expression Sheets'],
+    skillCatWriting:    'Writing & Story',
+    skillsWriting:  ['Narrative Writing','World-building','Dialogue','Pacing & Structure','Emotional Arc'],
+    skillCatProgramming: 'Programming',
+    skillsProgramming: ['HTML','CSS / SCSS','JavaScript','Python','React','Node.js','SQL','Java'],
   },
 
   carousel: {
@@ -216,41 +331,38 @@ export const en = {
 
 
   webtoon: {
-    badge:    'STORYTELLING · ORIGINAL · DARK FANTASY',
+    badge:    'Storytelling · Original IP · Fantasy Drama',
     title:    'Love Ruined Beneath Revenge',
     titleSub: 'พินาศรักฝังแค้น',
-    tagline:  '"Vengeance never dies — it only waits for the right moment."',
+    tagline:  '"Revenge never truly dies—it only waits for the right moment."',
     readLinks: [
       { label: 'Read on Webtoons', url: 'https://www.webtoons.com/th/canvas/%E0%B8%9E%E0%B8%99%E0%B8%B2%E0%B8%A8%E0%B8%A3%E0%B8%81%E0%B8%9D%E0%B8%87%E0%B9%81%E0%B8%84%E0%B8%99/list?title_no=1055578' },
       { label: 'Read on Tunwalai', url: 'https://www.tunwalai.com/story/852065' },
     ],
 
-    metaLabels: { role: 'Role', year: 'Year', format: 'Format' },
-    metaValues: { role: 'Writer · Illustrator · Character Designer · World Designer', year: '2024', format: 'Webtoon — Vertical Scroll' },
-    roleChips: ['Writer','Illustrator','Character Designer','World Designer'],
+    metaLabels: { role: 'Role', year: 'Year', format: 'Format', focus: 'Focus Areas' },
+    metaValues: { role: 'Writer · Illustrator · Designer', year: '2024 – Present', format: 'Webtoon · Novel', focus: 'Storytelling · Writing · Character Design · Worldbuilding · Narrative Structure' },
+    roleChips: ['Writer', 'Illustrator', 'Designer'],
     sections: {
-      overview:     { num: '01', label: 'Project Overview',      title: 'About Love Ruined Beneath Revenge' },
-      typography:   { num: '02', label: 'Typography',            title: 'Title Design & Mood' },
+      overview:     { num: '01', label: 'Project Overview',      title: 'Synopsis' },
+      typography:   { num: '02', label: 'Typography System',     title: 'Title Design & Visual Identity' },
       characters:   { num: '03', label: 'Character Design',      title: 'Cast of Love Ruined Beneath Revenge' },
-      expressions:  { num: '04', label: 'Expression Sheet',      title: 'Nemesis — Emotional Range' },
-      world:        { num: '05', label: 'World Building',        title: 'The Realm of Nemesis' },
-      environments: { num: '06', label: 'Environment Design',    title: 'Key Locations' },
-      illustrations:{ num: '07', label: 'Illustration Showcase', title: 'Selected Works' },
-      comic:        { num: '08', label: 'Comic Sample',          title: 'Storytelling & Flow' },
-      pipeline:     { num: '09', label: 'Production Process',    title: 'Pipeline: Script → Final Panel' },
-      skills:       { num: '10', label: 'Skills & Tools',        title: 'Software & Capabilities' },
-      contact:      { num: '11', label: 'Portfolio Links',        title: 'Read the Work' },
+      world:        { num: '04', label: 'World Map Design',      title: 'The World of Love Ruined Beneath Revenge' },
+      illustrations:{ num: '05', label: 'Illustration Showcase', title: 'Selected Illustrations' },
+      comic:        { num: '06', label: 'Comic Sample',          title: 'Vertical Webtoon Storytelling' },
+      video:        { num: '07', label: 'Video Showcase',        title: 'Motion & Promotional Media' },
+      skills:       { num: '08', label: 'Skills & Tools',        title: 'Software & Capabilities' },
+      contact:      { num: '09', label: 'Read the Series',       title: 'Available Platforms' },
     },
     info: [
-      { label: 'Genre',  value: 'Dark Fantasy · Romance · Revenge' },
-      { label: 'Theme',  value: 'Vengeance · Forbidden Love · Reincarnation' },
-      { label: 'Format', value: 'Vertical Scroll Webtoon' },
-      { label: 'Status', value: 'In Development' },
-      { label: 'Target', value: 'Young Adult 16–25 · Fantasy / Romance Readers' },
+      { label: 'Genre',  value: 'Dark Fantasy · Romance · Revenge Drama' },
+      { label: 'Themes', value: 'Revenge · Forbidden Love · Reincarnation · Fate · Redemption' },
+      { label: 'Status', value: 'Currently in Development' },
+      { label: 'Target', value: 'Young Adults (16–25) · Fantasy, Drama, Romance, and Action Readers' },
     ],
     overview: {
-      p1: "Love Ruined Beneath Revenge is an original dark-fantasy webtoon following Chezo — heir apparent of the Jenuss Empire — who carries a soul cursed by a past life. Reincarnated from Chelio, a man betrayed and killed by his own lover, she is bound by a pact with a divine shadow entity: destroy the Suriyan Royal Family, or lose everything — including her very existence.",
-      p2: 'Disguised within Suriyan\'s court as "Nemesis," Chezo navigates empire politics, war, and an impossible connection with Crown Prince Inthanil — the very person she is meant to destroy. Every chapter is a question: where does the mission end, and where does the person begin?',
+      p1: "Chelio — a devoted lover and loyal soldier — was betrayed by the woman he loved and buried alive by the very hands he trusted. Yet death refused to claim him. Revived by a divine shadow entity, he was reborn as Chezo: a princess of the Janus Empire, carrying the memories of his past life and a pact with shadow — destroy the Suriyan Royal Family, or lose everything, including his reborn soul.",
+      p2: 'Disguised within Suriyan\'s court as "Nemesis," Chezo navigates a web of empire politics, ancient betrayal, and an impossible bond forming with Crown Prince Inthanil — the very heir she is meant to destroy. But fate has more layers than vengeance. Every step forward peels back another truth. And the person Chezo must ultimately face may be the one she sees in the mirror.',
     },
     typo: {
       whiteVersion: '☀ White Version',
@@ -284,63 +396,162 @@ export const en = {
       ],
     },
     world: {
-      desc: "Seven empires, each built on a distinct culture and military doctrine. The story's conflict ignites between Jenuss (Hmong-Russian-Chinese influenced) and Suriyan (Thai-influenced) — two powers whose entangled past stretches back a hundred years to a single act of betrayal.",
-      worldMapLabel: 'World Map', politicalMapLabel: 'Political Map',
+      desc: "The world spans seven great nations, each built on a distinct culture, language, and military doctrine. At its center lies the Suriyan Empire — a sun-worshipping dynasty whose reach extends across three continents. Each nation harbors its own gods, grievances, and secrets, making every political alliance as fragile as the peace it claims to preserve.",
+      mapVariants: [
+        { label: 'Political Overview' },
+        { label: 'War Fronts & Territory' },
+        { label: 'Ancient Parchment Style' },
+        { label: 'Blood-War Edition' },
+      ],
       factions: [
-        { name: 'Jenuss Empire',    color: '#4b5563', desc: "Hmong-Russian-Chinese culture. Homeland of Chezo. Under siege after refusing Suriyan's marriage proposal." },
-        { name: 'Suriyan Empire',   color: '#b45309', desc: "Thai-influenced. Crown Prince Inthanil's realm. Conceals the origin of a hundred-year-old vendetta." },
-        { name: 'Fiya Empire',      color: '#be185d', desc: "Greek-influenced. Home of Princess Verita — Inthanil's official fiancée, a pawn in political chess." },
-        { name: 'Silvaren Kingdom', color: '#1d4ed8', desc: "Medieval-European culture. Home of Prince Allen — Chezo's betrothed who becomes Mesia's love." },
+        { name: 'Suriyan Empire',  symbol: '☀', color: '#f59e0b', desc: 'Sun-worshipping dynasty — military superpower spanning three continents.' },
+        { name: 'Janus Empire',    symbol: '◑', color: '#c084fc', desc: 'Shadow-aligned sovereign nation — birthplace of Nemesis.' },
+        { name: 'The Seven Lords', symbol: '✦', color: '#94a3b8', desc: 'Coalition of neutral kingdoms balancing power between the two empires.' },
       ],
     },
-    environments: {
-      items: [
-        { title: 'Temple of Dawn',          desc: 'Ancient pillars catch gold morning light — sacred and terrifying. Perspective lines converge on the altar where a god once stood.', tags: ['Perspective','Hard Light','Sacred Architecture'], placeholder: 'ENV 01 — Temple of Dawn\n[env-temple.jpg]' },
-        { title: 'Poison River Confluence', desc: "Three rivers meet in faint emerald glow. Poison mist clings low, swallowing every shadow — the empire's power made visible.", tags: ['Atmospheric','Night Scene','Volumetric Fog'], placeholder: 'ENV 02 — Poison River Confluence\n[env-river.jpg]' },
-        { title: 'Royal Vault',             desc: 'Hundreds of poison vials glow against ancient stone. Deep perspective makes the chamber feel endless — a secret larger than the empire.', tags: ['Interior','Bioluminescence','Deep Perspective'], placeholder: 'ENV 03 — Royal Vault\n[env-vault.jpg]' },
-      ],
-    },
+
     illustrations: {
       items: [
-        { type: 'Key Visual',    title: 'Nemesis Rising'    },
-        { type: 'Character Art', title: 'Portrait Study'    },
-        { type: 'Scene Spread',  title: 'The Convergence'  },
-        { type: 'Cover Design',  title: 'Chapter Art'       },
-        { type: 'Atmosphere',    title: 'Before the Storm'  },
-        { type: 'Concept Art',   title: 'The deadly poison of Daraporn'    },
+        { title: 'Nemesis — Key Visual',      type: 'Key Visual' },
+        { title: 'Inthanil — Character Art',  type: 'Character Art' },
+        { title: 'Reunion — Scene',           type: 'Scene Illustration' },
+        { title: 'Shadow Pact',               type: 'Concept Art' },
+        { title: 'Rival Portrait',            type: 'Character Study' },
+        { title: 'Orchkan — Final Moment',    type: 'Emotional Scene' },
       ],
     },
     comic: {
-      intro: "This section showcases real comic pages — demonstrating panel flow, pacing, and visual storytelling. How the reader's eye moves through each panel is the craft.",
-      hint: '* Format: Vertical strip · 800–1000 px wide · optimised for mobile reading',
+      intro: 'Three pivotal scenes from the series — each strip demonstrates how panel composition, pacing, and silence are used to carry emotional weight without exposition.',
       strips: [
-        { ep: 'EP. 01', title: 'Turmoil',  caption: "Opening act — the prince wakes in a poison river, memory shattered. Inner chaos mirrors the empire's unravelling." },
-        { ep: 'EP. 02', title: 'Drowning', caption: 'Submerged beneath the palace poison reservoir — the venom enters the bloodstream and visions of truth arrive.' },
-        { ep: 'EP. 03', title: 'The Tomb', caption: 'A chapter where past and present collide — the weight of a hundred-year vendetta crystallises in a single panel.' },
+        { ep: 'Episode 03', title: 'The Turmoil',  caption: 'Nemesis discovers the first crack in the imperial façade.' },
+        { ep: 'Episode 07', title: 'Drowning',     caption: 'A silent battle between what she remembers and what she feels.' },
+        { ep: 'Episode 12', title: 'The Tomb',     caption: 'The confrontation she has been running from since her first breath.' },
       ],
+      hint: 'Read full episodes on Webtoons & Tunwalai.',
     },
-    pipeline: {
-      steps: [
-        { step: '01', label: 'Script',      icon: '✍', note: 'Plot structure · Dialogue · Panel breakdown' },
-        { step: '02', label: 'Thumbnail',   icon: '▭', note: 'Page composition · Reading flow · Pacing' },
-        { step: '03', label: 'Sketch',      icon: '✏', note: 'Character poses · Expressions · Environments' },
-        { step: '04', label: 'Line Art',    icon: '◈', note: 'Clean linework · Weight variation' },
-        { step: '05', label: 'Color',       icon: '◉', note: 'Flat → shading → FX · Color script' },
-        { step: '06', label: 'Final Panel', icon: '▣', note: 'Text · SFX · Export for web' },
+    video: {
+      intro: 'Motion and promotional media — character animations, scene transitions, and promo clips produced for the series.',
+      items: [
+        { label: 'Character Motion',  caption: 'Nemesis animated — movement study and emotional range.' },
+        { label: 'Scene Transition',  caption: 'Chapter-opening motion graphic with title reveal.' },
+        { label: 'Promo Clip',        caption: 'Short promotional video for the series launch.' },
       ],
     },
     skills: {
       softwareTitle: 'Software',
-      artTitle:   'Art Skills',
-      writingTitle: 'Writing Skills',
-      prodTitle:  'Production Skills',
-      art:     ['Character Design','Concept Art','World Building','Storyboarding','Color Theory','Typography Design','Environment Design','Expression Sheet'],
-      writing: ['Story Development','Plot Structuring','Character Writing','Dialogue Writing','Narrative Design','Worldbuilding','Script Writing','Story Planning'],
-      prod:    ['Vertical Scroll Format','Panel Composition','Visual Storytelling','Style Guide Creation','Production Pipeline','Project Documentation'],
+      artTitle:      'Art & Illustration',
+      writingTitle:  'Writing & Story',
+      prodTitle:     'Production',
+      art:     ['Character Design', 'Concept Art', 'Webtoon Panels', 'Scene Composition', 'Color & Lighting', 'Expression Sheets'],
+      writing: ['Narrative Writing', 'World-building', 'Dialogue', 'Pacing & Structure', 'Emotional Arc'],
+      prod:    ['Asset Packaging', 'Panel Layout', 'Cover Design', 'Promo Materials'],
     },
-    contact: { intro: 'Read the full series on the platforms below.', back: '← Back to Portfolio' },
+    contact: {
+      intro: 'Read the full series on the platforms below.',
+      back:  '← Back to Portfolio',
+    },
   },
-
+  kkulMap: {
+    badge:    'UX/UI Design · Frontend Development · Full-stack',
+    title:    'KKUL Library Map',
+    subtitle: 'KKU · Khon Kaen University · 2025',
+    lbHint:   'Double-click or press Esc to close',
+    back:     '← Back to Portfolio',
+    meta: {
+      roleLabel:     'Role',
+      role:          'UX/UI Designer & Frontend Developer',
+      orgLabel:      'Organization',
+      org:           'Khon Kaen University Library',
+      durationLabel: 'Duration',
+      duration:      '2025 · 3 months',
+    },
+    overview: {
+      label: 'Project Overview',
+      title: 'What is KKUL Library Map?',
+      text:  'An interactive digital map for Khon Kaen University Library — helping students and staff navigate 8 floors, locate study rooms, special collections, and services in real time. Designed from user research to final deployment.',
+    },
+    features: {
+      label: 'Key Features',
+      title: 'What it does',
+      items: [
+        { title: 'Interactive Floor Map',   desc: 'SVG-based floor plans for all 8 levels — click any zone to reveal details.' },
+        { title: 'Real-time Room Status',   desc: 'Live availability for study rooms and group spaces fetched from the booking API.' },
+        { title: 'Search & Filter',         desc: 'Search by floor, zone type, or service to jump directly to your destination.' },
+        { title: 'Special Collections',     desc: 'Dedicated views for rare books, archives, and restricted research areas.' },
+        { title: 'Mobile-first Design',     desc: 'Fully responsive — designed for students navigating on their phones.' },
+        { title: 'Multi-language Support',  desc: 'Thai and English interface for international students and staff.' },
+      ],
+    },
+    ps: {
+      label:          'Problem & Solution',
+      title:          'The Challenge',
+      problemsTitle:  'Problems',
+      solutionsTitle: 'Solutions',
+      problems: [
+        "Students couldn't find study rooms or special collections without asking staff.",
+        'No digital map existed — only static paper signage on each floor.',
+        'Room booking data was siloed and not visible to users in real time.',
+        'International students struggled with Thai-only signage.',
+      ],
+      solutions: [
+        'Built an interactive SVG map covering all 8 floors with clickable zones.',
+        'Integrated the library booking API to surface live room availability.',
+        'Designed a search system with floor and zone-type filters.',
+        'Implemented bilingual UI (Thai/English) with language toggle.',
+      ],
+    },
+    highlights: {
+      label: 'Design Highlights',
+      title: 'Design Decisions',
+      items: [
+        { title: 'SVG Floor Plans',      desc: 'Every floor drawn as a vector map — scalable, accessible, and click-accurate.' },
+        { title: 'Colour-coded Zones',   desc: 'Zone types (study, collection, service) use a consistent colour system for instant recognition.' },
+        { title: 'Minimal UI Overlay',   desc: 'Information panels slide in without blocking the map — focus stays on navigation.' },
+        { title: 'Accessibility First',  desc: 'Keyboard navigable, screen-reader labelled, sufficient colour contrast throughout.' },
+      ],
+    },
+    tech: {
+      label: 'Tech Stack',
+      title: 'Built With',
+      items: [
+        { icon: '⚛', name: 'React',      role: 'UI Framework' },
+        { icon: '🗺', name: 'SVG Maps',   role: 'Interactive Floor Plans' },
+        { icon: '🎨', name: 'Figma',      role: 'UX Design & Prototyping' },
+        { icon: '🔗', name: 'REST API',   role: 'Real-time Room Data' },
+        { icon: '💨', name: 'Tailwind',   role: 'Styling' },
+        { icon: '☁', name: 'Vercel',     role: 'Deployment' },
+      ],
+    },
+    results: {
+      label: 'Outcomes',
+      title: 'Impact',
+      stats: [
+        { value: '8',    label: 'Floors Mapped' },
+        { value: '200+', label: 'Study Zones' },
+        { value: '2',    label: 'Languages' },
+        { value: '100%', label: 'Mobile Responsive' },
+      ],
+      outcomes: [
+        'Deployed to the KKU Library portal and used by students campus-wide.',
+        'Reduced staff navigation queries significantly in the first month.',
+        'Positive feedback from international students on the bilingual interface.',
+        'Recognised as a student innovation project by the university computing college.',
+      ],
+    },
+    showcase: {
+      label: 'Showcase',
+      title: 'Screenshots & Demo',
+    },
+    specialRoom: {
+      label:   'Special Room',
+      title:   'Special Collections Floor',
+      caption: 'Restricted-access rare book archive — tap any shelf to view collection metadata.',
+    },
+    videos: [
+      { label: 'Full Walkthrough',  caption: 'End-to-end demo of the map navigation and room booking flow.' },
+      { label: 'Mobile View',       caption: 'Responsive design — navigating the map on a smartphone.' },
+    ],
+  },
   footer: {
     rights: '© {year} {name}. All rights reserved.',
   },

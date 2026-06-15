@@ -62,10 +62,11 @@ import wtCharThamil    from '@/assets/images/webtoon/character/wt-char-thamil.pn
 import wtCharOrchkan   from '@/assets/images/webtoon/character/wt-char-orchkan.jpg'
 import wtCharLilil     from '@/assets/images/webtoon/character/wt-char-lilil.jpg'
 import wtCharKoin      from '@/assets/images/webtoon/character/wt-char-koin.jpg'
-import wtMapHD         from '@/assets/images/webtoon/map.png'
+
 
 // ── Creative / Logo assets ──────────────────────────────────
 // logo_light
+import logocover         from '@/assets/images/Creative/logo/logo_cover.PNG'
 import logoLightGwriteMain          from '@/assets/images/Creative/logo/logo_light/GWRITE_main.svg'
 import logoLightGwriteDesignPublish from '@/assets/images/Creative/logo/logo_light/GWRITE_Design&Publish.svg'
 import logoLightGwriteSmartInsights from '@/assets/images/Creative/logo/logo_light/GWRITE_SmartInsights.svg'
@@ -77,6 +78,11 @@ import logoLightKkuChatbot          from '@/assets/images/Creative/logo/logo_lig
 import logoLightKkulPeople          from '@/assets/images/Creative/logo/logo_light/KKUL_people.svg'
 import logoLightKkulReadbook        from '@/assets/images/Creative/logo/logo_light/KKUL_readbook.svg'
 import logoLightKkuManual           from '@/assets/images/Creative/logo/logo_light/KKUManual.svg'
+import logoLightKkulBuilding        from '@/assets/images/Creative/logo/logo_light/KKUL_building.svg'
+import logoLightKkulBuilding1       from '@/assets/images/Creative/logo/logo_light/KKUL_building1.svg' 
+import logoLightKkulBuilding_       from '@/assets/images/Creative/logo/logo_light/KKUL_building_.svg'   
+import logoLightKkulBuildingNum     from '@/assets/images/Creative/logo/logo_light/KKUL_building_num.svg'   
+import logoLightDabNeegHmoob         from '@/assets/images/Creative/logo/logo_light/Dab Neeg Hmoob Light.jpg'
 // logo_dack
 import logoDarkGwriteMain           from '@/assets/images/Creative/logo/logo_dack/GWRITE_main.svg'
 import logoDarkGwriteDesignPublish  from '@/assets/images/Creative/logo/logo_dack/GWRITE_Design&Publish.svg'
@@ -89,6 +95,11 @@ import logoDarkKkuChatbot           from '@/assets/images/Creative/logo/logo_dac
 import logoDarkKkulPeople           from '@/assets/images/Creative/logo/logo_dack/KKUL_people.svg'
 import logoDarkKkulReadbook         from '@/assets/images/Creative/logo/logo_dack/KKUL_readbook.svg'
 import logoDarkKkuManual            from '@/assets/images/Creative/logo/logo_dack/KKUManual.svg'
+import logoDarkKkulBuilding         from '@/assets/images/Creative/logo/logo_dack/KKUL_building.svg'
+import logoDarkKkulBuilding1        from '@/assets/images/Creative/logo/logo_dack/KKUL_building1.svg'
+import logoDarkKkulBuilding_        from '@/assets/images/Creative/logo/logo_dack/KKUL_building_.svg'
+import logoDarkKkulBuildingNum      from '@/assets/images/Creative/logo/logo_dack/KKUL_building_num.svg'
+import logoDarkDabNeegHmoob        from '@/assets/images/Creative/logo/logo_dack/Dab Neeg Hmoob Dark.png'
 
 // ── Cultural Design assets ──────────────────────────────────
 // accessories
@@ -135,6 +146,11 @@ import cmMoon         from '@/assets/images/commission/cm-moon.jpg'
 import cmTung         from '@/assets/images/commission/cm-tung.jpg'
 import cmConverCm     from '@/assets/images/commission/conver_cm.jpg'
 
+// ── Library map ───────────────────────────────────────────────
+import heroMap         from '@/assets/images/KKUL-LibraryMap/Hero Screenshot.png'
+import kkulPageMain    from '@/assets/images/KKUL-LibraryMap/KKUL-LibraryMap-pagemain.png'
+import kkulSpecial     from '@/assets/images/KKUL-LibraryMap/Special-Room-Information.png'
+
 export const CATEGORIES = [
   { id: 'all',          label: 'All' },
   { id: 'game',         label: 'Project' },
@@ -153,6 +169,122 @@ export const TIERS = {
 const img = (seed, w, h) => `https://picsum.photos/seed/${seed}/${w}/${h}`
 
 export const works = [
+  // ────────────────────────────────────────────────────────
+  {
+    id: '008',
+    slug: 'library-map',
+    title: 'KKUL Library Map',
+    category: 'game',
+    categories: ['game', 'web'],
+    tier: TIERS.PROFESSIONAL,
+    role: 'UX/UI Designer · Frontend Developer',
+    client: 'Khon Kaen University Library',
+    year: 2025,
+    featured: true,
+    thumbnail: heroMap,
+    banner:    heroMap,
+    description: 'Interactive library navigation system for Khon Kaen University — real-time room status, smart search, floor navigation, and special room booking across 2 buildings and 6 floors.',
+    mood: 'Technical, Clean, Purposeful',
+    software: ['React 18', 'Vite 5', 'Tailwind CSS 3', 'Figma', 'Iconify'],
+    tags: ['web', 'react', 'ux-ui', 'interactive-map', 'real-time', 'svg-engine'],
+
+    overview: `KKUL Library Map คือระบบแผนที่ห้องสมุด Khon Kaen University แบบ Interactive พัฒนาด้วย React 18 + Vite 5 ครอบคลุม 2 อาคาร 5 ชั้น
+
+ระบบแสดงแผนผัง SVG ความละเอียดสูงพร้อมสีสถานะแบบ Real-time ระบบจองห้องพิเศษ 11 ประเภท Fuzzy Search ข้ามทุก entity Dark Mode ด้วย CSS Variables และ Bilingual UI ทั้งหมดผ่านเว็บเบราว์เซอร์โดยไม่ต้องติดตั้งแอปพลิเคชัน
+
+สถาปัตยกรรมของโปรเจคนี้ถ่ายทอดได้โดยตรงสู่ระบบแผนที่เกม — SVG area layers ทำหน้าที่เหมือน tilemap, area types เป็น zone data, booking status เป็น entity occupancy state`,
+
+    worldbuilding: `ปัญหาหลัก: ผู้ใช้บริการต้องเดินไปสำรวจห้องด้วยตนเองเพราะไม่ทราบว่าห้องไหนว่างหรือเต็ม ไม่มีระบบกลางรวมข้อมูลอาคารทั้งหมด และไม่มีอินเทอร์เฟซสำหรับผู้ใช้ภาษาอังกฤษ
+
+โซลูชัน: Interactive Floor Map ที่แสดงสถานะ Real-time — ว่าง (#58FFCA) · เต็ม (#FF8282) · จองแล้ว — พร้อม Fuzzy Search ทุก entity, Time Slot Booking สำหรับห้องพิเศษ, และ Floor Navigation ผ่านบันได/ลิฟต์`,
+
+    techHighlights: [
+      {
+        label: 'SVG Coloring Engine',
+        text: 'colorBgPath() ค้นหา path ที่ใหญ่ที่สุดใน SVG group เพื่อทาสีเฉพาะ background โดยไม่ทำลาย wall lines ส่วน setRoomFilter() ใช้ CSS filter: brightness + drop-shadow สำหรับ hover/selection ทำให้ border details คงอยู่ครบถ้วน',
+      },
+      {
+        label: 'Booking-aware Room Colors',
+        text: 'ห้องพิเศษที่มี ID pattern /^R\\d.*[A-Za-z]$/ (เช่น R1302A) ตรวจสอบ booking status ณ เวลาปัจจุบัน ผ่าน getSlotStatus() ทุกครั้งที่โหลดชั้น ว่าง = #58FFCA เขียว, จอง = #FF8282 แดง',
+      },
+      {
+        label: 'Zero Re-render SVG Listeners',
+        text: 'Event listeners attach ครั้งเดียวตอนโหลด SVG ใช้ ref pattern (onEnterRef, onLeaveRef) เพื่ออ้างอิง handler ล่าสุดเสมอ ป้องกัน stale closure และ memory leak โดยไม่ต้อง re-attach เมื่อ parent component re-render',
+      },
+      {
+        label: 'CSS Variable Dark Mode (No FOUC)',
+        text: 'ทุก hardcoded สีถูกแทนด้วย var(--bg), var(--bg-card), var(--border) — Dark mode ทำงานโดยแก้เพียง [data-theme="dark"] block ไม่มีโค้ด theme check ใน Component ทำให้ไม่มี Flash of Unstyled Content',
+      },
+      {
+        label: 'Memoized Search Index',
+        text: 'SearchBar สร้าง index 200+ items ครั้งเดียวด้วย useMemo() ครอบคลุมห้อง ชั้น อาคาร ห้องน้ำ ทางหนีไฟ พร้อม keyword arrays สำหรับ fuzzy matching และ Keyboard Navigation (↑↓ + Enter)',
+      },
+      {
+        label: 'Game Map Applicability',
+        text: 'Architecture ถ่ายทอดได้โดยตรงสู่ Game Map System — SVG layers เป็น tilemap, area types เป็น zone/entity data, booking status เป็น NPC/object occupancy state, floor navigation เป็น dungeon level system',
+      },
+    ],
+
+    sections: [
+      {
+        type: 'feature-grid',
+        title: 'Key Features',
+        items: [
+          { icon: '🗺️', label: 'Interactive Floor Map',   desc: 'SVG 5 ชั้น hover/click popup ข้อมูล real-time' },
+          { icon: '🟢', label: 'Status Color System',      desc: 'ว่าง / ปานกลาง / แออัด / เต็ม แสดงสีทันที' },
+          { icon: '🔍', label: 'Fuzzy Search',             desc: 'ค้นหาห้อง ชั้น อาคาร ห้องน้ำ ทางหนีไฟ' },
+          { icon: '📅', label: 'Special Room Booking',     desc: 'จอง 11 ประเภท Time Slots 08:00–20:00' },
+          { icon: '🌙', label: 'Dark Mode',                desc: 'CSS Variables toggle ไม่มี FOUC' },
+          { icon: '🌐', label: 'Bilingual TH / EN',        desc: 'i18n ผ่าน AppContext ไม่ต้อง reload' },
+          { icon: '🪜', label: 'Floor Navigation',         desc: 'บันได / ลิฟต์ popup นำทางข้ามชั้นทันที' },
+          { icon: '📊', label: 'Occupancy Dashboard',      desc: 'Stat cards สรุปผู้ใช้งานทั้งอาคาร' },
+        ],
+      },
+      {
+        type: 'gamescreens',
+        title: 'UI Screens',
+        images: [
+          { src: img('kkul-dash-01', 1200, 700),   caption: 'Dashboard — Occupancy cards + Interactive floor plan' },
+          { src: img('kkul-floor-02', 1200, 700),  caption: 'Floor Map — ชั้น 3 อาคาร 1 พร้อมสีสถานะ Real-time' },
+          { src: img('kkul-modal-03', 1200, 700),  caption: 'Special Room Modal — Time slot booking ห้องอัดวีดีโอ' },
+          { src: img('kkul-search-04', 1200, 700), caption: 'Search Overlay — Fuzzy search + Keyboard navigation' },
+          { src: img('kkul-dark-05', 1200, 700),   caption: 'Dark Mode — Full CSS Variable theme system' },
+          { src: img('kkul-panel-06', 1200, 700),  caption: 'Sidebar Panel — ข้อมูลห้อง สิ่งอำนวยความสะดวก จองโต๊ะ' },
+        ],
+      },
+      {
+        type: 'techstack',
+        title: 'Technology Stack',
+        items: [
+          { icon: '⚛️', name: 'React 18',          role: 'UI framework — hooks, context, memoization' },
+          { icon: '⚡', name: 'Vite 5',             role: 'Build tool — HMR, path alias @/, fast bundle' },
+          { icon: '💨', name: 'Tailwind CSS 3',    role: 'Utility-first CSS + CSS Variables dark mode' },
+          { icon: '🎨', name: 'Iconify / Solar',   role: 'Solar + PH icon sets ทดแทน emoji ทั้งหมด' },
+          { icon: '🗺️', name: 'Custom SVG Engine', role: 'colorBgPath + setRoomFilter — booking-aware colors' },
+          { icon: '📦', name: 'Context API',        role: 'AppContext — theme + lang state ไม่พึ่ง Redux' },
+          { icon: '🔤', name: 'Anuphan / Sarabun', role: 'Thai web fonts สำหรับ bilingual UI' },
+          { icon: '🃏', name: 'ESM + Vite Alias',  role: '@/ path alias + JSON floor data modules' },
+        ],
+      },
+      {
+        type: 'results',
+        title: 'Results & Scope',
+        stats: [
+          { value: '2',  label: 'อาคาร' },
+          { value: '5',  label: 'ชั้น' },
+          { value: '48', label: 'Sub-rooms' },
+          { value: '11', label: 'ห้องพิเศษ' },
+        ],
+        notes: [
+          'แสดงสถานะห้องแบบ Real-time ลดเวลาค้นหาห้องว่างจากการเดินสำรวจ',
+          'Fuzzy Search ครอบคลุม 200+ items ข้ามทุก entity ในการค้นหาเดียว',
+          'Dark Mode + Bilingual ทำให้ UX เข้าถึงได้สำหรับผู้ใช้ทุกกลุ่ม',
+          'Architecture นำไปปรับเป็น Game Map System ได้โดยตรง',
+        ],
+      },
+    ],
+  },
+
   // ────────────────────────────────────────────────────────
   {
     id: '007',
@@ -368,13 +500,13 @@ My responsibilities covered the entire visual layer: designing and rigging the S
     category: 'creative-art',
     tier: TIERS.PROFESSIONAL,
     role: 'Logo Designer · Brand Identity',
-    client: 'GWRITE · KKU Library',
-    year: 2024,
+    // client: 'GWRITE · KKU Library',
+    // year: 2024,
     featured: true,
-    thumbnail: logoLightGwriteMain,
+    thumbnail: logocover,
     banner:    logoDarkGwriteMain,
     description: 'Brand identity and logo design for GWRITE and KKU Library — covering main marks and sub-feature icons.',
-    mood: 'Clean, Modern, Purposeful',
+    // mood: 'Clean, Modern, Purposeful',
     software: ['Illustrator', 'Figma'],
     tags: ['logo', 'branding', 'identity', 'vector'],
     sections: [
@@ -406,8 +538,17 @@ My responsibilities covered the entire visual layer: designing and rigging the S
               { name: 'Main',      light: logoLightKkulMain,     dark: logoDarkKkulMain },
               { name: 'People',    light: logoLightKkulPeople,   dark: logoDarkKkulPeople },
               { name: 'Read Book', light: logoLightKkulReadbook, dark: logoDarkKkulReadbook },
+              { name: 'Building',  light: logoLightKkulBuilding, dark: logoDarkKkulBuilding },
+              { name: 'Building 1',light: logoLightKkulBuilding1, dark: logoDarkKkulBuilding1 },
+              { name: 'Building _',light: logoLightKkulBuilding_, dark: logoDarkKkulBuilding_ },
+              { name: 'Building #',light: logoLightKkulBuildingNum, dark: logoDarkKkulBuildingNum },
             ],
           },
+          { name: 'Dab Neeg Hmoob',
+            logos: [
+              { name: 'Dab Neeg Hmoob', light: logoLightDabNeegHmoob, dark: logoDarkDabNeegHmoob, fill: true },
+            ],
+          }
         ],
       },
     ],

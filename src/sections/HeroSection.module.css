@@ -10,11 +10,62 @@
   align-items: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 70% 60% at 75% 50%, #1b0c53 0%, transparent 60%),
+    radial-gradient(ellipse 60% 100% at 76% 48%, rgba(76,28,173,0.50) 0%, rgba(27,12,83,0.22) 50%, transparent 75%),
     #05010B;
 }
 
-/* ── Main two-column grid ─────────────────────────────────── */
+/* ── Key Visual — locked to hero, absolute ────────────────── */
+.keyVisual {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Large blurred glow — softer, more diffuse ellipse */
+.kvGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 1000px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(144, 99, 158, 0.50)  0%,
+    rgba(120, 60, 190, 0.32) 30%,
+    rgba(76,  28, 173, 0.18) 55%,
+    rgba(27,  12,  83, 0.06) 75%,
+    transparent 90%
+  );
+  filter: blur(110px);
+  z-index: 1;
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Character photo */
+.kvImage {
+  position: relative;
+  z-index: 2;
+  height: min(100vh, 680px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter:
+    drop-shadow(0 0 60px rgba(144,99,158,0.30))
+    drop-shadow(0 0 120px rgba(76,28,173,0.18));
+  animation: fadeIn 1s ease 0.3s both;
+}
+
+/* ── Main content — text only, left side ─────────────────── */
 .content {
   position: relative;
   z-index: 5;
@@ -22,16 +73,14 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 6rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  gap: 2rem;
   min-height: 100vh;
 }
 
 /* ── LEFT: Text block ─────────────────────────────────────── */
 .textContent {
-  max-width: 620px;
+  max-width: 580px;
   padding-top: var(--navbar-height);
 }
 
@@ -67,7 +116,6 @@
   animation: fadeUp var(--duration-slow) var(--ease-smooth) 300ms both;
 }
 
-/* Short neon underline divider */
 .divider {
   width: 48px;
   height: 2px;
@@ -122,7 +170,6 @@
 .dot[data-status="closed"]   { background: var(--color-closed); }
 .dot[data-status="waitlist"] { background: #90639e; box-shadow: 0 0 10px rgba(144,99,158,0.6); }
 
-/* Social icons */
 .social {
   display: flex;
   align-items: center;
@@ -142,53 +189,6 @@
   filter: drop-shadow(0 0 8px rgba(192,132,252,0.5));
 }
 
-/* ── RIGHT: Key Visual ────────────────────────────────────── */
-.keyVisual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding-top: var(--navbar-height);
-}
-
-/* Large blurred circular glow — the halo behind the character */
-.kvGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 640px;
-  height: 640px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(144, 99, 158, 0.75)  0%,
-    rgba(76,  28, 173, 0.55) 40%,
-    rgba(27,  12,  83, 0.30) 70%,
-    transparent 100%
-  );
-  filter: blur(55px);
-  z-index: 1;
-  animation: pulseGlow 6s ease-in-out infinite;
-}
-
-/* Character photo — sits above the glow */
-.kvImage {
-  position: relative;
-  z-index: 2;
-  height: calc(100vh - var(--navbar-height));
-  max-height: 820px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter:
-    drop-shadow(0 0 40px rgba(144,99,158,0.40))
-    drop-shadow(0 0 80px rgba(76,28,173,0.25));
-  animation: fadeIn 1s ease 0.3s both;
-}
-
 /* ── Background FX ────────────────────────────────────────── */
 .bg {
   position: absolute;
@@ -197,7 +197,6 @@
   z-index: 0;
 }
 
-/* Large soft orbs */
 .orb1 {
   position: absolute;
   width: 500px; height: 500px;
@@ -220,7 +219,6 @@
   animation: orbFloat2 20s ease-in-out infinite;
 }
 
-/* Subtle grid overlay */
 .grid {
   position: absolute;
   inset: 0;
@@ -230,36 +228,25 @@
   background-size: 72px 72px;
 }
 
-/* ── Glow pulse animation ─────────────────────────────────── */
+/* ── Animations ───────────────────────────────────────────── */
 @keyframes pulseGlow {
-  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.8; }
-  50%       { transform: translate(-50%, -50%) scale(1.07); opacity: 1;   }
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.85; }
+  50%       { transform: translate(-50%, -50%) scale(1.06); opacity: 1;   }
 }
 
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1100px) {
+/* ── Responsive — text only, image stays locked ───────────── */
+@media (max-width: 900px) {
   .content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: calc(var(--navbar-height) + 4rem) 2rem 4rem;
-    min-height: unset;
+    padding-inline: 2.5rem;
   }
-  .textContent { margin: 0 auto; padding-top: 0; }
-  .tagline     { margin-inline: auto; }
-  .ctas        { justify-content: center; }
-  .availability{ justify-content: center; }
-  .social      { justify-content: center; }
-  .divider     { margin-inline: auto; }
-  .keyVisual   { height: 70vw; min-height: 320px; padding-top: 0; }
-  .kvImage     { height: 100%; max-height: none; }
-  .kvGlow      { width: 400px; height: 400px; }
+  .name { font-size: clamp(3.2rem, 10vw, 5rem); }
 }
 
 @media (max-width: 640px) {
   .content  { padding-inline: 1.5rem; }
-  .name     { font-size: clamp(3.5rem, 14vw, 5rem); }
-  .title    { font-size: 1.05rem; }
+  .name     { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .title    { font-size: 1rem; }
   .tagline  { font-size: 0.95rem; }
-  .keyVisual { height: 80vw; }
-  .kvGlow   { width: 300px; height: 300px; }
+  /* Dim image slightly so text stays readable on small screens */
+  .keyVisual { opacity: 0.55; }
 }

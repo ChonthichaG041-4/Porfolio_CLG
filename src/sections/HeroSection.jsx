@@ -31,10 +31,18 @@ export function HeroSection() {
         <div className={styles.grid} />
       </div>
 
+      {/* ── Key Visual — locked to hero background ── */}
+      <div className={styles.keyVisual} aria-hidden="true">
+        <div className={styles.kvGlow} />
+        <img
+          src={heroImage}
+          alt={profile.nameDisplay}
+          className={styles.kvImage}
+        />
+      </div>
+
       {/* ── Main Content ── */}
       <div className={styles.content}>
-
-        {/* LEFT: Text */}
         <div className={styles.textContent}>
           <span className={styles.label}>{th.label}</span>
 
@@ -60,7 +68,6 @@ export function HeroSection() {
             <span>{statusLabel}</span>
           </div>
 
-          {/* Social icons row */}
           <div className={styles.social} aria-label="Social links">
             {profile.social?.discord && (
               <a href={profile.social.discord} className={styles.socialLink} target="_blank" rel="noreferrer" aria-label="Discord">
@@ -84,17 +91,6 @@ export function HeroSection() {
             )}
           </div>
         </div>
-
-        {/* RIGHT: Key Visual */}
-        <div className={styles.keyVisual} aria-hidden="true">
-          <div className={styles.kvGlow} />
-          <img
-            src={heroImage}
-            alt={profile.nameDisplay}
-            className={styles.kvImage}
-          />
-        </div>
-
       </div>
     </section>
   )

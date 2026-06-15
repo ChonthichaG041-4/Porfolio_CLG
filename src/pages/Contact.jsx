@@ -41,23 +41,29 @@ export default function Contact() {
                 <span className={styles.methodLabel}>{tc.methods.email}</span>
                 <span className={styles.methodValue}>{profile.email}</span>
               </a>
-              {profile.discord && (
+              {profile.phone && (
                 <div className={styles.method}>
-                  <span className={styles.methodLabel}>{tc.methods.discord}</span>
-                  <span className={styles.methodValue}>{profile.discord}</span>
+                  <span className={styles.methodLabel}>{tc.methods.phone}</span>
+                  <span className={styles.methodValue}>{profile.phone}</span>
                 </div>
               )}
-              {profile.social.artstation && (
-                <a href={profile.social.artstation} target="_blank" rel="noopener noreferrer" className={styles.method}>
-                  <span className={styles.methodLabel}>{tc.methods.artstation}</span>
+              {profile.discord && (
+                <a href={profile.discord} target="_blank" rel="noopener noreferrer" className={styles.method}>
+                  <span className={styles.methodLabel}>{tc.methods.discord}</span>
+                  <span className={styles.methodValue}>{tc.methods.discordJoin}</span>
+                </a>
+              )}
+              {profile.social.facebook && (
+                <a href={profile.social.facebook} target="_blank" rel="noopener noreferrer" className={styles.method}>
+                  <span className={styles.methodLabel}>{tc.methods.facebook}</span>
                   <span className={styles.methodValue}>{tc.methods.viewProfile}</span>
                 </a>
               )}
-              {profile.social.instagram && (
-                <a href={profile.social.instagram} target="_blank" rel="noopener noreferrer" className={styles.method}>
-                  <span className={styles.methodLabel}>{tc.methods.instagram}</span>
-                  <span className={styles.methodValue}>@cheso.art →</span>
-                </a>
+              {profile.location && (
+                <div className={styles.method}>
+                  <span className={styles.methodLabel}>{tc.methods.address}</span>
+                  <span className={styles.methodValue}>{profile.location}</span>
+                </div>
               )}
             </div>
           </div>
