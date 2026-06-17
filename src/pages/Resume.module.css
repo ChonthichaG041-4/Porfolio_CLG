@@ -543,4 +543,29 @@
     gap: 1rem;
   }
   .heroLeft  { gap: 1rem; }
-  .heroRigh
+  .heroRight { align-items: flex-start; }
+
+  .avatar { width: 80px; height: 80px; }
+
+  .heroName  { font-size: 1.3rem; }
+  .heroRole1 { font-size: 11px; }
+  .heroRole2 { font-size: 10px; }
+
+  .blockHeading { font-size: 1.2rem; }
+
+  .timeline { padding-left: 20px; }
+  .tdot     { left: -20px; }
+
+  .skillsGrid { grid-template-columns: 1fr 1fr; }
+
+  .swGrid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+
+  .langRowOuter { gap: 1rem; }
+  .langItem     { min-width: 90px; }
+}
+
+@media (max-width: 480px) {
+  .skillsGrid { grid-template-columns: 1fr; }
+  .tcardTop   { flex-direction: column; gap: 6px; }
+  .tcardBadge { align-self: flex-start; }
+}
