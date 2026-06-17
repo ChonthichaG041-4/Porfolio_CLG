@@ -276,4 +276,17 @@ export default function Resume() {
                     <span className={styles.langLvl}>{level}</span>
                   </div>
                   <div className={styles.langTrack}>
-                    <div className={styles.langFill} sty
+                    <div className={styles.langFill} style={{ width: `${bar}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
+      </div>
+
+      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
+    </div>
+  )
+}
