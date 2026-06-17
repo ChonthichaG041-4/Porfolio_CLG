@@ -65,7 +65,7 @@ export default function ProjectDetail() {
       <section className={styles.hero}>
         {work.banner && (
           <div className={styles.bannerWrap}>
-            <img src={work.banner} alt={workTitle} className={styles.banner} />
+            <img src={work.banner} alt={workTitle} className={styles.banner} loading="eager" />
             <div className={styles.bannerOverlay} />
           </div>
         )}
@@ -142,12 +142,12 @@ export default function ProjectDetail() {
             <h2 className={styles.sectionTitle}>{webtoonCoverSec.title}</h2>
             <div className={styles.webtoonCover}>
               <div className={styles.webtoonCoverMain}>
-                <img src={webtoonCoverSec.cover} alt="Cover" className={styles.webtoonCoverImg} />
+                <img src={webtoonCoverSec.cover} alt="Cover" className={styles.webtoonCoverImg} loading="lazy" />
               </div>
               <div className={styles.webtoonCoverSide}>
                 {webtoonCoverSec.images?.map((item, i) => (
                   <div key={i} className={styles.webtoonCoverThumb}>
-                    <img src={item.src} alt={item.caption} className={styles.webtoonThumbImg} />
+                    <img src={item.src} alt={item.caption} className={styles.webtoonThumbImg} loading="lazy" />
                     {item.caption && <span className={styles.webtoonThumbCap}>{item.caption}</span>}
                   </div>
                 ))}
@@ -205,7 +205,7 @@ export default function ProjectDetail() {
           <div className={styles.cmLbOverlay} onClick={closeCmLb}>
             <button type="button" className={styles.cmLbClose} onClick={closeCmLb} aria-label="Close">✕</button>
             <div className={styles.cmLbContent} onClick={e => e.stopPropagation()}>
-              <img src={cmLbImg.src} alt={cmLbImg.title} className={styles.cmLbImg} />
+              <img src={cmLbImg.src} alt={cmLbImg.title} className={styles.cmLbImg} loading="lazy" />
               <div className={styles.cmLbInfo}>
                 <span className={styles.cmLbTitle}>{cmLbImg.title}</span>
                 {cmLbImg.desc && <p className={styles.cmLbDesc}>{cmLbImg.desc}</p>}

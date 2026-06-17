@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { profile } from '@/data/profile'
 import { useI18n } from '@/i18n/context'
 import { Button } from '@/components/UI/Button'
-import heroImageDesktop from '@/assets/images/me0.png'
-import heroImageMobile  from '@/assets/images/me.png'
+import heroImageDesktop from '@/assets/images/me0.webp'
+import heroImageMobile  from '@/assets/images/me.webp'
 import styles from './HeroSection.module.css'
 
 /* ── Simple inline SVG icons ── */
@@ -34,7 +34,7 @@ export function HeroSection() {
           <img
             src={heroImageDesktop}
             alt={profile.nameDisplay}
-            className={styles.kvImage}
+            className={styles.kvImage} loading="eager"
           />
         </picture>
       </div>

@@ -46,7 +46,7 @@ export function SceneGallery({ scenes = [] }) {
               onClick={() => setActive(i)}
               aria-label={scene.title ?? `Scene ${i + 1}`}
             >
-              <img src={scene.src} alt="" className={styles.thumbImg} />
+              <img src={scene.src} alt="" className={styles.thumbImg} loading="lazy" />
               <span className={styles.thumbLabel}>{scene.title}</span>
             </button>
           ))}

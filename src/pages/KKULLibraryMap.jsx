@@ -4,9 +4,9 @@ import { useI18n } from "@/i18n/context";
 import styles from "./KKULLibraryMap.module.css";
 
 // ── Assets ──────────────────────────────────────────────────
-import heroImg      from "@/assets/images/KKUL-LibraryMap/Hero Screenshot.png";
-import pageMain     from "@/assets/images/KKUL-LibraryMap/KKUL-LibraryMap-pagemain.png";
-import specialRoom  from "@/assets/images/KKUL-LibraryMap/Special-Room-Information.png";
+import heroImg      from "@/assets/images/KKUL-LibraryMap/Hero Screenshot.webp";
+import pageMain     from "@/assets/images/KKUL-LibraryMap/KKUL-LibraryMap-pagemain.webp";
+import specialRoom  from "@/assets/images/KKUL-LibraryMap/Special-Room-Information.webp";
 
 import vidSearch    from "@/assets/images/KKUL-LibraryMap/Search Flow.mp4";
 import vidFloors    from "@/assets/images/KKUL-LibraryMap/Changing building floors.mp4";
@@ -34,7 +34,7 @@ function Lightbox({ item, hint, onClose }) {
         {item.type === "video" ? (
           <video src={item.src} autoPlay loop muted playsInline controls className={styles.lbMedia} />
         ) : (
-          <img src={item.src} alt={item.alt ?? ""} className={styles.lbMedia} />
+          <img src={item.src} alt={item.alt ?? ""} className={styles.lbMedia} loading="lazy" />
         )}
         {item.caption && <p className={styles.lbCaption}>{item.caption}</p>}
       </div>
@@ -65,7 +65,7 @@ export default function KKULLibraryMap() {
             src={heroImg}
             alt={km.title}
             className={`${styles.heroBanner} ${styles.zoomable}`}
-            onDoubleClick={() => open({ type: "image", src: heroImg, alt: km.title })}
+            onDoubleClick={() = loading="lazy"> open({ type: "image", src: heroImg, alt: km.title })}
           />
           <div className={styles.heroGradient} />
         </div>
@@ -107,7 +107,7 @@ export default function KKULLibraryMap() {
             className={`${styles.overviewScreenshot} ${styles.zoomable}`}
             onDoubleClick={() => open({ type: "image", src: pageMain, alt: km.overview.title })}
           >
-            <img src={pageMain} alt={km.overview.title} className={styles.overviewImg} />
+            <img src={pageMain} alt={km.overview.title} className={styles.overviewImg} loading="lazy" />
           </div>
         </section>
 
@@ -196,7 +196,7 @@ export default function KKULLibraryMap() {
             className={`${styles.featureScreenshot} ${styles.zoomable}`}
             onDoubleClick={() => open({ type: "image", src: specialRoom, alt: km.specialRoom.title, caption: km.specialRoom.caption })}
           >
-            <img src={specialRoom} alt={km.specialRoom.title} className={styles.featureScreenImg} />
+            <img src={specialRoom} alt={km.specialRoom.title} className={styles.featureScreenImg} loading="lazy" />
             <div className={styles.featureScreenCaption}>{km.specialRoom.caption}</div>
           </div>
         </section>

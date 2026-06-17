@@ -179,13 +179,13 @@ export function CharacterCarousel({ characters = [], title }) {
             <div className={styles.imgPopupInner}>
               {imgChar.characterImg && (
                 <div className={styles.imgPopupCol}>
-                  <img src={imgChar.characterImg} alt={tx(imgChar).name} className={styles.imgPopupImg} />
+                  <img src={imgChar.characterImg} alt={tx(imgChar).name} className={styles.imgPopupImg} loading="lazy" />
                   <span className={styles.imgPopupLabel}>{ui.design ?? 'Character Art'}</span>
                 </div>
               )}
               {imgChar.disassembledImg && (
                 <div className={styles.imgPopupCol}>
-                  <img src={imgChar.disassembledImg} alt={`${tx(imgChar).name} — disassembled`} className={styles.imgPopupImg} />
+                  <img src={imgChar.disassembledImg} alt={`${tx(imgChar).name} — disassembled`} className={styles.imgPopupImg} loading="lazy" />
                   <span className={styles.imgPopupLabel}>{ui.disassembled ?? 'Bone Structure'}</span>
                 </div>
               )}
@@ -209,7 +209,7 @@ export function CharacterCarousel({ characters = [], title }) {
               <div className={styles.infoImages}>
                 {infoChar.characterImg && (
                   <div className={styles.infoImgWrap}>
-                    <img src={infoChar.characterImg} alt={infoTx.name} className={styles.infoImg} />
+                    <img src={infoChar.characterImg} alt={infoTx.name} className={styles.infoImg} loading="lazy" />
                     <span className={styles.infoImgLabel}>{ui.design ?? 'Character Art'}</span>
                   </div>
                 )}
@@ -220,7 +220,7 @@ export function CharacterCarousel({ characters = [], title }) {
                       <img
                         src={infoChar.sourceImage}
                         alt={infoChar.sourceLabel ?? (ui.sourceRef ?? 'Reference')}
-                        className={styles.infoImg}
+                        className={styles.infoImg} loading="lazy"
                       />
                       <span className={styles.infoImgLabel}>
                         {infoChar.sourceLabel ?? (ui.sourceRef ?? 'Source Reference')}

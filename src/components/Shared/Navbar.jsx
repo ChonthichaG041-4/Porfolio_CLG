@@ -38,7 +38,7 @@ export function Navbar() {
           {profile.nameDisplay}
         </Link> */}
         <Link to="/" className={styles.logo} aria-label="Go to home">
-          <img src={logoIcon} alt="Logo" className={styles.logoIcon} />
+          <img src={logoIcon} alt="Logo" className={styles.logoIcon} loading="eager" />
         </Link>
 
         {/* Desktop nav */}

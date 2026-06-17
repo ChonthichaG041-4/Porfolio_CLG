@@ -63,7 +63,7 @@ export function GameMedia({ items = [], title }) {
               <img
                 src={item.poster ?? item.src}
                 alt={item.caption ?? `thumb-${i}`}
-                className={styles.thumbImg}
+                className={styles.thumbImg} loading="lazy"
               />
               {item.type === 'video' && (
                 <span className={styles.playIcon}>▶</span>

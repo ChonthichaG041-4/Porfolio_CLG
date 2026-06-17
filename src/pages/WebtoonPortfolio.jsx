@@ -12,34 +12,34 @@ import iconBlender from "@/assets/icons/blender-icon.svg";
 import iconClaude from "@/assets/icons/claude-icon.svg";
 
 // ── Webtoon assets ──────────────────────────────────────────
-import wtCover        from "@/assets/images/webtoon/wt-cover.jpg";
-import wtCoverBg      from '@/assets/images/webtoon/wt-cover-bg.png'
-import wtMap          from "@/assets/images/webtoon/wt-map.jpg";
-import wtMapWar       from "@/assets/images/webtoon/wt-map-war.jpg";
-import wtMapPaper     from "@/assets/images/webtoon/wt-map-paper.jpg";
-import wtMapRed       from "@/assets/images/webtoon/wt-map-red.jpg";
+import wtCover        from "@/assets/images/webtoon/wt-cover.webp";
+import wtCoverBg      from '@/assets/images/webtoon/wt-cover-bg.webp'
+import wtMap          from "@/assets/images/webtoon/wt-map.webp";
+import wtMapWar       from "@/assets/images/webtoon/wt-map-war.webp";
+import wtMapPaper     from "@/assets/images/webtoon/wt-map-paper.webp";
+import wtMapRed       from "@/assets/images/webtoon/wt-map-red.webp";
 // ── Webtoon videos ──────────────────────────────────────────
 import wtVdo0         from "@/assets/images/webtoon/wt-vdo.mp4";
 import wtVdo1         from "@/assets/images/webtoon/wt-vdo1.mp4";
 import wtVdo2         from "@/assets/images/webtoon/wt-vdo2.mp4";
-import wtContinueDark from "@/assets/images/webtoon/wt-continue-dark.jpg";
-import wtContinueLight from "@/assets/images/webtoon/wt-continue-light.jpg";
-import wtIllus0       from "@/assets/images/webtoon/wt-illus-0.jpg";
-import wtIllus1       from "@/assets/images/webtoon/wt-illus-1.jpg";
-import wtIllus2       from "@/assets/images/webtoon/wt-illus-2.jpg";
-import wtIllus3       from "@/assets/images/webtoon/wt-illus-3.jpg";
-import wtIllus4       from "@/assets/images/webtoon/wt-illus-4.jpg";
-import wtIllus5       from "@/assets/images/webtoon/wt-illus-5.jpg";
+import wtContinueDark from "@/assets/images/webtoon/wt-continue-dark.webp";
+import wtContinueLight from "@/assets/images/webtoon/wt-continue-light.webp";
+import wtIllus0       from "@/assets/images/webtoon/wt-illus-0.webp";
+import wtIllus1       from "@/assets/images/webtoon/wt-illus-1.webp";
+import wtIllus2       from "@/assets/images/webtoon/wt-illus-2.webp";
+import wtIllus3       from "@/assets/images/webtoon/wt-illus-3.webp";
+import wtIllus4       from "@/assets/images/webtoon/wt-illus-4.webp";
+import wtIllus5       from "@/assets/images/webtoon/wt-illus-5.webp";
 import wtStripTurmoil from "@/assets/images/webtoon/wt-strip-turmoil.webp";
 import wtStripDrowning from "@/assets/images/webtoon/wt-strip-drowning.webp";
 import wtStripTomb    from "@/assets/images/webtoon/wt-strip-tomb.webp";
 // ── Characters ─────────────────────────────────────────────
-import wtCharNemesis  from "@/assets/images/webtoon/character/wt-char-nemesis.jpg";
-import wtCharThamil   from "@/assets/images/webtoon/character/wt-char-thamil.png";
-import wtCharDaraporn from "@/assets/images/webtoon/character/wt-char-daraporn.png";
-import wtCharKoin     from "@/assets/images/webtoon/character/wt-char-koin.jpg";
-import wtCharLilil    from "@/assets/images/webtoon/character/wt-char-lilil.jpg";
-import wtCharOrchkan  from "@/assets/images/webtoon/character/wt-char-orchkan.jpg";
+import wtCharNemesis  from "@/assets/images/webtoon/character/wt-char-nemesis.webp";
+import wtCharThamil   from "@/assets/images/webtoon/character/wt-char-thamil.webp";
+import wtCharDaraporn from "@/assets/images/webtoon/character/wt-char-daraporn.webp";
+import wtCharKoin     from "@/assets/images/webtoon/character/wt-char-koin.webp";
+import wtCharLilil    from "@/assets/images/webtoon/character/wt-char-lilil.webp";
+import wtCharOrchkan  from "@/assets/images/webtoon/character/wt-char-orchkan.webp";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Non-translatable visual data (images, colours, numeric stats)
@@ -94,7 +94,7 @@ function Lightbox({ item, onClose }) {
       <div className={styles.lbContent} onClick={e => e.stopPropagation()} onDoubleClick={e => { e.stopPropagation(); onClose(); }}>
         {item.type === "video"
           ? <video src={item.src} autoPlay loop muted playsInline controls className={styles.lbMedia} />
-          : <img src={item.src} alt={item.alt ?? ""} className={styles.lbMedia} />
+          : <img src={item.src} alt={item.alt ?? ""} className={styles.lbMedia} loading="lazy" />
         }
         {item.caption && <p className={styles.lbCaption}>{item.caption}</p>}
       </div>
@@ -155,12 +155,12 @@ export default function WebtoonPortfolio() {
       ═══════════════════════════════════════════════════ */}
       <section className={styles.hero} id="cover">
         <div className={styles.bannerWrap}>
-          <img src={wtCoverBg} alt="" className={styles.banner} />
+          <img src={wtCoverBg} alt="" className={styles.banner} loading="eager" />
           <div className={styles.bannerOverlay} />
         </div>
 
         <div className={styles.heroCoverArt}>
-          {/* <img src={wtCover} alt={tw.title} className={styles.heroCoverImg} /> */}
+          {/* <img src={wtCover} alt={tw.title} className={styles.heroCoverImg} loading="lazy" /> */}
         </div>
 
         <div className={styles.heroContent}>

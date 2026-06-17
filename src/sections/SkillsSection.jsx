@@ -111,7 +111,7 @@ export function SkillsSection() {
                 <div key={sw.name} className={styles.softwareCard}>
                   {sw.isImg
                     ? <span className={styles.softwareIconBox}>
-                        <img src={sw.icon} alt="" className={styles.softwareIconImg} aria-hidden="true" />
+                        <img src={sw.icon} alt="" className={styles.softwareIconImg} aria-hidden="true" loading="lazy" />
                       </span>
                     : <span className={styles.softwareIcon}>{sw.icon}</span>
                   }

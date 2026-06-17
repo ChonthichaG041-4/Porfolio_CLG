@@ -2,7 +2,7 @@ import { profile }        from '@/data/profile'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useI18n }         from '@/i18n/context'
 import { cx }              from '@/utils/helpers'
-import avatarImg           from '@/assets/images/I.png'
+import avatarImg           from '@/assets/images/I.webp'
 import styles from './Resume.module.css'
 
 function Reveal({ children, delay = 0 }) {
@@ -71,7 +71,7 @@ export default function Resume() {
         <div className={styles.heroBand}>
           <div className={styles.heroLeft}>
             <div className={styles.avatar}>
-              <img src={avatarImg} alt="Chonthicha Leepreecha" className={styles.avatarImg} />
+              <img src={avatarImg} alt="Chonthicha Leepreecha" className={styles.avatarImg} loading="eager" />
             </div>
             <div>
               <h1 className={styles.heroName}>{tr.name ?? 'Chonthicha Leepreecha'}</h1>
