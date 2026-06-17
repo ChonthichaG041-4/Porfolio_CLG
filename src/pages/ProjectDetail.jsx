@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getWorkBySlug }    from '@/data/works'
 import { useI18n }          from '@/i18n/context'
@@ -15,7 +15,34 @@ export default function ProjectDetail() {
   const td       = t.detail
   const work     = getWorkBySlug(slug)
 
+  const [cmLbImg, setCmLbImg]     = useState(null)   // { src, title, desc }
+  const openCmLb  = useCallback((item) => setCmLbImg(item), [])
+  const closeCmLb = useCallback(() => setCmLbImg(null), [])
+
+  useEffect(() => {
+    if (!cmLbImg) return
+    const onKey = (e) => { if (e.key === 'Escape') closeCmLb() }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [cmLbImg, closeCmLb])
+
   if (!work) return <Navigate to="/portfolio" replace />
+
+  // i18n overrides — keyed by slug
+  const slugI18n = {
+    'commission-collection': t.commissionCollection,
+    'knight-of-swords':      t.knightOfSwords,
+    'cultural-design':       t.culturalDesign,
+  }
+  const wi18n          = slugI18n[work.slug] ?? null
+  const workTitle      = wi18n?.title          ?? work.title
+  const workDesc       = wi18n?.description    ?? work.description
+  const workOverview   = wi18n?.overview       ?? work.overview
+  const workWorld      = wi18n?.worldbuilding  ?? work.worldbuilding
+  const workTechHl     = wi18n?.techHighlights ?? work.techHighlights
+  const workRole       = wi18n?.role           ?? work.role
+  const workClient     = wi18n?.client         ?? work.client
+  const workMood       = wi18n?.mood           ?? work.mood
 
   const gallerySection     = work.sections?.find(s => s.type === 'gallery')
   const techSection        = work.sections?.find(s => s.type === 'techstack')
@@ -38,7 +65,7 @@ export default function ProjectDetail() {
       <section className={styles.hero}>
         {work.banner && (
           <div className={styles.bannerWrap}>
-            <img src={work.banner} alt={work.title} className={styles.banner} />
+            <img src={work.banner} alt={workTitle} className={styles.banner} />
             <div className={styles.bannerOverlay} />
           </div>
         )}
@@ -47,14 +74,14 @@ export default function ProjectDetail() {
             <span className={cx(styles.tierBadge, styles[work.tier])}>
               {t.tiers[work.tier]}
             </span>
-            <h1 className={styles.title}>{work.title}</h1>
-            <p  className={styles.description}>{work.description}</p>
+            <h1 className={styles.title}>{workTitle}</h1>
+            <p  className={styles.description}>{workDesc}</p>
             <div className={styles.meta}>
               {[
-                { label: td.meta.role,   value: work.role   },
-                { label: td.meta.year,   value: work.year   },
-                { label: td.meta.client, value: work.client },
-                { label: td.meta.mood,   value: work.mood   },
+                { label: td.meta.role,   value: workRole   },
+                { label: td.meta.year,   value: work.year  },
+                { label: td.meta.client, value: workClient },
+                { label: td.meta.mood,   value: workMood   },
               ].filter(m => m.value).map(({ label, value }) => (
                 <div key={label} className={styles.metaItem}>
                   <span className={styles.metaLabel}>{label}</span>
@@ -87,20 +114,24 @@ export default function ProjectDetail() {
         )}
 
         {/* ─── Overview ─── */}
-        {work.overview && (
+        {workOverview && (
           <section className={styles.section}>
             <p className="section-label">{td.overview}</p>
             <h2 className={styles.sectionTitle}>{td.overviewTitle}</h2>
-            <p  className={styles.overview}>{work.overview}</p>
+            {workOverview.split('\n\n').map((para, i) => (
+              <p key={i} className={styles.overview}>{para}</p>
+            ))}
           </section>
         )}
 
         {/* ─── Worldbuilding ─── */}
-        {work.worldbuilding && (
+        {workWorld && (
           <section className={styles.section}>
             <p className="section-label">{td.world}</p>
             <h2 className={styles.sectionTitle}>{td.worldTitle}</h2>
-            <p  className={styles.overview}>{work.worldbuilding}</p>
+            {workWorld.split('\n\n').map((para, i) => (
+              <p key={i} className={styles.overview}>{para}</p>
+            ))}
           </section>
         )}
 
@@ -140,27 +171,47 @@ export default function ProjectDetail() {
             <p className="section-label">Commissions</p>
             <h2 className={styles.sectionTitle}>{commissionGalSec.title}</h2>
             <div className={styles.commissionGrid}>
-              {commissionGalSec.pieces.map((piece, i) => (
-                <div key={i} className={styles.commissionCard}>
-                  <div className={styles.commissionImgWrap}>
-                    <img
-                      src={piece.src}
-                      alt={piece.title}
-                      className={styles.commissionImg}
-                      loading="lazy"
-                    />
-                    <div className={styles.commissionOverlay}>
-                      <span className={styles.commissionZoom}>⤢</span>
+              {commissionGalSec.pieces.map((piece, i) => {
+                const i18nPiece = t.commissionCollection?.pieces?.[i]
+                const title = i18nPiece?.title ?? piece.title
+                const desc  = i18nPiece?.desc  ?? piece.desc
+                return (
+                  <div key={i} className={styles.commissionCard}
+                    onDoubleClick={() => openCmLb({ src: piece.src, title, desc })}>
+                    <div className={styles.commissionImgWrap}>
+                      <img
+                        src={piece.src}
+                        alt={title}
+                        className={styles.commissionImg}
+                        loading="lazy"
+                      />
+                      <div className={styles.commissionOverlay}>
+                        <span className={styles.commissionZoom}>⤢</span>
+                      </div>
+                    </div>
+                    <div className={styles.commissionInfo}>
+                      <span className={styles.commissionTitle}>{title}</span>
+                      {desc && <p className={styles.commissionDesc}>{desc}</p>}
                     </div>
                   </div>
-                  <div className={styles.commissionInfo}>
-                    <span className={styles.commissionTitle}>{piece.title}</span>
-                    {piece.desc && <p className={styles.commissionDesc}>{piece.desc}</p>}
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </section>
+        )}
+
+        {/* ─── Commission Lightbox ─── */}
+        {cmLbImg && (
+          <div className={styles.cmLbOverlay} onClick={closeCmLb}>
+            <button type="button" className={styles.cmLbClose} onClick={closeCmLb} aria-label="Close">✕</button>
+            <div className={styles.cmLbContent} onClick={e => e.stopPropagation()}>
+              <img src={cmLbImg.src} alt={cmLbImg.title} className={styles.cmLbImg} />
+              <div className={styles.cmLbInfo}>
+                <span className={styles.cmLbTitle}>{cmLbImg.title}</span>
+                {cmLbImg.desc && <p className={styles.cmLbDesc}>{cmLbImg.desc}</p>}
+              </div>
+            </div>
+          </div>
         )}
 
         {/* ─── Character Carousel ─── */}
@@ -201,12 +252,12 @@ export default function ProjectDetail() {
         )}
 
         {/* ─── Tech Highlights ─── */}
-        {work.techHighlights?.length > 0 && (
+        {workTechHl?.length > 0 && (
           <section className={styles.section}>
             <p className="section-label">{td.techHighlights ?? 'Technical Highlights'}</p>
             <h2 className={styles.sectionTitle}>{td.howItWorks ?? 'How It Works'}</h2>
             <div className={styles.techHighlights}>
-              {work.techHighlights.map((item, i) => (
+              {workTechHl.map((item, i) => (
                 <div key={i} className={styles.techHighlight}>
                   <span className={styles.techHighlightLabel}>{item.label}</span>
                   <p    className={styles.techHighlightText}>{item.text}</p>
@@ -275,44 +326,54 @@ export default function ProjectDetail() {
         )}
 
         {/* ─── Accessories Gallery ─── */}
-        {accessoriesSecs.map((sec, i) => (
-          <section key={`acc-${i}`} className={styles.section}>
-            <p className="section-label">Creative Art</p>
-            <h2 className={styles.sectionTitle}>{sec.title}</h2>
-            <div className={styles.accessoriesGrid}>
-              {sec.items.map((item, j) => (
-                <div key={j} className={styles.accessoryCard}>
-                  <div className={styles.accessoryImgWrap}>
-                    <img src={item.src} alt={item.label} className={styles.accessoryImg} loading="lazy" />
+        {accessoriesSecs.map((sec, i) => {
+          const secI18n = wi18n?.sections?.[sec.title]
+          return (
+            <section key={`acc-${i}`} className={styles.section}>
+              <p className="section-label">Creative Art</p>
+              <h2 className={styles.sectionTitle}>{secI18n?.title ?? sec.title}</h2>
+              <div className={styles.accessoriesGrid}>
+                {sec.items.map((item, j) => (
+                  <div key={j} className={styles.accessoryCard}>
+                    <div className={styles.accessoryImgWrap}>
+                      <img src={item.src} alt={secI18n?.items?.[j]?.label ?? item.label} className={styles.accessoryImg} loading="lazy" />
+                    </div>
+                    {item.label && <span className={styles.accessoryLabel}>{secI18n?.items?.[j]?.label ?? item.label}</span>}
                   </div>
-                  {item.label && <span className={styles.accessoryLabel}>{item.label}</span>}
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
+                ))}
+              </div>
+            </section>
+          )
+        })}
 
         {/* ─── Lineart Gallery (hover → colour) ─── */}
-        {lineartSecs.map((sec, i) => (
-          <section key={`line-${i}`} className={styles.section}>
-            <p className="section-label">Creative Art</p>
-            <h2 className={styles.sectionTitle}>{sec.title}</h2>
-            {sec.subtitle && <p className={styles.lineartHint}>{sec.subtitle}</p>}
-            <div className={styles.lineartGrid}>
-              {sec.items.map((item, j) => (
-                <div key={j} className={styles.lineartCard}>
-                  <div className={styles.lineartImgWrap}>
-                    <img src={item.base}  alt={item.label} className={styles.lineartBase}  loading="lazy" />
-                    {item.color && (
-                      <img src={item.color} alt={`${item.label} — colour`} className={styles.lineartColor} loading="lazy" />
-                    )}
-                  </div>
-                  {item.label && <span className={styles.lineartLabel}>{item.label}</span>}
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
+        {lineartSecs.map((sec, i) => {
+          const secI18n = wi18n?.sections?.[sec.title]
+          const hint = secI18n?.subtitle ?? sec.subtitle
+          return (
+            <section key={`line-${i}`} className={styles.section}>
+              <p className="section-label">Creative Art</p>
+              <h2 className={styles.sectionTitle}>{secI18n?.title ?? sec.title}</h2>
+              {hint && <p className={styles.lineartHint}>{hint}</p>}
+              <div className={styles.lineartGrid}>
+                {sec.items.map((item, j) => {
+                  const lbl = secI18n?.items?.[j]?.label ?? item.label
+                  return (
+                    <div key={j} className={styles.lineartCard}>
+                      <div className={styles.lineartImgWrap}>
+                        <img src={item.base}  alt={lbl} className={styles.lineartBase}  loading="lazy" />
+                        {item.color && (
+                          <img src={item.color} alt={`${lbl} — colour`} className={styles.lineartColor} loading="lazy" />
+                        )}
+                      </div>
+                      {item.label && <span className={styles.lineartLabel}>{lbl}</span>}
+                    </div>
+                  )
+                })}
+              </div>
+            </section>
+          )
+        })}
 
         {/* ─── Logo Gallery ─── */}
         {logoGallerySec?.groups?.length > 0 && (
@@ -350,11 +411,11 @@ function LogoGallery({ sec }) {
       <p className="section-label">Logo Design</p>
       <h2 className={styles.sectionTitle}>{sec.title}</h2>
       <div className={styles.logoBgToggle}>
-        <button
+        <button type="button"
           className={cx(styles.logoBgBtn, bg === 'light' && styles.logoBgBtnActive)}
           onClick={() => setBg('light')}
         >☀ Light</button>
-        <button
+        <button type="button"
           className={cx(styles.logoBgBtn, bg === 'dark' && styles.logoBgBtnActive)}
           onClick={() => setBg('dark')}
         >☾ Dark</button>

@@ -128,9 +128,11 @@ import lineColor1      from '@/assets/images/Creative/linedrawings/Object-line-c
 import lineBase2       from '@/assets/images/Creative/linedrawings/Object-line2.jpg'
 import lineColor2      from '@/assets/images/Creative/linedrawings/Object-line2-color.jpg'
 import lineBase3       from '@/assets/images/Creative/linedrawings/Object-line3.jpg'
+import lineColor3      from '@/assets/images/Creative/linedrawings/Object-line3-color.PNG'
 import lineBase4       from '@/assets/images/Creative/linedrawings/Object-line4.jpg'
 import lineColor4      from '@/assets/images/Creative/linedrawings/Object-line4-color.jpg'
 import lineBase5       from '@/assets/images/Creative/linedrawings/Object-line5.jpg'
+import lineColor5      from '@/assets/images/Creative/linedrawings/Object-line5-color.PNG'
 // flowers
 import flowerCaesa     from '@/assets/images/Creative/flowers/Flowers-Caesapiniodeae.png'
 import flowerRoses     from '@/assets/images/Creative/flowers/Flowers-roses .png'
@@ -138,6 +140,7 @@ import flowerUnknown1  from '@/assets/images/Creative/flowers/Flowers-unknown.pn
 import flowerUnknown2  from '@/assets/images/Creative/flowers/Flowers-unknown2.png'
 
 // ── Commission assets ───────────────────────────────────────
+import cmNudtha       from '@/assets/images/commission/cm-nudtha.jpg'
 import cm3p           from '@/assets/images/commission/cm-3p.jpg'
 import cmAri          from '@/assets/images/commission/cm-ari.jpg'
 import cmAri2         from '@/assets/images/commission/cm-ari2.jpg'
@@ -626,9 +629,9 @@ My responsibilities covered the entire visual layer: designing and rigging the S
         items: [
           { base: lineBase1, color: lineColor1, label: 'Object Study I' },
           { base: lineBase2, color: lineColor2, label: 'Object Study II' },
-          { base: lineBase3,                    label: 'Object Study III' },
+          { base: lineBase3, color: lineColor3, label: 'Object Study III' },
           { base: lineBase4, color: lineColor4, label: 'Object Study IV' },
-          { base: lineBase5,                    label: 'Object Study V' },
+          { base: lineBase5, color: lineColor5, label: 'Object Study V' },
         ],
       },
       {
@@ -657,20 +660,23 @@ My responsibilities covered the entire visual layer: designing and rigging the S
     featured: true,
     thumbnail: cmConverCm,
     banner:    cmConverCm,
-    description: 'A curated selection of commissioned character illustrations — from single-character portraits to multi-character group pieces across various art styles.',
+    description: 'A curated collection of commissioned character illustrations, featuring everything from expressive single-character portraits to dynamic multi-character compositions across a variety of artistic styles.',
     mood: 'Varied — Warm, Energetic, Detailed',
     software: ['Clip Studio Paint', 'Photoshop'],
     tags: ['illustration', 'commission', 'character', 'portrait'],
 
-    overview: `This collection brings together commissioned character artworks completed between 2022–2023. Each piece was created to the client's specifications — from reference sheets and character descriptions through to the finished illustration.
+    overview: `This collection showcases commissioned artworks created between 2025 and 2026. Each piece was developed based on the unique vision and requirements of individual clients, beginning with character concepts, personality descriptions, and visual references before evolving into fully realized illustrations.
 
-The commissions range from single-character portrait pieces to multi-character group compositions, and cover a variety of styles from soft painterly to bold line-art.`,
+The project encompasses a wide range of works, including individual character portraits, paired compositions, and large group illustrations. Various artistic approaches were explored throughout the collection, from soft and atmospheric color palettes to refined line art that emphasizes character identity and emotional storytelling.
+
+To enhance both quality and creative efficiency, AI-assisted tools were incorporated into selected stages of the production process. These technologies supported ideation, composition refinement, and visual enhancement while preserving the artistic direction, originality, and creative intent of each commissioned piece.`,
 
     sections: [
       {
         type: 'commission-gallery',
         title: 'Commissions',
         pieces: [
+          { src: cmNudtha, title: 'Nudtha',      desc: 'Character portrait commission featuring dynamic lighting and detailed costume design with a warm colour palette.' },
           { src: cmAri,  title: 'Ari',        desc: 'Original character portrait commission. Soft lighting with detailed costume design.' },
           { src: cmAri2, title: 'Ari (Alt)',   desc: 'Alternate colour variation of the Ari commission — warm evening palette.' },
           { src: cmTung, title: 'Tung',        desc: 'Character portrait commission \u2014 warm tones with a traditional-inspired outfit and expressive lighting.' },

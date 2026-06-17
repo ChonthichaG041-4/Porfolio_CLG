@@ -285,8 +285,58 @@ export const en = {
     skillsWriting:  ['Narrative Writing','World-building','Dialogue','Pacing & Structure','Emotional Arc'],
     skillCatProgramming: 'Programming',
     skillsProgramming: ['HTML','CSS / SCSS','JavaScript','Python','React','Node.js','SQL','Java'],
+
+    addressLine1: '329 Moo 10 Khek Noi Khao Kho,',
+    addressLine2: 'Phetchabun, Thailand, 67280',
+    devSkillsHeading: 'Development Skills',
+    profSkillsList: ['Professional Growth','Self-Learning','Adaptability','Critical Thinking','Attention to Detail'],
+    devSkillsList: [
+      { category: 'Programming', items: ['Python','JavaScript','React','Vite','HTML5','CSS3','Tailwind CSS','Node.js','Express.js','Phaser 3','Git','Docker'] },
+      { category: 'Other',       items: ['DragonBones','NLP / AI'] },
+    ],
+    languagesList: [
+      { name: 'Thai',    level: 'Native',       bar: 100 },
+      { name: 'Hmong',   level: 'Native',       bar: 100 },
+      { name: 'English', level: 'Intermediate', bar: 60  },
+      { name: 'Japanese',level: 'Beginner',     bar: 25  },
+    ],
   },
 
+
+  culturalDesign: {
+    title: 'Cultural Design',
+    description: 'A collection of culturally inspired accessory designs, line art environment studies, and decorative botanical illustrations — drawing from traditional art, natural motifs, and the beauty of craft.',
+    role:   'Illustrator · Accessory Designer',
+    client: 'Personal Project',
+    mood:   'Cultural · Elegant · Detailed',
+    sections: {
+      'Accessory Design': {
+        title: 'Accessory Design',
+        items: [
+          { label: 'Crown I' },           { label: 'Crown II' },          { label: 'Crown III' },
+          { label: 'Earring I' },         { label: 'Earring II' },        { label: 'Earring III' },       { label: 'Earring IV' },
+          { label: 'Traditional Ear Cuff' },
+          { label: 'Sangwan I' },         { label: 'Sangwan II' },        { label: 'Sangwan VI' },
+          { label: 'Thap Thruang I' },    { label: 'Thap Thruang II' },
+          { label: 'Belt Buckle' },
+          { label: 'Accessory I' },       { label: 'Accessory II' },      { label: 'Accessory III' },     { label: 'Accessory IV' },      { label: 'Accessory V' },
+        ],
+      },
+      'Environment Design': {
+        title: 'Environment Design',
+        subtitle: 'Hover to reveal colour',
+        items: [
+          { label: 'Object Study I' },    { label: 'Object Study II' },   { label: 'Object Study III' },  { label: 'Object Study IV' },   { label: 'Object Study V' },
+        ],
+      },
+      'Decorative Illustration': {
+        title: 'Decorative Illustration',
+        items: [
+          { label: 'Caesalpinioideae' },  { label: 'Roses' },             { label: 'Botanical Study I' }, { label: 'Botanical Study II' },
+        ],
+      },
+    },
+  },
   carousel: {
     ui: {
       design:       'Design',

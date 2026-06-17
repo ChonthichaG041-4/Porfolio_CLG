@@ -29,7 +29,7 @@ function Lightbox({ item, hint, onClose }) {
   if (!item) return null;
   return (
     <div className={styles.lbOverlay} onClick={onClose}>
-      <button className={styles.lbClose} onClick={onClose} aria-label="Close">✕</button>
+      <button type="button" className={styles.lbClose} onClick={onClose} aria-label="Close">✕</button>
       <div className={styles.lbContent} onClick={e => e.stopPropagation()} onDoubleClick={e => { e.stopPropagation(); onClose(); }}>
         {item.type === "video" ? (
           <video src={item.src} autoPlay loop muted playsInline controls className={styles.lbMedia} />
@@ -124,8 +124,8 @@ export default function KKULLibraryMap() {
               <ul className={styles.psList}>
                 {km.ps.problems.map((p, i) => (
                   <li key={i} className={styles.psItem}>
-                    <span className={styles.psItemIcon}>{p.icon}</span>
-                    <span>{p.text}</span>
+                    <span className={styles.psBullet} aria-hidden="true">•</span>
+                    <span>{p}</span>
                   </li>
                 ))}
               </ul>
@@ -138,8 +138,8 @@ export default function KKULLibraryMap() {
               <ul className={styles.psList}>
                 {km.ps.solutions.map((s, i) => (
                   <li key={i} className={`${styles.psItem} ${styles.psItemSolution}`}>
-                    <span className={styles.psItemIcon}>{s.icon}</span>
-                    <span>{s.text}</span>
+                    <span className={styles.psBulletSolution} aria-hidden="true">•</span>
+                    <span>{s}</span>
                   </li>
                 ))}
               </ul>
@@ -154,8 +154,11 @@ export default function KKULLibraryMap() {
           <div className={styles.featGrid}>
             {km.features.items.map((f, i) => (
               <div key={i} className={styles.featCard}>
-                <span className={styles.featIcon}>{f.icon}</span>
-                <span className={styles.featLabel}>{f.label}</span>
+                <span className={styles.featIcon}>
+                  {/* eslint-disable-next-line react/no-unknown-property */}
+                  <iconify-icon icon={f.icon} width="28" height="28" aria-hidden="true" />
+                </span>
+                <span className={styles.featLabel}>{f.title}</span>
                 <p className={styles.featDesc}>{f.desc}</p>
               </div>
             ))}
@@ -222,9 +225,12 @@ export default function KKULLibraryMap() {
           <div className={styles.highlightList}>
             {km.highlights.items.map((h, i) => (
               <div key={i} className={styles.highlightItem}>
-                <span className={styles.highlightNum}>{h.num}</span>
+                <span className={styles.highlightIcon}>
+                  {/* eslint-disable-next-line react/no-unknown-property */}
+                  <iconify-icon icon={h.icon} width="28" height="28" aria-hidden="true" />
+                </span>
                 <div className={styles.highlightBody}>
-                  <h3 className={styles.highlightLabel}>{h.label}</h3>
+                  <h3 className={styles.highlightLabel}>{h.title}</h3>
                   <p className={styles.highlightDesc}>{h.desc}</p>
                 </div>
               </div>

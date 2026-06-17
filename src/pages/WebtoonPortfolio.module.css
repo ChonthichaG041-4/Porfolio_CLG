@@ -37,7 +37,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: var(--leading-tight);
+  line-height: 1.4;
+  padding-top: 0.2em;
+  margin-top: -0.2em;
   margin-bottom: var(--space-2);
 }
 
@@ -184,7 +186,9 @@
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: var(--weight-extrabold);
-  line-height: 1.05;
+  line-height: 1.4;
+  padding-top: 0.2em;
+  margin-top: -0.2em;
   background: linear-gradient(135deg, #ffffff 0%, #ff6b6b 45%, #8b0000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -633,20 +637,24 @@
   color: var(--color-glow); background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.25);
   border-radius: var(--radius-md); width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
 }
-.softwareIconImg {
+.softwareIconBox {
   grid-row: 1 / 3;
   width: 44px; height: 44px;
-  padding: 8px;
-  object-fit: contain;
   background: rgba(168,85,247,0.12);
   border: 1px solid rgba(168,85,247,0.25);
   border-radius: var(--radius-md);
-  /* แปลงสีดำ → สีม่วง theme */
-  filter: invert(42%) sepia(82%) saturate(590%) hue-rotate(245deg) brightness(100%) contrast(97%);
-  transition: filter var(--duration-normal);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
-.softwareCard:hover .softwareIconImg {
-  filter: invert(42%) sepia(82%) saturate(800%) hue-rotate(245deg) brightness(110%) contrast(100%);
+.softwareIconMask {
+  width: 24px; height: 24px;
+  background-color: var(--color-glow);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 .softwareName { font-size: var(--text-sm); font-weight: var(--weight-semi); color: var(--color-text-primary); }
 .softwareRole { font-size: var(--text-xs); color: var(--color-text-muted); }
@@ -657,8 +665,8 @@
 .skillPillArt:hover { background: rgba(168,85,247,0.14); border-color: rgba(168,85,247,0.4); }
 .skillPillWriting { color: var(--color-glow-light); background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.2); }
 .skillPillWriting:hover { background: rgba(168,85,247,0.14); border-color: rgba(168,85,247,0.4); }
-.skillPillProd { color: var(--color-text-secondary); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
-.skillPillProd:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); }
+.skillPillProd { color: var(--color-glow-light); background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.2); }
+.skillPillProd:hover { background: rgba(168,85,247,0.14); border-color: rgba(168,85,247,0.4); }
 
 /* ════════════════════════════════════════════════════════════
    07 — VIDEO SHOWCASE

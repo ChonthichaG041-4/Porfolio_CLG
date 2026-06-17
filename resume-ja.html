@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resume — チョンティチャ・リープリーチャ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --purple:#a855f7;--purple-light:#c084fc;--purple-dim:rgba(168,85,247,0.15);
+  --purple-border:rgba(168,85,247,0.25);--sidebar:#100c1e;--bg:#0d0b17;
+  --text:#e2dced;--muted:#7a6f9a;--subtle:#4a4268;
+  --font:'Noto Sans JP', sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{display:flex;min-height:100vh;}
+/* ── Sidebar ───────────────────────────────────── */
+.sidebar{width:220px;min-width:220px;background:var(--sidebar);border-right:1px solid var(--purple-border);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1.4rem;}
+.avatar-wrap{display:flex;justify-content:center;}
+.avatar{width:76px;height:76px;border-radius:50%;background:var(--purple-dim);border:2px solid var(--purple-border);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.side-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#ede6ff;text-align:center;line-height:1.35;}
+.side-role{font-size:9.5px;text-align:center;color:var(--purple-light);letter-spacing:0.05em;line-height:1.5;margin-top:2px;}
+.side-role-2{color:var(--subtle);font-size:9px;}
+.side-divider{height:1px;background:var(--purple-border);}
+.side-label{font-size:8.5px;text-transform:uppercase;letter-spacing:0.2em;color:var(--subtle);font-weight:500;margin-bottom:0.5rem;}
+.contact-item{display:flex;align-items:flex-start;gap:7px;margin-bottom:7px;}
+.contact-item i{font-size:12px;color:var(--purple);flex-shrink:0;margin-top:1px;}
+.contact-item span{font-size:10.5px;color:var(--muted);line-height:1.45;}
+.side-skill-list{display:flex;flex-direction:column;gap:3px;}
+.side-skill{font-size:10px;color:#c0b8e0;padding-left:8px;position:relative;line-height:1.5;}
+.side-skill::before{content:"·";position:absolute;left:0;color:var(--purple);}
+.lang-row{margin-bottom:8px;}
+.lang-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px;}
+.lang-name{font-size:11px;color:#c0b8e0;font-weight:500;}
+.lang-level{font-size:9.5px;color:var(--subtle);}
+.lang-bar-bg{height:3px;background:rgba(168,85,247,0.12);border-radius:2px;}
+.lang-bar{height:3px;background:var(--purple);border-radius:2px;}
+/* ── Main ──────────────────────────────────────── */
+.main{flex:1;padding:2.5rem 2rem 2.5rem 2.2rem;}
+.main-header{margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--purple-border);}
+.main-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:#ede6ff;line-height:1.2;}
+.main-role1{font-size:11.5px;color:var(--purple-light);margin-top:4px;letter-spacing:0.04em;}
+.main-role2{font-size:10.5px;color:var(--subtle);margin-top:2px;}
+.section{margin-bottom:1.8rem;}
+.section-eyebrow{font-size:8.5px;text-transform:uppercase;letter-spacing:0.22em;color:var(--subtle);margin-bottom:4px;}
+.section-heading{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#ddd4f8;margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid var(--purple-border);}
+.exp-item{margin-bottom:1.2rem;padding-left:1rem;border-left:1.5px solid var(--purple-border);position:relative;}
+.exp-item::before{content:'';position:absolute;left:-4px;top:6px;width:6px;height:6px;border-radius:50%;background:var(--purple);}
+.exp-year{font-size:9.5px;color:var(--subtle);letter-spacing:0.08em;margin-bottom:2px;}
+.exp-title{font-size:12.5px;font-weight:500;color:#c8bcec;margin-bottom:2px;line-height:1.4;}
+.exp-project{font-size:11px;color:var(--purple-light);margin-bottom:3px;}
+.exp-desc{font-size:10.5px;color:var(--muted);line-height:1.6;}
+.edu-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:1rem;}
+.edu-icon{width:30px;height:30px;min-width:30px;border-radius:8px;background:var(--purple-dim);border:1px solid var(--purple-border);display:flex;align-items:center;justify-content:center;}
+.edu-icon i{font-size:14px;color:var(--purple);}
+.edu-school{font-size:12px;font-weight:500;color:#c8bcec;}
+.edu-degree{font-size:10.5px;color:var(--muted);margin-top:1px;}
+.edu-year{font-size:9.5px;color:var(--subtle);margin-top:2px;}
+.skill-cat{font-size:9.5px;font-weight:600;color:var(--purple);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;margin-top:10px;}
+.chip-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:4px;}
+.chip{font-size:10px;padding:3px 9px;border-radius:20px;color:#9d7de8;background:var(--purple-dim);border:1px solid var(--purple-border);}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:7px;}
+.sw-card{background:rgba(255,255,255,0.025);border:1px solid var(--purple-border);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:6px;}
+.sw-card i{font-size:13px;color:var(--purple);flex-shrink:0;}
+.sw-name{font-size:10.5px;color:#9d91bc;line-height:1.3;}
+.sw-level{font-size:9px;color:var(--subtle);margin-top:1px;}
+/* ── Print ─────────────────────────────────────── */
+@media print{
+  body{background:#0d0b17 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{min-height:unset;}
+  .sidebar{background:#100c1e !important;}
+  @page{size:A4;margin:0;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="avatar-wrap">
+      <div class="avatar"><img src="src/assets/images/I.png" alt="チョンティチャ・リープリーチャ"></div>
+    </div>
+    <div>
+      <div class="side-name">チョンティチャ・リープリーチャ</div>
+      <div class="side-role">2Dイラストレーター・キャラクターコンセプトアーティスト</div>
+      <div class="side-role side-role-2">フロントエンドエンジニア・UX/UIデザイナー</div>
+    </div>
+    <div class="side-divider"></div>
+    <div>
+      <div class="side-label">Contact</div>
+      <div class="contact-item"><i class="ti ti-mail"></i><span>chonthicha.le@kkumail.com</span></div>
+      <div class="contact-item"><i class="ti ti-phone"></i><span>0909 789 874</span></div>
+      <div class="contact-item"><i class="ti ti-map-pin"></i><span>タイ王国 ペッチャブーン県 カオコー郡 ケークノーイ<br>329番地（ムー10）67280</span></div>
+    </div>
+    <div class="side-divider"></div>
+    <div>
+      <div class="side-label">プロフェッショナルスキル</div>
+      <div class="side-skill-list"><div class="side-skill">自己学習</div><div class="side-skill">適応力</div><div class="side-skill">批判的思考</div><div class="side-skill">細部への注意</div></div>
+    </div>
+    <div>
+      <div class="side-label">開発技術</div>
+      <div class="side-skill-list"><div class="side-skill">Python</div><div class="side-skill">JavaScript</div><div class="side-skill">React</div><div class="side-skill">Vite</div><div class="side-skill">HTML5</div><div class="side-skill">CSS3</div><div class="side-skill">Tailwind CSS</div><div class="side-skill">Node.js</div><div class="side-skill">Express.js</div><div class="side-skill">Phaser 3</div><div class="side-skill">Git</div><div class="side-skill">Docker</div><div class="side-skill">DragonBones</div><div class="side-skill">NLP / AI</div></div>
+    </div>
+    <div>
+      <div class="side-label">アート・デザイン</div>
+      <div class="side-skill-list"><div class="side-skill">キャラクターデザイン</div><div class="side-skill">コンセプトアート</div><div class="side-skill">ウェブトゥーン</div><div class="side-skill">構図設計</div><div class="side-skill">色彩設計</div><div class="side-skill">表情設定</div></div>
+    </div>
+    <div>
+      <div class="side-label">ストーリーテリング</div>
+      <div class="side-skill-list"><div class="side-skill">物語執筆</div><div class="side-skill">世界観構築</div><div class="side-skill">台詞制作</div><div class="side-skill">ストーリー構成</div><div class="side-skill">感情表現</div></div>
+    </div>
+    <div class="side-divider"></div>
+    <div>
+      <div class="side-label">言語</div>
+      
+        <div class="lang-row">
+          <div>
+            <span class="lang-name">タイ語</span>
+            <span class="lang-level">母語</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar" style="width:100%"></div></div>
+        </div>
+
+        <div class="lang-row">
+          <div>
+            <span class="lang-name">モン語</span>
+            <span class="lang-level">母語</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar" style="width:100%"></div></div>
+        </div>
+
+        <div class="lang-row">
+          <div>
+            <span class="lang-name">英語</span>
+            <span class="lang-level">中級</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar" style="width:60%"></div></div>
+        </div>
+
+        <div class="lang-row">
+          <div>
+            <span class="lang-name">日本語</span>
+            <span class="lang-level">初級</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar" style="width:25%"></div></div>
+        </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="main-header">
+      <div class="main-name">チョンティチャ・リープリーチャ</div>
+      <div class="main-role1">2Dイラストレーター・キャラクターコンセプトアーティスト</div>
+      <div class="main-role2">フロントエンドエンジニア・UX/UIデザイナー</div>
+    </div>
+
+    <div class="section">
+      <div class="section-eyebrow">職務経歴</div>
+      <div class="section-heading">職務経歴</div>
+      
+        <div class="exp-item">
+          <div class="exp-year">2026</div>
+          <div class="exp-title">作家・イラストレーター・キャラクターデザイナー</div>
+          <div class="exp-project">Love Ruined Beneath Revenge（ウェブトゥーン）</div>
+          <div class="exp-desc">物語の執筆からキャラクターデザイン、世界観構築、イラスト制作まで、作品制作の全工程を一人で担当。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2025</div>
+          <div class="exp-title">UX/UIデザイナー・共同開発者</div>
+          <div class="exp-project">WebXith</div>
+          <div class="exp-desc">Dialogflow APIと連携したチャットボット管理プラットフォームの設計・開発を担当。管理者がデータを効率的に編集・更新できる環境を構築。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2025</div>
+          <div class="exp-title">UX/UIデザイナー・フロントエンドエンジニア</div>
+          <div class="exp-project">KKUL Library Map</div>
+          <div class="exp-desc">コンケン大学図書館向けインタラクティブマップシステムを設計・開発。館内ナビゲーションとユーザー体験の向上に注力。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2025</div>
+          <div class="exp-title">作家・イラストレーター・キャラクターデザイナー</div>
+          <div class="exp-project">Love Ruined Beneath Revenge（小説）</div>
+          <div class="exp-desc">オリジナル小説の企画・執筆に加え、キャラクターデザインや世界観設定、挿絵制作を担当。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2025</div>
+          <div class="exp-title">イラストレーター・アクセサリーデザイナー</div>
+          <div class="exp-project">Cultural Design</div>
+          <div class="exp-desc">タイの伝統文化や美意識を取り入れたアクセサリーおよびイラスト作品を制作。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2025</div>
+          <div class="exp-title">キャラクターイラストレーター</div>
+          <div class="exp-project">Commission Collection</div>
+          <div class="exp-desc">クライアント向けキャラクターイラスト制作。ポートレート・全身イラスト・オリジナルキャラクターデザインを担当。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2023</div>
+          <div class="exp-title">ロゴデザイナー・ブランドアイデンティティデザイナー</div>
+          <div class="exp-project">Logo Design</div>
+          <div class="exp-desc">企業や個人向けにロゴおよびブランドビジュアルシステムを設計。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2023</div>
+          <div class="exp-title">UX/UIデザイナー・開発者</div>
+          <div class="exp-project">Snake Game Mobile App</div>
+          <div class="exp-desc">モバイル向けSnakeゲームのUI設計と開発を担当。ゲーム体験とパフォーマンスの最適化を実施。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2023</div>
+          <div class="exp-title">AI開発者</div>
+          <div class="exp-project">NLP Chatbot</div>
+          <div class="exp-desc">自然言語処理技術を活用したチャットボットを開発し、ユーザー対応の効率化を実現。</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-year">2022</div>
+          <div class="exp-title">アートディレクター・キャラクターアニメーター・背景デザイナー</div>
+          <div class="exp-project">Knight of Swords</div>
+          <div class="exp-desc">2Dマルチプレイヤーゲームのビジュアル全体を統括。DragonBonesによるキャラクターアニメーション制作と背景アート制作を担当。</div>
+        </div>
+    </div>
+
+    <div class="section">
+      <div class="section-eyebrow">学歴</div>
+      <div class="section-heading">学歴</div>
+      
+        <div class="edu-item">
+          <div class="edu-icon"><i class="ti ti-school"></i></div>
+          <div>
+            <div class="edu-school">コンケン大学</div>
+            <div class="edu-degree">コンピュータサイエンス学士</div>
+            <div class="edu-year">2021 — 2025</div>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-icon"><i class="ti ti-building"></i></div>
+          <div>
+            <div class="edu-school">キャンプソンウィッタヤコム高校</div>
+            <div class="edu-degree">高等学校卒業</div>
+            <div class="edu-year">2018 — 2020</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="section">
+      <div class="section-eyebrow">使用ソフトウェア</div>
+      <div class="section-heading">使用ソフトウェア</div>
+      <div class="sw-grid"><div class="sw-card"><i class="ti ti-pencil"></i><div><div class="sw-name">Clip Studio Paint</div><div class="sw-level">上級</div></div></div>
+<div class="sw-card"><i class="ti ti-pencil-plus"></i><div><div class="sw-name">Procreate</div><div class="sw-level">上級</div></div></div>
+<div class="sw-card"><i class="ti ti-photo"></i><div><div class="sw-name">Photoshop</div><div class="sw-level">中級</div></div></div>
+<div class="sw-card"><i class="ti ti-vector"></i><div><div class="sw-name">Figma</div><div class="sw-level">上級</div></div></div>
+<div class="sw-card"><i class="ti ti-box"></i><div><div class="sw-name">Blender</div><div class="sw-level">初級</div></div></div>
+<div class="sw-card"><i class="ti ti-building"></i><div><div class="sw-name">SketchUp</div><div class="sw-level">初級</div></div></div>
+<div class="sw-card"><i class="ti ti-device-gamepad"></i><div><div class="sw-name">DragonBones</div><div class="sw-level">中級</div></div></div>
+<div class="sw-card"><i class="ti ti-layout"></i><div><div class="sw-name">Adobe XD</div><div class="sw-level">中級</div></div></div>
+<div class="sw-card"><i class="ti ti-code"></i><div><div class="sw-name">VS Code</div><div class="sw-level">中級</div></div></div>
+<div class="sw-card"><i class="ti ti-brand-github"></i><div><div class="sw-name">GitHub</div><div class="sw-level">基礎</div></div></div></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

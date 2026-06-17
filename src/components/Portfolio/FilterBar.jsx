@@ -10,7 +10,7 @@ export function FilterBar({ activeCategory, onSelect, showAll, onToggleShowAll }
     <div className={styles.wrapper}>
       <div className={styles.tabs} role="tablist" aria-label="Filter by category">
         {CATEGORIES.map(({ id }) => (
-          <button
+          <button type="button"
             key={id}
             role="tab"
             aria-selected={activeCategory === id}
@@ -22,7 +22,7 @@ export function FilterBar({ activeCategory, onSelect, showAll, onToggleShowAll }
         ))}
       </div>
 
-      <button
+      <button type="button"
         className={cx(styles.toggle, showAll && styles.toggleActive)}
         onClick={onToggleShowAll}
       >

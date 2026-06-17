@@ -2,6 +2,7 @@ import { profile }        from '@/data/profile'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useI18n }         from '@/i18n/context'
 import { cx }              from '@/utils/helpers'
+import avatarImg           from '@/assets/images/I.png'
 import styles from './Resume.module.css'
 
 function Reveal({ children, delay = 0 }) {
@@ -69,11 +70,13 @@ export default function Resume() {
         {/* ── Hero band ─────────────────────────────────── */}
         <div className={styles.heroBand}>
           <div className={styles.heroLeft}>
-            <div className={styles.avatar}>CL</div>
+            <div className={styles.avatar}>
+              <img src={avatarImg} alt="Chonthicha Leepreecha" className={styles.avatarImg} />
+            </div>
             <div>
-              <h1 className={styles.heroName}>Chonthicha Leepreecha</h1>
-              <p className={styles.heroRole1}>2D Artist · Character Concept Artist</p>
-              <p className={styles.heroRole2}>Frontend Developer · UX/UI Designer</p>
+              <h1 className={styles.heroName}>{tr.name ?? 'Chonthicha Leepreecha'}</h1>
+              <p className={styles.heroRole1}>{tr.role1 ?? '2D Artist · Character Concept Artist'}</p>
+              <p className={styles.heroRole2}>{tr.role2 ?? 'Frontend Developer · UX/UI Designer'}</p>
             </div>
           </div>
           <div className={styles.heroRight}>
@@ -85,9 +88,12 @@ export default function Resume() {
               <i className="ti ti-mail" aria-hidden="true" />
               <span>{profile.email}</span>
             </div>
-            <div className={styles.contactRow}>
-              <i className="ti ti-map-pin" aria-hidden="true" />
-              <span>{profile.location}</span>
+            <div className={styles.contactRow} style={{ alignItems: 'flex-start' }}>
+              <i className="ti ti-map-pin" aria-hidden="true" style={{ marginTop: '2px' }} />
+              <span style={{ textAlign: 'right' }}>
+                {tr.addressLine1 ?? '329 Moo 10 Khek Noi Khao Kho,'}<br />
+                {tr.addressLine2 ?? 'Phetchabun, Thailand, 67280'}
+              </span>
             </div>
             <a href={profile.resumeUrl} download className={styles.dlBtn}>
               <i className="ti ti-download" aria-hidden="true" />
@@ -110,7 +116,7 @@ export default function Resume() {
                   <p className={styles.tyear}>{exp.year}</p>
                   <div className={styles.tcard}>
                     <div className={styles.tcardTop}>
-                      <p className={styles.tcardTitle}>{exp.title}</p>
+                      <p className={styles.tcardTitle}>{tr.experienceEntries?.[i]?.title ?? exp.title}</p>
                       {exp.badge && (
                         <span className={cx(styles.tcardBadge,
                           styles[`badge${exp.badge.charAt(0).toUpperCase() + exp.badge.slice(1)}`])}>
@@ -118,7 +124,7 @@ export default function Resume() {
                         </span>
                       )}
                     </div>
-                    <p className={styles.tcardDesc}>{exp.desc}</p>
+                    <p className={styles.tcardDesc}>{tr.experienceEntries?.[i]?.desc ?? exp.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -142,8 +148,8 @@ export default function Resume() {
                     <i className={`ti ${ed.tiIcon}`} aria-hidden="true" />
                   </div>
                   <div>
-                    <p className={styles.eduSchool}>{ed.school}</p>
-                    <p className={styles.eduDegree}>{ed.degree}</p>
+                    <p className={styles.eduSchool}>{tr.educationEntries?.[i]?.school ?? ed.school}</p>
+                    <p className={styles.eduDegree}>{tr.educationEntries?.[i]?.degree ?? ed.degree}</p>
                     <p className={styles.eduYear}>{ed.period}</p>
                   </div>
                 </div>
@@ -162,7 +168,7 @@ export default function Resume() {
           </Reveal>
           <Reveal delay={40}>
             <div className={styles.chipWrap}>
-              {PROF_SKILLS.map((label) => (
+              {(tr.profSkillsList ?? PROF_SKILLS).map((label) => (
                 <span key={label} className={cx(styles.chip, styles.chipMain)}>{label}</span>
               ))}
             </div>
@@ -175,10 +181,10 @@ export default function Resume() {
         <section className={styles.block}>
           <Reveal>
             <p className={styles.eyebrow}>{tr.eyebrowSkills}</p>
-            <h2 className={styles.blockHeading}>Development Skills</h2>
+            <h2 className={styles.blockHeading}>{tr.devSkillsHeading ?? 'Development Skills'}</h2>
           </Reveal>
           <div className={styles.skillsGrid}>
-            {DEV_SKILLS.map((group, gi) => (
+            {(tr.devSkillsList ?? DEV_SKILLS).map((group, gi) => (
               <Reveal key={group.category} delay={gi * 60}>
                 <div className={styles.skillGroup}>
                   <p className={styles.skillCat}>{group.category}</p>
@@ -260,7 +266,7 @@ export default function Resume() {
           </Reveal>
           <Reveal delay={40}>
             <div className={styles.langRowOuter}>
-              {profile.languages.map(({ name, level, bar }) => (
+              {(tr.languagesList ?? profile.languages).map(({ name, level, bar }) => (
                 <div key={name} className={styles.langItem}>
                   <div className={styles.langTop}>
                     <span className={styles.langName}>{name}</span>

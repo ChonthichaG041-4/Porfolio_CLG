@@ -8,6 +8,8 @@ import iconCsp    from "@/assets/icons/csp_dack.svg";
 import iconSkp    from "@/assets/icons/skp_dack.svg";
 import iconPc     from "@/assets/icons/pc_dack.svg";
 import iconFigma  from "@/assets/icons/figma_dack.svg";
+import iconBlender from "@/assets/icons/blender-icon.svg";
+import iconClaude from "@/assets/icons/claude-icon.svg";
 
 // ── Webtoon assets ──────────────────────────────────────────
 import wtCover        from "@/assets/images/webtoon/wt-cover.jpg";
@@ -60,10 +62,11 @@ const VIDEO_SRCS   = [wtVdo0, wtVdo1, wtVdo2];
 const SOFTWARE = [
   { name: "Clip Studio Paint", icon: iconCsp,   role: "Line Art · Panel · Comic" },
   { name: "Photoshop",         icon: "PS",       role: "Painting · FX · Export"   },
-  { name: "Blender",           icon: "⬡",        role: "3D Reference · Scene Setup" },
+  { name: "Blender",           icon: iconBlender,        role: "3D Reference · Scene Setup" },
   { name: "SketchUp",          icon: iconSkp,   role: "Reference Management"     },
   { name: "Procreate",         icon: iconPc,    role: "Thumbnail · Sketch"       },
   { name: "Figma",             icon: iconFigma, role: "Layout · Typography"      },
+  // { name: "Claude",            icon: iconClaude, role: "AI Assistance"             },
 ];
 
 const CONTACTS = [
@@ -87,7 +90,7 @@ function Lightbox({ item, onClose }) {
   if (!item) return null;
   return (
     <div className={styles.lbOverlay} onClick={onClose}>
-      <button className={styles.lbClose} onClick={onClose} aria-label="Close">✕</button>
+      <button type="button" className={styles.lbClose} onClick={onClose} aria-label="Close">✕</button>
       <div className={styles.lbContent} onClick={e => e.stopPropagation()} onDoubleClick={e => { e.stopPropagation(); onClose(); }}>
         {item.type === "video"
           ? <video src={item.src} autoPlay loop muted playsInline controls className={styles.lbMedia} />
@@ -165,7 +168,7 @@ export default function WebtoonPortfolio() {
             <span className={styles.heroBadge}>{tw.badge}</span>
 
             <h1 className={styles.heroTitle}>{tw.title}</h1>
-            <p className={styles.heroTitleSub}>{tw.titleSub}</p>
+            {tw.titleSub && <p className={styles.heroTitleSub}>{tw.titleSub}</p>}
 
             <p className={styles.heroTagline}>{tw.tagline}</p>
 
@@ -342,7 +345,7 @@ export default function WebtoonPortfolio() {
               </div>
             ))}
           </div>
-          <div className={styles.factions}>
+          {/* <div className={styles.factions}>
             {tw.world.factions.map((f) => (
               <div key={f.name} className={styles.factionCard}>
                 <span className={styles.factionSymbol} style={{ color: f.color }}>{f.symbol}</span>
@@ -352,7 +355,7 @@ export default function WebtoonPortfolio() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -459,7 +462,13 @@ export default function WebtoonPortfolio() {
                   <div key={sw.name} className={styles.softwareCard}>
                     {typeof sw.icon === 'string' && !sw.icon.startsWith('/')
                       ? <span className={styles.softwareIcon}>{sw.icon}</span>
-                      : <img src={sw.icon} alt={sw.name} className={styles.softwareIconImg} />
+                      : <span className={styles.softwareIconBox}>
+                          <span
+                            className={styles.softwareIconMask}
+                            style={{ WebkitMaskImage: `url(${sw.icon})`, maskImage: `url(${sw.icon})` }}
+                            aria-hidden="true"
+                          />
+                        </span>
                     }
                     <span className={styles.softwareName}>{sw.name}</span>
                     <span className={styles.softwareRole}>{sw.role}</span>

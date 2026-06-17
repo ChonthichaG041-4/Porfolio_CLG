@@ -32,8 +32,8 @@ export function Footer() {
           {profile.social.instagram && (
             <a href={profile.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
           )}
-          {profile.social.twitter && (
-            <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+          {profile.social.facebook && (
+            <a href={profile.social.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
           )}
         </div>
       </div>

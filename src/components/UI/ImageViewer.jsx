@@ -26,7 +26,7 @@ export function ImageViewer({
 
   return (
     <>
-      <button
+      <button type="button"
         className={cx(styles.viewer, className)}
         onClick={() => setOpen(true)}
         aria-label={`View full size: ${alt}`}
@@ -34,7 +34,7 @@ export function ImageViewer({
       >
         <img src={src} alt={alt} loading="lazy" />
         <span className={styles.overlay}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
           </svg>
         </span>

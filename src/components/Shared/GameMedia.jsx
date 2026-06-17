@@ -54,7 +54,7 @@ export function GameMedia({ items = [], title }) {
       {items.length > 1 && (
         <div className={styles.strip}>
           {items.map((item, i) => (
-            <button
+            <button type="button"
               key={i}
               className={styles.thumb + (i === active ? ' ' + styles.thumbActive : '')}
               onClick={() => setActive(i)}

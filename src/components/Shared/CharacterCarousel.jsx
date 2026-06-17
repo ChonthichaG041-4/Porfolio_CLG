@@ -111,7 +111,7 @@ export function CharacterCarousel({ characters = [], title }) {
               style={{ '--glow': char.glowColor ?? '#90639e' }}
             >
               {/* การ์ดหลัก — คลิกเปิด image popup */}
-              <button
+              <button type="button"
                 className={styles.card}
                 onClick={e => { setActive(idx); openImg(idx, e) }}
                 aria-label={`${ui.select ?? 'View'} ${charTx.name}`}
@@ -138,7 +138,7 @@ export function CharacterCarousel({ characters = [], title }) {
               </button>
 
               {/* ⓘ button — แสดงบนทุกการ์ดที่มองเห็น */}
-              <button
+              <button type="button"
                 className={styles.infoBtn}
                 onClick={e => openInfo(idx, e)}
                 aria-label={`${ui.info ?? 'Character info'}: ${charTx.name}`}
@@ -153,10 +153,10 @@ export function CharacterCarousel({ characters = [], title }) {
 
       {/* ── Controls ── */}
       <div className={styles.controls}>
-        <button className={styles.arrow} onClick={prev} aria-label={ui.prev ?? 'Previous'}>←</button>
+        <button type="button" className={styles.arrow} onClick={prev} aria-label={ui.prev ?? 'Previous'}>←</button>
         <div className={styles.dots}>
           {characters.map((char, i) => (
-            <button
+            <button type="button"
               key={i}
               className={`${styles.dot}${i === active ? ' ' + styles.dotActive : ''}`}
               onClick={() => setActive(i)}
@@ -164,7 +164,7 @@ export function CharacterCarousel({ characters = [], title }) {
             />
           ))}
         </div>
-        <button className={styles.arrow} onClick={next} aria-label={ui.next ?? 'Next'}>→</button>
+        <button type="button" className={styles.arrow} onClick={next} aria-label={ui.next ?? 'Next'}>→</button>
       </div>
 
       {/* ── Popup A: ภาพตัวละคร + แยกส่วน ── */}
@@ -175,7 +175,7 @@ export function CharacterCarousel({ characters = [], title }) {
             ref={imgPanelRef}
             style={{ '--glow': imgChar.glowColor ?? '#90639e' }}
           >
-            <button className={styles.closeBtn} onClick={closeImg} aria-label={ui.close ?? 'Close'}>✕</button>
+            <button type="button" className={styles.closeBtn} onClick={closeImg} aria-label={ui.close ?? 'Close'}>✕</button>
             <div className={styles.imgPopupInner}>
               {imgChar.characterImg && (
                 <div className={styles.imgPopupCol}>
@@ -202,7 +202,7 @@ export function CharacterCarousel({ characters = [], title }) {
             ref={infoPanelRef}
             style={{ '--glow': infoChar.glowColor ?? '#90639e' }}
           >
-            <button className={styles.closeBtn} onClick={closeInfo} aria-label={ui.close ?? 'Close'}>✕</button>
+            <button type="button" className={styles.closeBtn} onClick={closeInfo} aria-label={ui.close ?? 'Close'}>✕</button>
 
             <div className={styles.infoPanelInner}>
               {/* ภาพตัวละคร + source (ถ้า adapted) */}

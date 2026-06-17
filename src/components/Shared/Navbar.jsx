@@ -61,7 +61,7 @@ export function Navbar() {
         <div className={styles.controls}>
           <LanguageSwitcher />
 
-          <button
+          <button type="button"
             className={styles.burger}
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}

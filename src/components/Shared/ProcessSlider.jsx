@@ -27,7 +27,7 @@ export function ProcessSlider({ sections = [] }) {
       {processSections.length > 1 && (
         <div className={styles.tabs}>
           {processSections.map((s, i) => (
-            <button
+            <button type="button"
               key={i}
               className={cx(styles.tab, active === i && styles.active)}
               onClick={() => setActive(i)}

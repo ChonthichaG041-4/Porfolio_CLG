@@ -17,7 +17,7 @@ export function WebtoonReader({ strips = [] }) {
       {strips.length > 1 && (
         <div className={styles.tabs}>
           {strips.map((s, i) => (
-            <button
+            <button type="button"
               key={i}
               className={`${styles.tab}${i === active ? ' ' + styles.tabActive : ''}`}
               onClick={() => setActive(i)}

@@ -59,7 +59,7 @@ export function CharDesignPanel({ left, right, note }) {
         {/* selete — animation selector floating panel */}
         <div className={styles.animList}>
           {anims.map(anim => (
-            <button
+            <button type="button"
               key={anim.id}
               className={`${styles.animItem}${anim.id === activeId ? ' ' + styles.animActive : ''}`}
               onClick={() => setActiveId(anim.id)}

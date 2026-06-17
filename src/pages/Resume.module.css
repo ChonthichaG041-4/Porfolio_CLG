@@ -71,20 +71,25 @@
 }
 
 .avatar {
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background: rgba(168, 85, 247, 0.1);
-  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  border: 2px solid rgba(168, 85, 247, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: var(--weight-bold);
-  color: var(--color-glow);
   flex-shrink: 0;
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.12);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.08), 0 0 24px rgba(168, 85, 247, 0.18);
+  overflow: hidden;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
 }
 
 .heroName {

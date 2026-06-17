@@ -34,13 +34,13 @@ export function SceneGallery({ scenes = [] }) {
 
       {/* Thumbnail strip + nav */}
       <div className={styles.nav}>
-        <button className={styles.navBtn}
+        <button type="button" className={styles.navBtn}
           onClick={() => setActive(i => (i - 1 + scenes.length) % scenes.length)}
           aria-label="Previous scene">←</button>
 
         <div className={styles.thumbs}>
           {scenes.map((scene, i) => (
-            <button
+            <button type="button"
               key={i}
               className={`${styles.thumb}${i === active ? ' ' + styles.thumbActive : ''}`}
               onClick={() => setActive(i)}
@@ -52,7 +52,7 @@ export function SceneGallery({ scenes = [] }) {
           ))}
         </div>
 
-        <button className={styles.navBtn}
+        <button type="button" className={styles.navBtn}
           onClick={() => setActive(i => (i + 1) % scenes.length)}
           aria-label="Next scene">→</button>
       </div>
