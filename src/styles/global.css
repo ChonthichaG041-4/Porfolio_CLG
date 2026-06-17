@@ -103,16 +103,6 @@ p {
   line-height: var(--leading-normal);
 }
 
-@font-face {
-  font-family: "DM Hemman";
-  src:
-    url("./assets/fonts/DM Hemman.woff2") format("woff2"),
-    url("./assets/fonts/DM Hemman.ttf") format("truetype"),
-    url("./assets/fonts/DM Hemman.otf") format("opentype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Restrict "Teachers" to Latin/punctuation only so Thai chars
    fall through to Anuphan (which has correct Thai metrics).
@@ -158,7 +148,7 @@ p {
 }
 
 .section-label {
-  font-family: "DM Hemman", "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif JP", sans-serif;
   font-size: var(--text-xs);
   font-weight: var(--weight-semi);
   letter-spacing: 0.2em;
@@ -248,9 +238,4 @@ p {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(168, 85, 247, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(168, 85, 247, 0.025) 1px, transparent 1px);
-  background-size: 72px 72px;
-  pointer-events: none;
-  z-index: 0;
-}
+    linea
