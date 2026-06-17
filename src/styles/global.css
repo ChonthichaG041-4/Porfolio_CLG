@@ -238,4 +238,9 @@ p {
   position: absolute;
   inset: 0;
   background-image:
-    linea
+    linear-gradient(rgba(168, 85, 247, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
