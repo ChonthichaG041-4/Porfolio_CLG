@@ -443,4 +443,32 @@ function LogoGallery({ sec }) {
         <button type="button"
           className={cx(styles.logoBgBtn, bg === 'dark' && styles.logoBgBtnActive)}
           onClick={() => setBg('dark')}
-    
+        >☾ Dark</button>
+      </div>
+      {sec.groups.map((group) => (
+        <div key={group.name} className={styles.logoGroup}>
+          <h3 className={styles.logoGroupName}>{group.name}</h3>
+          <div className={styles.logoGrid}>
+            {group.logos.map((logo) => (
+              <div key={logo.name} className={styles.logoCard}>
+                <div className={cx(
+                  styles.logoImgWrap,
+                  bg === 'light' ? styles.logoImgWrapLight : styles.logoImgWrapDark,
+                  logo.fill && styles.logoImgWrapFill
+                )}>
+                  <img
+                    src={bg === 'light' ? logo.light : logo.dark}
+                    alt={logo.name}
+                    className={logo.fill ? styles.logoImgFill : styles.logoImg}
+                    loading="lazy"
+                  />
+                </div>
+                <span className={styles.logoName}>{logo.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+  )
+}
