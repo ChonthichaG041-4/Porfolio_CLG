@@ -681,4 +681,21 @@ To enhance both quality and creative efficiency, AI-assisted tools were incorpor
           { src: cmAri2, title: 'Ari (Alt)',   desc: 'Alternate colour variation of the Ari commission — warm evening palette.' },
           { src: cmTung, title: 'Tung',        desc: 'Character portrait commission \u2014 warm tones with a traditional-inspired outfit and expressive lighting.' },
           { src: cmUri,  title: 'Uri',         desc: 'Portrait commission featuring soft shading and detailed character design with expressive facial work.' },
-          { src: cmMoon, title: 'M
+          { src: cmMoon, title: 'Moon',        desc: 'Atmospheric character commission \u2014 moonlit ambient lighting and a cool-toned cinematic palette.' },
+          { src: cm3p,   title: 'Group Piece', desc: 'Multi-character group commission \u2014 three characters composed together in a cohesive scene.' },
+        ],
+      },
+    ],
+  },
+]
+
+// \u2500 Helpers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+export const getFeaturedWorks   = ()      => works.filter(w => w.featured)
+export const getWorkBySlug      = (slug)  => works.find(w => w.slug === slug)
+export const getWorksByCategory = (categoryId, showAll = false) => {
+  const base = showAll
+    ? works
+    : works.filter(w => w.tier !== TIERS.FANART && w.tier !== TIERS.PRACTICE)
+  if (categoryId === 'all') return base
+  return base.filter(w => w.category === categoryId)
+}
