@@ -14,15 +14,12 @@
     #05010B;
 }
 
-/* ── Key Visual — locked to hero, absolute ────────────────── */
+/* ── Key Visual — full-width so kvGlow isn't clipped ─────── */
 .keyVisual {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 55%;
+  inset: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   pointer-events: none;
   z-index: 2;
