@@ -268,21 +268,24 @@
     z-index: 5;
   }
 
-  /* ② Character image — fades into hero background at bottom via mask */
+  /* ② Character image — purple top fades out, black stays, spacing from text */
   .keyVisual {
     position: relative;
     order: 2;
     width: 100%;
     height: 90vw;
     top: 0; right: 0; bottom: 0;
+    margin-top: 1.25rem;
     opacity: 1;
     align-items: flex-end;
     justify-content: center;
     z-index: 2;
-    /* Mask fades image to transparent — hero bg shows through seamlessly */
-    -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+    /* Top transparent (hides purple glow) → opaque mid → keep black bottom */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
   }
+  /* Hide kvGlow on mobile — causes unwanted purple bleed */
+  .kvGlow { display: none; }
   .kvImage {
     height: 90vw;
     width: auto;
