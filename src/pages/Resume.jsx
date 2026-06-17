@@ -90,7 +90,7 @@ export default function Resume() {
             </div>
             <div className={styles.contactRow} style={{ alignItems: 'flex-start' }}>
               <i className="ti ti-map-pin" aria-hidden="true" style={{ marginTop: '2px' }} />
-              <span style={{ textAlign: 'right' }}>
+              <span>
                 {tr.addressLine1 ?? '329 Moo 10 Khek Noi Khao Kho,'}<br />
                 {tr.addressLine2 ?? 'Phetchabun, Thailand, 67280'}
               </span>
