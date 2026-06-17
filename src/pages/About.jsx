@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { profile } from "@/data/profile";
 import { useI18n } from "@/i18n/context";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -48,6 +49,7 @@ export default function About() {
             <p className={styles.subtitle}>{ta.subtitle}</p>
             <p className={styles.also}>{ta.also}</p>
 
+            <p className={styles.chipsLabel}>{ta.skillsLabel ?? 'SKILLS'}</p>
             <div className={styles.chips}>
               {ta.chips.map((c, i) => (
                 <span
@@ -79,6 +81,18 @@ export default function About() {
           </Reveal>
           <Reveal delay={80}>
             <p className={styles.bodyText}>{ta.whoIAm.body}</p>
+          </Reveal>
+          <Reveal delay={120} className={styles.mobileCtas}>
+            <Link to="/portfolio" className={styles.mobileCtaBtn}>
+              <i className="ti ti-briefcase" aria-hidden="true" />
+              {ta.viewPortfolio ?? 'View Portfolio'}
+              <i className="ti ti-arrow-right" aria-hidden="true" />
+            </Link>
+            <Link to="/contact" className={styles.mobileCtaBtnGhost}>
+              <i className="ti ti-mail" aria-hidden="true" />
+              {ta.contactMe ?? 'Contact Me'}
+              <i className="ti ti-arrow-right" aria-hidden="true" />
+            </Link>
           </Reveal>
         </section>
 

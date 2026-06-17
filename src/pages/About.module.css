@@ -532,10 +532,109 @@
 /* ════════════════════════════════════════════════════════════
    MOBILE — hero + resumeCta
    ════════════════════════════════════════════════════════════ */
+/* ── Skills label (hidden on desktop) ──────────────────── */
+.chipsLabel {
+  display: none;
+}
+
+/* ── Mobile CTA buttons (hidden on desktop) ──────────── */
+.mobileCtas {
+  display: none;
+}
+
 @media (max-width: 640px) {
-  .heroContent { padding-top: calc(var(--navbar-height) + var(--space-6)); }
-  .heroName    { font-size: clamp(3rem, 13vw, 5rem); }
-  .rhombusWrap { opacity: 0.2; }
+  /* Header stacks: text → rhombus → chips */
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: unset;
+    padding-bottom: 0;
+  }
+
+  .rhombusWrap {
+    position: relative;
+    width: 100%;
+    height: 85vw;
+    max-height: 380px;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    order: 2;
+    opacity: 1;
+  }
+
+  .rhombusSvg {
+    width: 100%;
+    height: 100%;
+    max-height: 380px;
+  }
+
+  .heroOuter {
+    order: 1;
+  }
+
+  .heroContent {
+    padding-top: calc(var(--navbar-height) + var(--space-6));
+    padding-bottom: var(--space-6);
+    max-width: 100%;
+  }
+
+  .heroName { font-size: clamp(3rem, 13vw, 5rem); }
+
+  /* Skills label visible on mobile */
+  .chipsLabel {
+    display: block;
+    font-size: 9.5px;
+    font-weight: var(--weight-bold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-glow);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  /* CTA buttons visible on mobile */
+  .mobileCtas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: var(--space-6);
+  }
+
+  .mobileCtaBtn,
+  .mobileCtaBtnGhost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    font-family: var(--font-body);
+    text-decoration: none;
+    transition: background var(--duration-fast), border-color var(--duration-fast);
+  }
+
+  .mobileCtaBtn {
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+  }
+  .mobileCtaBtn:hover {
+    background: #9333ea;
+  }
+
+  .mobileCtaBtnGhost {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .mobileCtaBtnGhost:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(168, 85, 247, 0.35);
+  }
 
   .resumeCta {
     flex-direction: column;
