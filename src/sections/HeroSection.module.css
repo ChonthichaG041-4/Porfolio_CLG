@@ -234,19 +234,56 @@
   50%       { transform: translate(-50%, -50%) scale(1.06); opacity: 1;   }
 }
 
-/* ── Responsive — text only, image stays locked ───────────── */
+/* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .content {
-    padding-inline: 2.5rem;
-  }
-  .name { font-size: clamp(3.2rem, 10vw, 5rem); }
+  .content { padding-inline: 2.5rem; }
+  .name    { font-size: clamp(3.2rem, 10vw, 5rem); }
 }
 
 @media (max-width: 640px) {
-  .content  { padding-inline: 1.5rem; }
-  .name     { font-size: clamp(2.8rem, 12vw, 4rem); }
-  .title    { font-size: 1rem; }
-  .tagline  { font-size: 0.95rem; }
-  /* Dim image slightly so text stays readable on small screens */
-  .keyVisual { opacity: 0.55; }
+  /* Character image sits faded at bottom-right; text fills full width */
+  .hero { align-items: flex-start; }
+
+  .keyVisual {
+    width: 60%;
+    height: 55vh;
+    top: auto;
+    bottom: 0;
+    right: -5%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    opacity: 0.18;
+  }
+  .kvImage {
+    height: 55vh;
+    object-position: center bottom;
+  }
+
+  .content {
+    padding-inline: 1.25rem;
+    min-height: unset;
+    padding-top: calc(var(--navbar-height) + 1.5rem);
+    padding-bottom: 3rem;
+    align-items: flex-start;
+  }
+
+  .textContent {
+    padding-top: 0;
+    max-width: 100%;
+  }
+
+  .name    { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+  .title   { font-size: 0.9rem; }
+  .tagline { font-size: 0.875rem; margin-bottom: 1.5rem; }
+
+  /* Stack CTA buttons vertically */
+  .ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .social { gap: 1rem; }
 }
