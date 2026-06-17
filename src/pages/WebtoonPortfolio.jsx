@@ -13,7 +13,7 @@ import iconClaude from "@/assets/icons/claude-icon.svg";
 
 // ── Webtoon assets ──────────────────────────────────────────
 import wtCover        from "@/assets/images/webtoon/wt-cover.jpg";
-import wtCoverBg2     from "@/assets/images/webtoon/wtconverbg2.jpg";
+import wtCoverBg2     from "@/assets/images/webtoon/Wtconverbg2.jpg";
 import wtMap          from "@/assets/images/webtoon/wt-map.jpg";
 import wtMapWar       from "@/assets/images/webtoon/wt-map-war.jpg";
 import wtMapPaper     from "@/assets/images/webtoon/wt-map-paper.jpg";
