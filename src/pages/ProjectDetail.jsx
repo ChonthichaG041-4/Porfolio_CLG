@@ -58,6 +58,7 @@ export default function ProjectDetail() {
   const finalSection       = work.sections?.find(s => s.type === 'final')
   const featureGridSec     = work.sections?.find(s => s.type === 'feature-grid')
   const resultsSec         = work.sections?.find(s => s.type === 'results')
+  const videoDemosSec      = work.sections?.find(s => s.type === 'video-demos')
 
   return (
     <main className={styles.page}>
@@ -251,6 +252,30 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* ─── Video Demos ─── */}
+        {videoDemosSec?.videos?.length > 0 && (
+          <section className={styles.section}>
+            <p className="section-label">{td.screenshotsDemo ?? 'Screenshots & Demo'}</p>
+            <h2 className={styles.sectionTitle}>{videoDemosSec.title}</h2>
+            <div className={styles.videoDemos}>
+              {videoDemosSec.videos.map((item, i) => (
+                <div key={i} className={styles.videoDemo}>
+                  <video
+                    src={item.src}
+                    className={styles.videoDemoPlayer}
+                    controls
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                  {item.caption && <span className={styles.gameScreenCaption}>{item.caption}</span>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* ─── Tech Highlights ─── */}
         {workTechHl?.length > 0 && (
           <section className={styles.section}>
@@ -418,32 +443,4 @@ function LogoGallery({ sec }) {
         <button type="button"
           className={cx(styles.logoBgBtn, bg === 'dark' && styles.logoBgBtnActive)}
           onClick={() => setBg('dark')}
-        >☾ Dark</button>
-      </div>
-      {sec.groups.map((group) => (
-        <div key={group.name} className={styles.logoGroup}>
-          <h3 className={styles.logoGroupName}>{group.name}</h3>
-          <div className={styles.logoGrid}>
-            {group.logos.map((logo) => (
-              <div key={logo.name} className={styles.logoCard}>
-                <div className={cx(
-                  styles.logoImgWrap,
-                  bg === 'light' ? styles.logoImgWrapLight : styles.logoImgWrapDark,
-                  logo.fill && styles.logoImgWrapFill
-                )}>
-                  <img
-                    src={bg === 'light' ? logo.light : logo.dark}
-                    alt={logo.name}
-                    className={logo.fill ? styles.logoImgFill : styles.logoImg}
-                    loading="lazy"
-                  />
-                </div>
-                <span className={styles.logoName}>{logo.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </section>
-  )
-}
+    

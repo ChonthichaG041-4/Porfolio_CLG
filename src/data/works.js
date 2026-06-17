@@ -153,6 +153,11 @@ import cmConverCm     from '@/assets/images/commission/conver_cm.webp'
 import heroMap         from '@/assets/images/KKUL-LibraryMap/Hero Screenshot.webp'
 import kkulPageMain    from '@/assets/images/KKUL-LibraryMap/KKUL-LibraryMap-pagemain.webp'
 import kkulSpecial     from '@/assets/images/KKUL-LibraryMap/Special-Room-Information.webp'
+import kkulVidAccess   from '@/assets/images/KKUL-LibraryMap/Access hours.mp4'
+import kkulVidFloors   from '@/assets/images/KKUL-LibraryMap/Changing building floors.mp4'
+import kkulVidDark     from '@/assets/images/KKUL-LibraryMap/Dark-Light Mode.mp4'
+import kkulVidStats    from '@/assets/images/KKUL-LibraryMap/Displaying data and statistics..mp4'
+import kkulVidSearch   from '@/assets/images/KKUL-LibraryMap/Search Flow.mp4'
 
 export const CATEGORIES = [
   { id: 'all',          label: 'All' },
@@ -283,6 +288,17 @@ export const works = [
           'Fuzzy Search ครอบคลุม 200+ items ข้ามทุก entity ในการค้นหาเดียว',
           'Dark Mode + Bilingual ทำให้ UX เข้าถึงได้สำหรับผู้ใช้ทุกกลุ่ม',
           'Architecture นำไปปรับเป็น Game Map System ได้โดยตรง',
+        ],
+      },
+      {
+        type: 'video-demos',
+        title: 'Screenshots & Demo',
+        videos: [
+          { src: kkulVidSearch,  caption: 'Search Flow — Fuzzy search + keyboard navigation' },
+          { src: kkulVidFloors,  caption: 'Changing Building Floors — SVG floor switching' },
+          { src: kkulVidDark,    caption: 'Dark / Light Mode — CSS Variable theme toggle' },
+          { src: kkulVidStats,   caption: 'Occupancy Dashboard — Real-time statistics' },
+          { src: kkulVidAccess,  caption: 'Access Hours — Library opening hours display' },
         ],
       },
     ],
@@ -681,21 +697,4 @@ To enhance both quality and creative efficiency, AI-assisted tools were incorpor
           { src: cmAri2, title: 'Ari (Alt)',   desc: 'Alternate colour variation of the Ari commission — warm evening palette.' },
           { src: cmTung, title: 'Tung',        desc: 'Character portrait commission \u2014 warm tones with a traditional-inspired outfit and expressive lighting.' },
           { src: cmUri,  title: 'Uri',         desc: 'Portrait commission featuring soft shading and detailed character design with expressive facial work.' },
-          { src: cmMoon, title: 'Moon',        desc: 'Atmospheric character commission \u2014 moonlit ambient lighting and a cool-toned cinematic palette.' },
-          { src: cm3p,   title: 'Group Piece', desc: 'Multi-character group commission \u2014 three characters composed together in a cohesive scene.' },
-        ],
-      },
-    ],
-  },
-]
-
-// \u2500 Helpers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
-export const getFeaturedWorks   = ()      => works.filter(w => w.featured)
-export const getWorkBySlug      = (slug)  => works.find(w => w.slug === slug)
-export const getWorksByCategory = (categoryId, showAll = false) => {
-  const base = showAll
-    ? works
-    : works.filter(w => w.tier !== TIERS.FANART && w.tier !== TIERS.PRACTICE)
-  if (categoryId === 'all') return base
-  return base.filter(w => w.category === categoryId)
-}
+          { src: cmMoon, title: 'Moon',       
