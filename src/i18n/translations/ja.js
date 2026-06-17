@@ -232,6 +232,16 @@ export const ja = {
       ],
     },
 
+    credLabel:         '学歴',
+    credHeading:       '学術',
+    credHeadingItalic: '資格証明書',
+    credSub:           'コンケン大学の公式書類 — ブラウザで直接開けます。',
+    certTitle:         '卒業証明書',
+    certDesc:          'デジタル卒業証明書 · コンケン大学 · 2025年',
+    transcriptTitle:   '公式成績証明書',
+    transcriptDesc:    '公式デジタル成績証明書 · コンケン大学 · 理学士（コンピュータサイエンス）',
+    viewDoc:           '表示',
+
     resumeNote: "完全な概要については履歴書をダウンロードしてください。",
     downloadResume: "履歴書PDFをダウンロード",
   },

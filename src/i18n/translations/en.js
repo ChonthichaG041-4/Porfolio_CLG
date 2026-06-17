@@ -207,6 +207,16 @@ export const en = {
       ],
     },
 
+    credLabel:          'EDUCATION',
+    credHeading:        'Academic ',
+    credHeadingItalic:  'Credentials',
+    credSub:            'Official documents from Khon Kaen University — open directly in browser.',
+    certTitle:          'Graduation Certificate',
+    certDesc:           'Digital Certificate of Graduation · Khon Kaen University · 2025',
+    transcriptTitle:    'Official Transcript',
+    transcriptDesc:     'Official Digital Transcript · Khon Kaen University · B.S. Computer Science',
+    viewDoc:            'View',
+
     resumeNote:     'Download my full resume for a complete overview.',
     downloadResume: 'Download Resume PDF',
   },
