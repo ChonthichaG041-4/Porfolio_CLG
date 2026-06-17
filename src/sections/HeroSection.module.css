@@ -275,14 +275,14 @@
     width: 100%;
     height: 90vw;
     top: 0; right: 0; bottom: 0;
-    margin-top: 1.25rem;
+    margin-top: 2rem;
     opacity: 1;
     align-items: flex-end;
     justify-content: center;
     z-index: 2;
-    /* Top transparent (hides purple glow) → opaque mid → keep black bottom */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 100%);
+    /* Black at bottom, fades up to transparent */
+    -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+    mask-image: linear-gradient(to top, black 40%, transparent 100%);
   }
   /* Hide kvGlow on mobile — causes unwanted purple bleed */
   .kvGlow { display: none; }
