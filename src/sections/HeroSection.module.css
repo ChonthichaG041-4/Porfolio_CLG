@@ -269,7 +269,7 @@
     z-index: 5;
   }
 
-  /* ② Character image — full opacity, centred */
+  /* ② Character image — full opacity, fades into background at bottom */
   .keyVisual {
     position: relative;
     order: 2;
@@ -280,6 +280,17 @@
     align-items: flex-end;
     justify-content: center;
     z-index: 2;
+    overflow: hidden;
+  }
+  /* Gradient fade — bottom of image blends to hero bg */
+  .keyVisual::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 35%;
+    background: linear-gradient(to bottom, transparent, #05010B);
+    z-index: 3;
+    pointer-events: none;
   }
   .kvImage {
     height: 72vw;
