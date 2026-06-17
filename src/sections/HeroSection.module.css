@@ -140,7 +140,6 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
   animation: fadeUp var(--duration-slow) var(--ease-smooth) 500ms both;
 }
 
@@ -269,7 +268,7 @@
     z-index: 5;
   }
 
-  /* ② Character image — full opacity, fades into background at bottom */
+  /* ② Character image — fades into hero background at bottom via mask */
   .keyVisual {
     position: relative;
     order: 2;
@@ -280,17 +279,9 @@
     align-items: flex-end;
     justify-content: center;
     z-index: 2;
-    overflow: hidden;
-  }
-  /* Gradient fade — bottom 50% blends to hero bg colour */
-  .keyVisual::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 50%;
-    background: linear-gradient(to bottom, transparent 0%, #05010B 85%);
-    z-index: 3;
-    pointer-events: none;
+    /* Mask fades image to transparent — hero bg shows through seamlessly */
+    -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 45%, transparent 100%);
   }
   .kvImage {
     height: 90vw;
