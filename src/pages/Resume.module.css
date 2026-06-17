@@ -141,6 +141,12 @@
   opacity: 0.5;
 }
 
+.contactRowIndent {
+  padding-left: 19px;  /* icon 13px + gap 6px */
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+}
+
 .dlBtn {
   margin-top: 6px;
   padding: 8px 18px;

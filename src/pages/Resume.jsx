@@ -92,8 +92,7 @@ export default function Resume() {
               <i className="ti ti-map-pin" aria-hidden="true" />
               <span>{tr.addressLine1 ?? '329 Moo 10 Khek Noi Khao Kho,'}</span>
             </div>
-            <div className={styles.contactRow}>
-              <i className="ti ti-map-pin" aria-hidden="true" style={{ opacity: 0 }} />
+            <div className={styles.contactRowIndent}>
               <span>{tr.addressLine2 ?? 'Phetchabun, Thailand, 67280'}</span>
             </div>
             <a href={profile.resumeUrl} download className={styles.dlBtn}>
