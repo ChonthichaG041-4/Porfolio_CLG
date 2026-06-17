@@ -274,7 +274,7 @@
     position: relative;
     order: 2;
     width: 100%;
-    height: 72vw;
+    height: 90vw;
     top: 0; right: 0; bottom: 0;
     opacity: 1;
     align-items: flex-end;
@@ -282,18 +282,18 @@
     z-index: 2;
     overflow: hidden;
   }
-  /* Gradient fade — bottom of image blends to hero bg */
+  /* Gradient fade — bottom 50% blends to hero bg colour */
   .keyVisual::after {
     content: '';
     position: absolute;
     left: 0; right: 0; bottom: 0;
-    height: 35%;
-    background: linear-gradient(to bottom, transparent, #05010B);
+    height: 50%;
+    background: linear-gradient(to bottom, transparent 0%, #05010B 85%);
     z-index: 3;
     pointer-events: none;
   }
   .kvImage {
-    height: 72vw;
+    height: 90vw;
     width: auto;
     object-fit: contain;
     object-position: center bottom;
