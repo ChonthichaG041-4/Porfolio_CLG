@@ -10,7 +10,7 @@ export const profile = {
   tagline:
     "Creating emotional fantasy worlds\nthrough stylized visual storytelling.",
   location: "329 Moo 10 Khek Noi Khao Kho, Phetchabun, Thailand, 67280",
-  email: "chonthicha.le@kkumail.com",
+  email: "chonthicha.glight@gmail.com",
   phone: "0909 789 874",
   discord: "https://discord.gg/qFBX6MvA",
   // website: 'https://chonthicha.art',
