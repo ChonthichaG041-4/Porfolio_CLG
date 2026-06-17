@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { profile } from '@/data/profile'
 import { useI18n } from '@/i18n/context'
 import { Button } from '@/components/UI/Button'
-import heroImage from '@/assets/images/me.png'
+import heroImageDesktop from '@/assets/images/me0.png'
+import heroImageMobile  from '@/assets/images/me.png'
 import styles from './HeroSection.module.css'
 
 /* ── Simple inline SVG icons ── */
@@ -34,11 +35,14 @@ export function HeroSection() {
       {/* ── Key Visual — locked to hero background ── */}
       <div className={styles.keyVisual} aria-hidden="true">
         <div className={styles.kvGlow} />
-        <img
-          src={heroImage}
-          alt={profile.nameDisplay}
-          className={styles.kvImage}
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcSet={heroImageMobile} />
+          <img
+            src={heroImageDesktop}
+            alt={profile.nameDisplay}
+            className={styles.kvImage}
+          />
+        </picture>
       </div>
 
       {/* ── Main Content ── */}
@@ -83,13 +87,4 @@ export function HeroSection() {
               </a>
             )}
             {profile.email && (
-              <a href={`mailto:${profile.email}`} className={styles.socialLink} aria-label="Email">
-                <IconEmail />
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+              <a href={`mailto:${profile.
