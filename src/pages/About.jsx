@@ -213,4 +213,16 @@ export default function About() {
             <button
               type="button"
               className={styles.resumeCtaBtn}
-          
+              onClick={() => setDlOpen(true)}
+            >
+              {ta.downloadResume}
+            </button>
+          </section>
+        </Reveal>
+
+      </div>
+
+      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
+    </main>
+  );
+}
