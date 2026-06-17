@@ -214,4 +214,61 @@ export default function About() {
           <section className={styles.credSection}>
             <p className={styles.sLabel}>{ta.credLabel ?? 'EDUCATION'}</p>
             <h2 className={styles.sHeading}>
-              {ta.credHeading ?? 'Academic '}<em className={styles.italic}>{t
+              {ta.credHeading ?? 'Academic '}<em className={styles.italic}>{ta.credHeadingItalic ?? 'Credentials'}</em>
+            </h2>
+            <p className={styles.credSub}>{ta.credSub ?? 'Official documents from Khon Kaen University — open directly in browser.'}</p>
+
+            <div className={styles.credGrid}>
+              <div className={styles.credCard}>
+                <div className={styles.credCardIcon}>
+                  <i className="ti ti-certificate" aria-hidden="true" />
+                </div>
+                <div className={styles.credCardBody}>
+                  <p className={styles.credCardTitle}>{ta.certTitle ?? 'Graduation Certificate'}</p>
+                  <p className={styles.credCardDesc}>{ta.certDesc ?? 'Digital Certificate of Graduation · Khon Kaen University · 2025'}</p>
+                </div>
+                <button type="button" className={styles.credViewBtn} onClick={() => setCertOpen(true)}>
+                  <i className="ti ti-eye" aria-hidden="true" />
+                  {ta.viewDoc ?? 'View'}
+                </button>
+              </div>
+
+              <div className={styles.credCard}>
+                <div className={styles.credCardIcon}>
+                  <i className="ti ti-file-description" aria-hidden="true" />
+                </div>
+                <div className={styles.credCardBody}>
+                  <p className={styles.credCardTitle}>{ta.transcriptTitle ?? 'Official Transcript'}</p>
+                  <p className={styles.credCardDesc}>{ta.transcriptDesc ?? 'Official Digital Transcript · Khon Kaen University · B.S. Computer Science'}</p>
+                </div>
+                <button type="button" className={styles.credViewBtn} onClick={() => setTranscriptOpen(true)}>
+                  <i className="ti ti-eye" aria-hidden="true" />
+                  {ta.viewDoc ?? 'View'}
+                </button>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+
+        {/* RESUME CTA */}
+        <Reveal>
+          <section className={styles.resumeCta}>
+            <p>{ta.resumeNote}</p>
+            <button
+              type="button"
+              className={styles.resumeCtaBtn}
+              onClick={() => setDlOpen(true)}
+            >
+              {ta.downloadResume}
+            </button>
+          </section>
+        </Reveal>
+
+      </div>
+
+      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
+      <AcademicDocsModal open={certOpen}       onClose={() => setCertOpen(false)}       type="certificate" />
+      <AcademicDocsModal open={transcriptOpen} onClose={() => setTranscriptOpen(false)} type="transcript"  />
+    </main>
+  );
+}
