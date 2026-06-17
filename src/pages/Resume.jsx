@@ -1,7 +1,9 @@
-import { profile }        from '@/data/profile'
+import { useState }         from 'react'
+import { profile }         from '@/data/profile'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useI18n }         from '@/i18n/context'
 import { cx }              from '@/utils/helpers'
+import { ResumeDownloadModal } from '@/components/UI/ResumeDownloadModal'
 import avatarImg           from '@/assets/images/I.webp'
 import styles from './Resume.module.css'
 
@@ -53,6 +55,7 @@ const DEV_SKILLS = [
 export default function Resume() {
   const { t } = useI18n()
   const tr = t.resumePage
+  const [dlOpen, setDlOpen] = useState(false)
 
   const BADGE_LABEL = {
     art:   tr.badgeArt,
@@ -95,10 +98,10 @@ export default function Resume() {
             <div className={styles.contactRowIndent}>
               <span>{tr.addressLine2 ?? 'Phetchabun, Thailand, 67280'}</span>
             </div>
-            <a href={profile.resumeUrl} download className={styles.dlBtn}>
+            <button type="button" className={styles.dlBtn} onClick={() => setDlOpen(true)}>
               <i className="ti ti-download" aria-hidden="true" />
               {tr.downloadPDF}
-            </a>
+            </button>
           </div>
         </div>
 
@@ -273,15 +276,4 @@ export default function Resume() {
                     <span className={styles.langLvl}>{level}</span>
                   </div>
                   <div className={styles.langTrack}>
-                    <div className={styles.langFill} style={{ width: `${bar}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-
-      </div>
-    </div>
-  )
-}
+                    <div className={styles.langFill} sty

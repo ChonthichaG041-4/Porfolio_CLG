@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { profile } from "@/data/profile";
 import { useI18n } from "@/i18n/context";
+import { ResumeDownloadModal } from "@/components/UI/ResumeDownloadModal";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cx } from "@/utils/helpers";
 import { AboutHeroBackground } from "@/components/AboutHeroBackground";
@@ -22,6 +24,7 @@ function Reveal({ children, delay = 0, className }) {
 export default function About() {
   const { t } = useI18n();
   const ta = t.aboutPage;
+  const [dlOpen, setDlOpen] = useState(false);
 
   return (
     <main className={styles.page}>
@@ -207,17 +210,7 @@ export default function About() {
         <Reveal>
           <section className={styles.resumeCta}>
             <p>{ta.resumeNote}</p>
-            <a
-              href={profile.resumeUrl}
-              download
+            <button
+              type="button"
               className={styles.resumeCtaBtn}
-            >
-              {ta.downloadResume}
-            </a>
-          </section>
-        </Reveal>
-
-      </div>
-    </main>
-  );
-}
+          
