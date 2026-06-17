@@ -128,11 +128,11 @@ import lineColor1      from '@/assets/images/Creative/linedrawings/Object-line-c
 import lineBase2       from '@/assets/images/Creative/linedrawings/Object-line2.jpg'
 import lineColor2      from '@/assets/images/Creative/linedrawings/Object-line2-color.jpg'
 import lineBase3       from '@/assets/images/Creative/linedrawings/Object-line3.jpg'
-import lineColor3      from '@/assets/images/Creative/linedrawings/Object-line3-color.PNG'
+import lineColor3      from '@/assets/images/Creative/linedrawings/Object-line3-color.png'
 import lineBase4       from '@/assets/images/Creative/linedrawings/Object-line4.jpg'
 import lineColor4      from '@/assets/images/Creative/linedrawings/Object-line4-color.jpg'
 import lineBase5       from '@/assets/images/Creative/linedrawings/Object-line5.jpg'
-import lineColor5      from '@/assets/images/Creative/linedrawings/Object-line5-color.PNG'
+import lineColor5      from '@/assets/images/Creative/linedrawings/Object-line5-color.png'
 // flowers
 import flowerCaesa     from '@/assets/images/Creative/flowers/Flowers-Caesapiniodeae.png'
 import flowerRoses     from '@/assets/images/Creative/flowers/Flowers-roses .png'
