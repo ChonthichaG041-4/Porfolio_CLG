@@ -87,4 +87,13 @@ export function HeroSection() {
               </a>
             )}
             {profile.email && (
-              <a href={`mailto:${profile.
+              <a href={`mailto:${profile.email}`} className={styles.socialLink} aria-label="Email">
+                <IconEmail />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
