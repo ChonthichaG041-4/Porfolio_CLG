@@ -22,3 +22,10 @@
   color: var(--color-text-muted);
   max-width: 480px;
 }
+
+@media (max-width: 640px) {
+  .page   { padding-top: calc(var(--navbar-height) + var(--space-8)); }
+  .title  { font-size: clamp(var(--text-3xl), 9vw, var(--text-4xl)); }
+  .sub    { font-size: var(--text-base); }
+  .header { margin-bottom: var(--space-8); }
+}

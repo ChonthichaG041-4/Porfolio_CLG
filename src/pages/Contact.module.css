@@ -162,3 +162,11 @@ a.method:hover .methodValue {
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
 }
+
+@media (max-width: 640px) {
+  .page   { padding-top: calc(var(--navbar-height) + var(--space-8)); }
+  .title  { font-size: clamp(var(--text-3xl), 9vw, var(--text-5xl)); }
+  .intro  { font-size: var(--text-base); }
+  .header { margin-bottom: var(--space-8); }
+  .infoCard { padding: var(--space-4); }
+}

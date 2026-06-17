@@ -516,20 +516,21 @@
   gap: var(--space-2);
   padding: 0.75rem 1.75rem;
   border-radius: var(--radius-lg);
-  background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  color: var(--color-glow-light);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semi);
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background var(--duration-normal), border-color var(--duration-normal),
-              transform var(--duration-normal), box-shadow var(--duration-normal);
-}
-.resumeCtaBtn:hover {
-  background: rgba(168, 85, 247, 0.22);
-  border-color: rgba(168, 85, 247, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.18);
+  background: rgba(168, 85, 24
+/* ════════════════════════════════════════════════════════════
+   MOBILE — hero + resumeCta
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .heroContent { padding-top: calc(var(--navbar-height) + var(--space-6)); }
+  .heroName    { font-size: clamp(3rem, 13vw, 5rem); }
+  .rhombusWrap { opacity: 0.2; }
+
+  .resumeCta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-6);
+    gap: var(--space-4);
+  }
+
+  .resumeCta p { max-width: 100%; }
 }
