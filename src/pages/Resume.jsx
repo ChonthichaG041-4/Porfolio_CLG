@@ -284,4 +284,36 @@ export default function Resume() {
           </Reveal>
         </section>
 
-        <div className={styles.di
+        <div className={styles.divider} />
+
+        {/* ── Languages ──────────────────────────────────── */}
+        <section className={cx(styles.block, styles.blockLast)}>
+          <Reveal>
+            <p className={styles.eyebrow}>{tr.eyebrowLanguages}</p>
+            <h2 className={styles.blockHeading}>{tr.languages}</h2>
+          </Reveal>
+          <Reveal delay={40}>
+            <div className={styles.langRowOuter}>
+              {(tr.languagesList ?? profile.languages).map(({ name, level, bar }) => (
+                <div key={name} className={styles.langItem}>
+                  <div className={styles.langTop}>
+                    <span className={styles.langName}>{name}</span>
+                    <span className={styles.langLvl}>{level}</span>
+                  </div>
+                  <div className={styles.langTrack}>
+                    <div className={styles.langFill} style={{ width: `${bar}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
+      </div>
+
+      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
+      <AcademicDocsModal open={certOpen}       onClose={() => setCertOpen(false)}       type="certificate" />
+      <AcademicDocsModal open={transcriptOpen} onClose={() => setTranscriptOpen(false)} type="transcript"  />
+    </div>
+  )
+}
