@@ -605,4 +605,39 @@ export const en = {
   footer: {
     rights: '© {year} {name}. All rights reserved.',
   },
+
+  knightOfSwords: {
+    title:       'Knight of Swords',
+    description: '2D multiplayer browser platformer featuring DragonBones skeletal animation, real-time Socket.IO sync, and hand-crafted knight characters built in a group of four.',
+    role:        'Art Director · Character Animator · Background Designer',
+    client:      'Group Project — Game Design Class',
+    mood:        'Action, Medieval, Playful',
+    overview:    'Knight of Swords is a 2D browser-based multiplayer platformer built for a game-design course in 2022.\nPlayers explore a side-scrolling world, collect coins, battle AI monsters, and see each other moving in real time — all through a standard web browser with no installation required.\n\nMy responsibilities covered the entire visual layer: designing and rigging the Silver Knight and Golden Knight characters from scratch in DragonBones, drawing all tile art used for the platform maps, and directing the overall art style of the game.',
+    worldbuilding: 'A classic medieval world told through pixel-adjacent sprite art. Two rival knight factions — silver and gold — compete across castle ruins filled with coin hoards and wandering monsters. The "Silly Cat" playable character was added as a lighthearted wildcard: a cat in armour who somehow holds a sword.',
+    techHighlights: [
+      { label: 'Authoritative Server Physics',   text: 'Node.js runs the same Phaser game logic server-side using jsdom to simulate a DOM environment, so collision and gravity are calculated server-authoritatively — preventing cheating and keeping all clients in sync.' },
+      { label: 'Real-time Multiplayer',          text: 'Socket.IO broadcasts player positions, monster states, and coin pickups to every connected client at 60 fps. Joining a second browser tab immediately shows the second player as a live sprite.' },
+      { label: 'DragonBones Skeletal Animation', text: 'All three playable characters use bone-and-mesh rigs exported as _ske.dbbin / _tex.json / _tex.png trios. Animations include idle, run, jump, attack, and death — blended at runtime by the Phaser DragonBones plugin.' },
+      { label: 'Tiled Map Pipeline',             text: 'Levels are designed in Tiled as .tmx files then exported to JSON for Phaser to load as tile layers. Custom tile properties flag collision, spawn zones, and hazard types.' },
+      { label: 'Cloud Deployment',               text: 'The game server is containerised via Docker and was originally deployed on Google Cloud Run — allowing anyone with a browser to join the same game session through a public URL.' },
+    ],
+  },
+
+  commissionCollection: {
+    title:       'Commission Collection',
+    description: 'A curated collection of commissioned character illustrations, featuring everything from expressive single-character portraits to dynamic multi-character compositions across a variety of artistic styles.',
+    role:        'Illustrator · Character Artist',
+    client:      'Various Clients',
+    mood:        'Varied — Warm, Energetic, Detailed',
+    overview:    'This collection showcases commissioned artworks created between 2025 and 2026. Each piece was developed based on the unique vision and requirements of individual clients, beginning with character concepts, personality descriptions, and visual references before evolving into fully realized illustrations.\n\nThe project encompasses a wide range of works, including individual character portraits, paired compositions, and large group illustrations. Various artistic approaches were explored throughout the collection, from soft and atmospheric color palettes to refined line art that emphasizes character identity and emotional storytelling.\n\nTo enhance both quality and creative efficiency, AI-assisted tools were incorporated into selected stages of the production process. These technologies supported ideation, composition refinement, and visual enhancement while preserving the artistic direction, originality, and creative intent of each commissioned piece.',
+    pieces: [
+      { title: 'Nudtha',      desc: 'Character portrait commission featuring dynamic lighting and detailed costume design with a warm colour palette.' },
+      { title: 'Ari',         desc: 'Original character portrait commission. Soft lighting with detailed costume design.' },
+      { title: 'Ari (Alt)',   desc: 'Alternate colour variation of the Ari commission — warm evening palette.' },
+      { title: 'Tung',        desc: 'Character portrait commission — warm tones with a traditional-inspired outfit and expressive lighting.' },
+      { title: 'Uri',         desc: 'Portrait commission featuring soft shading and detailed character design with expressive facial work.' },
+      { title: 'Moon',        desc: 'Atmospheric character commission — moonlit ambient lighting and a cool-toned cinematic palette.' },
+      { title: 'Group Piece', desc: 'Multi-character group commission — three characters composed together in a cohesive scene.' },
+    ],
+  },
 }
