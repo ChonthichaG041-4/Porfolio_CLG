@@ -240,50 +240,84 @@
   .name    { font-size: clamp(3.2rem, 10vw, 5rem); }
 }
 
-@media (max-width: 640px) {
-  /* Character image sits faded at bottom-right; text fills full width */
-  .hero { align-items: flex-start; }
+/* textTop wrapper — desktop: no special treatment */
+.textTop {
+  display: flex;
+  flex-direction: column;
+}
 
+@media (max-width: 640px) {
+  /* ── Hero becomes a flex column: textTop → image → buttons ── */
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100dvh;
+    padding-top: var(--navbar-height);
+  }
+
+  /* Make wrappers transparent so children join hero's flex flow */
+  .content,
+  .textContent {
+    display: contents;
+  }
+
+  /* ① Text block — above image */
+  .textTop {
+    order: 1;
+    flex-direction: column;
+    padding: 1.25rem 1.25rem 0;
+    z-index: 5;
+  }
+
+  /* ② Character image — full opacity, centred */
   .keyVisual {
-    width: 60%;
-    height: 55vh;
-    top: auto;
-    bottom: 0;
-    right: -5%;
+    position: relative;
+    order: 2;
+    width: 100%;
+    height: 72vw;
+    top: 0; right: 0; bottom: 0;
+    opacity: 1;
     align-items: flex-end;
-    justify-content: flex-end;
-    opacity: 0.18;
+    justify-content: center;
+    z-index: 2;
   }
   .kvImage {
-    height: 55vh;
+    height: 72vw;
+    width: auto;
+    object-fit: contain;
     object-position: center bottom;
+    filter:
+      drop-shadow(0 0 40px rgba(144,99,158,0.45))
+      drop-shadow(0 0 80px rgba(76,28,173,0.30));
   }
 
-  .content {
-    padding-inline: 1.25rem;
-    min-height: unset;
-    padding-top: calc(var(--navbar-height) + 1.5rem);
-    padding-bottom: 3rem;
-    align-items: flex-start;
-  }
-
-  .textContent {
-    padding-top: 0;
-    max-width: 100%;
-  }
-
-  .name    { font-size: clamp(2.4rem, 11vw, 3.5rem); }
-  .title   { font-size: 0.9rem; }
-  .tagline { font-size: 0.875rem; margin-bottom: 1.5rem; }
-
-  /* Stack CTA buttons vertically */
+  /* ③ CTA buttons — below image */
   .ctas {
+    order: 3;
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.625rem;
-    width: 100%;
-    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.25rem 0;
+    z-index: 5;
+    margin-bottom: 0;
   }
 
-  .social { gap: 1rem; }
+  /* ④ Availability */
+  .availability {
+    order: 4;
+    padding: 0.875rem 1.25rem 0;
+    z-index: 5;
+  }
+
+  /* ⑤ Social links */
+  .social {
+    order: 5;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem 1.5rem;
+    z-index: 5;
+  }
+
+  /* Typography tweaks */
+  .name    { font-size: clamp(2.4rem, 11vw, 3.5rem); margin-bottom: 0.75rem; }
+  .title   { font-size: 0.9rem; }
+  .tagline { font-size: 0.875rem; margin-bottom: 0; }
 }

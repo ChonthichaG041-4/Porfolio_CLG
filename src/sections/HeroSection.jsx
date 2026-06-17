@@ -44,15 +44,13 @@ export function HeroSection() {
       {/* ── Main Content ── */}
       <div className={styles.content}>
         <div className={styles.textContent}>
-          <span className={styles.label}>{th.label}</span>
-
-          <h1 className={styles.name}>{profile.nameDisplay}</h1>
-
-          <p className={styles.title}>{profile.title}</p>
-
-          <div className={styles.divider} aria-hidden="true" />
-
-          <p className={styles.tagline}>{th.tagline}</p>
+          <div className={styles.textTop}>
+            <span className={styles.label}>{th.label}</span>
+            <h1 className={styles.name}>{profile.nameDisplay}</h1>
+            <p className={styles.title}>{profile.title}</p>
+            <div className={styles.divider} aria-hidden="true" />
+            <p className={styles.tagline}>{th.tagline}</p>
+          </div>
 
           <div className={styles.ctas}>
             <Button as={Link} to="/portfolio" variant="primary" size="lg">
