@@ -111,11 +111,7 @@ export function SkillsSection() {
                 <div key={sw.name} className={styles.softwareCard}>
                   {sw.isImg
                     ? <span className={styles.softwareIconBox}>
-                        <span
-                          className={styles.softwareIconMask}
-                          style={{ WebkitMaskImage: `url(${sw.icon})`, maskImage: `url(${sw.icon})` }}
-                          aria-hidden="true"
-                        />
+                        <img src={sw.icon} alt="" className={styles.softwareIconImg} aria-hidden="true" />
                       </span>
                     : <span className={styles.softwareIcon}>{sw.icon}</span>
                   }
