@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { profile } from "@/data/profile";
 import { useI18n } from "@/i18n/context";
 import { ResumeDownloadModal } from "@/components/UI/ResumeDownloadModal";
+import { AcademicDocsModal } from "@/components/UI/AcademicDocsModal";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cx } from "@/utils/helpers";
 import { AboutHeroBackground } from "@/components/AboutHeroBackground";
@@ -25,6 +26,8 @@ export default function About() {
   const { t } = useI18n();
   const ta = t.aboutPage;
   const [dlOpen, setDlOpen] = useState(false);
+  const [certOpen, setCertOpen] = useState(false);
+  const [transcriptOpen, setTranscriptOpen] = useState(false);
 
   return (
     <main className={styles.page}>
@@ -206,23 +209,9 @@ export default function About() {
           </ol>
         </section>
 
-        {/* RESUME CTA */}
+        {/* ACADEMIC CREDENTIALS */}
         <Reveal>
-          <section className={styles.resumeCta}>
-            <p>{ta.resumeNote}</p>
-            <button
-              type="button"
-              className={styles.resumeCtaBtn}
-              onClick={() => setDlOpen(true)}
-            >
-              {ta.downloadResume}
-            </button>
-          </section>
-        </Reveal>
-
-      </div>
-
-      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
-    </main>
-  );
-}
+          <section className={styles.credSection}>
+            <p className={styles.sLabel}>{ta.credLabel ?? 'EDUCATION'}</p>
+            <h2 className={styles.sHeading}>
+              {ta.credHeading ?? 'Academic '}<em className={styles.italic}>{t

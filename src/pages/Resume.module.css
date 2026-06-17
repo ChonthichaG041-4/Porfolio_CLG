@@ -356,6 +356,7 @@
 .eduCard {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
   background: rgba(255, 255, 255, 0.025);
   border: 0.5px solid var(--color-border);
@@ -403,6 +404,37 @@
   letter-spacing: 0.06em;
   opacity: 0.6;
 }
+
+.eduInfo { flex: 1; min-width: 0; }
+
+.eduDocs {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.eduDocBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(144,99,158,0.10);
+  border: 0.5px solid rgba(144,99,158,0.28);
+  color: #c084fc;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.eduDocBtn:hover {
+  background: rgba(144,99,158,0.22);
+  border-color: rgba(144,99,158,0.55);
+  color: #fff;
+}
+.eduDocBtn i { font-size: 13px; }
 
 /* ════════════════════════════════════════════════════════════
    SKILLS
@@ -599,31 +631,4 @@
     text-align: right;
   }
 
-  /* ── Download button: full width ── */
-  .dlBtn {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: var(--radius-md);
-    margin-top: 4px;
-  }
-
-  .blockHeading { font-size: 1.2rem; }
-
-  .timeline { padding-left: 20px; }
-  .tdot     { left: -20px; }
-
-  .skillsGrid { grid-template-columns: 1fr 1fr; }
-
-  .swGrid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
-
-  .langRowOuter { gap: 1rem; }
-  .langItem     { min-width: 90px; }
-}
-
-@media (max-width: 480px) {
-  .skillsGrid { grid-template-columns: 1fr; }
-  .tcardTop   { flex-direction: column; gap: 6px; }
-  .tcardBadge { align-self: flex-start; }
-}
+  /* ── Download button: fu

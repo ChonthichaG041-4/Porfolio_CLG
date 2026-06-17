@@ -489,6 +489,94 @@
 }
 
 /* ════════════════════════════════════════════════════════════
+   ACADEMIC CREDENTIALS
+   ════════════════════════════════════════════════════════════ */
+.credSection {
+  padding-bottom: var(--space-12);
+}
+
+.credSub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: calc(var(--space-4) * -1);
+  margin-bottom: var(--space-8);
+  max-width: 540px;
+}
+
+.credGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.credCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255,255,255,0.025);
+  border: 0.5px solid rgba(168,85,247,0.18);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s, background 0.2s;
+}
+.credCard:hover {
+  border-color: rgba(168,85,247,0.38);
+  background: rgba(168,85,247,0.04);
+}
+
+.credCardIcon {
+  width: 42px; height: 42px; min-width: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(144,99,158,0.12);
+  border: 0.5px solid rgba(168,85,247,0.22);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem;
+  color: #c084fc;
+}
+
+.credCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.credCardTitle {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.credCardDesc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.credViewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(144,99,158,0.12);
+  border: 0.5px solid rgba(144,99,158,0.30);
+  color: #c084fc;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.credViewBtn:hover {
+  background: rgba(144,99,158,0.25);
+  border-color: rgba(144,99,158,0.55);
+  color: #fff;
+}
+
+/* ════════════════════════════════════════════════════════════
    RESUME CTA
    ════════════════════════════════════════════════════════════ */
 .resumeCta {
@@ -542,106 +630,4 @@
   display: none;
 }
 
-@media (max-width: 640px) {
-  /* Header stacks: text → rhombus → chips */
-  .header {
-    flex-direction: column;
-    align-items: stretch;
-    min-height: unset;
-    padding-bottom: 0;
-  }
-
-  .rhombusWrap {
-    position: relative;
-    width: 100%;
-    height: 85vw;
-    max-height: 380px;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    order: 2;
-    opacity: 1;
-  }
-
-  .rhombusSvg {
-    width: 100%;
-    height: 100%;
-    max-height: 380px;
-  }
-
-  .heroOuter {
-    order: 1;
-  }
-
-  .heroContent {
-    padding-top: calc(var(--navbar-height) + var(--space-6));
-    padding-bottom: var(--space-6);
-    max-width: 100%;
-  }
-
-  .heroName { font-size: clamp(3rem, 13vw, 5rem); }
-
-  /* Skills label visible on mobile */
-  .chipsLabel {
-    display: block;
-    font-size: 9.5px;
-    font-weight: var(--weight-bold);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-glow);
-    margin-bottom: var(--space-3);
-    margin-top: var(--space-6);
-  }
-
-  /* CTA buttons visible on mobile */
-  .mobileCtas {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: var(--space-6);
-  }
-
-  .mobileCtaBtn,
-  .mobileCtaBtnGhost {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
-    width: 100%;
-    padding: 0.875rem 1.5rem;
-    border-radius: var(--radius-lg);
-    font-size: var(--text-base);
-    font-weight: var(--weight-medium);
-    font-family: var(--font-body);
-    text-decoration: none;
-    transition: background var(--duration-fast), border-color var(--duration-fast);
-  }
-
-  .mobileCtaBtn {
-    background: var(--color-accent);
-    color: #fff;
-    border: none;
-  }
-  .mobileCtaBtn:hover {
-    background: #9333ea;
-  }
-
-  .mobileCtaBtnGhost {
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--color-text-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .mobileCtaBtnGhost:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(168, 85, 247, 0.35);
-  }
-
-  .resumeCta {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--space-6);
-    gap: var(--space-4);
-  }
-
-  .resumeCta p { max-width: 100%; }
-}
+@media (max

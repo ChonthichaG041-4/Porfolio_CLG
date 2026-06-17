@@ -4,6 +4,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useI18n }         from '@/i18n/context'
 import { cx }              from '@/utils/helpers'
 import { ResumeDownloadModal } from '@/components/UI/ResumeDownloadModal'
+import { AcademicDocsModal }  from '@/components/UI/AcademicDocsModal'
 import avatarImg           from '@/assets/images/I.webp'
 import styles from './Resume.module.css'
 
@@ -56,6 +57,8 @@ export default function Resume() {
   const { t } = useI18n()
   const tr = t.resumePage
   const [dlOpen, setDlOpen] = useState(false)
+  const [certOpen, setCertOpen] = useState(false)
+  const [transcriptOpen, setTranscriptOpen] = useState(false)
 
   const BADGE_LABEL = {
     art:   tr.badgeArt,
@@ -150,11 +153,33 @@ export default function Resume() {
                   <div className={styles.eduIcon}>
                     <i className={`ti ${ed.tiIcon}`} aria-hidden="true" />
                   </div>
-                  <div>
+                  <div className={styles.eduInfo}>
                     <p className={styles.eduSchool}>{tr.educationEntries?.[i]?.school ?? ed.school}</p>
                     <p className={styles.eduDegree}>{tr.educationEntries?.[i]?.degree ?? ed.degree}</p>
                     <p className={styles.eduYear}>{ed.period}</p>
                   </div>
+                  {i === 0 && (
+                    <div className={styles.eduDocs}>
+                      <button
+                        type="button"
+                        className={styles.eduDocBtn}
+                        onClick={() => setCertOpen(true)}
+                        title="Graduation Certificate"
+                      >
+                        <i className="ti ti-certificate" aria-hidden="true" />
+                        {tr.certificate ?? 'Certificate'}
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.eduDocBtn}
+                        onClick={() => setTranscriptOpen(true)}
+                        title="Official Transcript"
+                      >
+                        <i className="ti ti-file-description" aria-hidden="true" />
+                        {tr.transcript ?? 'Transcript'}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -259,34 +284,4 @@ export default function Resume() {
           </Reveal>
         </section>
 
-        <div className={styles.divider} />
-
-        {/* ── Languages ──────────────────────────────────── */}
-        <section className={cx(styles.block, styles.blockLast)}>
-          <Reveal>
-            <p className={styles.eyebrow}>{tr.eyebrowLanguages}</p>
-            <h2 className={styles.blockHeading}>{tr.languages}</h2>
-          </Reveal>
-          <Reveal delay={40}>
-            <div className={styles.langRowOuter}>
-              {(tr.languagesList ?? profile.languages).map(({ name, level, bar }) => (
-                <div key={name} className={styles.langItem}>
-                  <div className={styles.langTop}>
-                    <span className={styles.langName}>{name}</span>
-                    <span className={styles.langLvl}>{level}</span>
-                  </div>
-                  <div className={styles.langTrack}>
-                    <div className={styles.langFill} style={{ width: `${bar}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-
-      </div>
-
-      <ResumeDownloadModal open={dlOpen} onClose={() => setDlOpen(false)} />
-    </div>
-  )
-}
+        <div className={styles.di
