@@ -65,7 +65,8 @@ export default function KKULLibraryMap() {
             src={heroImg}
             alt={km.title}
             className={`${styles.heroBanner} ${styles.zoomable}`}
-            onDoubleClick={() = loading="lazy"> open({ type: "image", src: heroImg, alt: km.title })}
+            onDoubleClick={() => open({ type: "image", src: heroImg, alt: km.title })}
+            loading="lazy"
           />
           <div className={styles.heroGradient} />
         </div>
