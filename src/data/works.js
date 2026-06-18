@@ -294,11 +294,11 @@ export const works = [
         type: 'video-demos',
         title: 'Screenshots & Demo',
         videos: [
-          { src: kkulVidSearch,  caption: 'Search Flow — Fuzzy search + keyboard navigation' },
           { src: kkulVidFloors,  caption: 'Changing Building Floors — SVG floor switching' },
+          { src: kkulVidAccess,  caption: 'Access Hours — Library opening hours display' },
+          { src: kkulVidSearch,  caption: 'Search Flow — Fuzzy search + keyboard navigation' },
           { src: kkulVidDark,    caption: 'Dark / Light Mode — CSS Variable theme toggle' },
           { src: kkulVidStats,   caption: 'Occupancy Dashboard — Real-time statistics' },
-          { src: kkulVidAccess,  caption: 'Access Hours — Library opening hours display' },
         ],
       },
     ],
