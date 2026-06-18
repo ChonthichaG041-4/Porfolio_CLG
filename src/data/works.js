@@ -317,7 +317,7 @@ export const works = [
     year: 2022,
     featured: true,
     thumbnail: kosGameStart,
-    banner:    kosGameStart,
+    banner:    kosMultiplayer,
     description: '2D multiplayer browser platformer featuring DragonBones skeletal animation, real-time Socket.IO sync, and hand-crafted knight characters built in a group of four.',
     mood: 'Action, Medieval, Playful',
     software: ['DragonBones', 'Tiled', 'Paint.NET', 'Phaser 3', 'Node.js'],
