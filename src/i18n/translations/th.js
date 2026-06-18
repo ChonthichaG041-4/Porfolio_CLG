@@ -915,22 +915,29 @@ export const th = {
       label: "เทคโนโลยี",
       title: "สร้างด้วย",
       items: [
-        { icon: "⚛", name: "React", role: "UI Framework" },
-        { icon: "🗺", name: "SVG Maps", role: "Interactive Floor Plans" },
-        { icon: "🎨", name: "Figma", role: "UX Design & Prototyping" },
-        { icon: "🔗", name: "REST API", role: "Real-time Room Data" },
-        { icon: "💨", name: "Tailwind", role: "Styling" },
-        { icon: "☁", name: "Vercel", role: "Deployment" },
+        { icon: '⚛️', name: 'React 18',                    role: 'UI Framework' },
+        { icon: '⚡', name: 'Vite 5',                      role: 'Build Tool' },
+        { icon: '💨', name: 'Tailwind CSS 3',              role: 'Styling' },
+        { icon: '📦', name: 'Context API',                 role: 'State Management' },
+        { icon: '🗺️', name: 'Custom SVG Rendering Engine', role: 'Interactive Floor Plans' },
+        { icon: '🎨', name: 'Iconify / Solar Icons',       role: 'ระบบไอคอน' },
+        { icon: '🟨', name: 'JavaScript (ESM)',             role: 'ภาษาหลัก' },
+        { icon: '🖌️', name: 'Figma',                       role: 'UX Design & Prototyping' },
+        { icon: '🐍', name: 'Python',                      role: 'ประมวลผลข้อมูลและ Scripts' },
+        { icon: '🌐', name: 'i18n (Thai / English)',        role: 'UI สองภาษา' },
+        { icon: '🎨', name: 'CSS Variables',               role: 'Theming & Dark Mode' },
+        { icon: '📊', name: 'SVG Visualization',           role: 'แสดงผลข้อมูลและความหนาแน่น' },
       ],
     },
     results: {
       label: "ผลลัพธ์",
       title: "ผลกระทบ",
       stats: [
-        { value: "8", label: "ชั้นที่แมป" },
-        { value: "200+", label: "โซนการศึกษา" },
-        { value: "2", label: "ภาษา" },
-        { value: "100%", label: "รองรับมือถือ" },
+        { value: "2",  label: "อาคาร" },
+        { value: "6",  label: "ชั้น" },
+        { value: "48", label: "ห้อง" },
+        { value: "11", label: "ห้องพิเศษ" },
+        { value: "2",  label: "ภาษา" },
       ],
       outcomes: [
         "ติดตั้งบนพอร์ทัลห้องสมุด KKU และนักศึกษาใช้งานทั่ววิทยาเขต",
@@ -945,7 +952,7 @@ export const th = {
     },
     specialRoom: {
       label: "ห้องพิเศษ",
-      title: "ชั้นคอลเลกชันพิเศษ",
+      title: "ข้อมูลห้องพิเศษ",
       caption:
         "หอเก็บหนังสือหายากที่จำกัดการเข้าถึง — แตะที่ชั้นหนังสือเพื่อดู metadata ของคอลเลกชัน",
     },
@@ -996,3 +1003,4 @@ export const th = {
     ],
   },
 };
+         
