@@ -15,7 +15,7 @@ import vidDarkLight from "@/assets/images/KKUL-LibraryMap/Dark-Light Mode.mp4";
 import vidAccess    from "@/assets/images/KKUL-LibraryMap/Access hours.mp4";
 
 // Video sources in order matching translation videos array
-const VIDEO_SRCS = [vidSearch, vidFloors, vidStats, vidDarkLight, vidAccess];
+const VIDEO_SRCS = [vidFloors, vidAccess, vidSearch, vidDarkLight, vidStats];
 
 // ── Fullscreen Lightbox ──────────────────────────────────────
 

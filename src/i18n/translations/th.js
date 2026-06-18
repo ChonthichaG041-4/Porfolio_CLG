@@ -950,14 +950,11 @@ export const th = {
         "หอเก็บหนังสือหายากที่จำกัดการเข้าถึง — แตะที่ชั้นหนังสือเพื่อดู metadata ของคอลเลกชัน",
     },
     videos: [
-      {
-        label: "สาธิตแบบเต็ม",
-        caption: "เดโมครบวงจรของการนำทางแผนที่และขั้นตอนการจองห้อง",
-      },
-      {
-        label: "มุมมองมือถือ",
-        caption: "การออกแบบ responsive — นำทางแผนที่บนสมาร์ทโฟน",
-      },
+      { label: "เปลี่ยนชั้นอาคาร",          caption: "สลับชั้นและอาคารแบบ Real-time ผ่าน SVG floor map" },
+      { label: "เวลาเปิด-ปิด",              caption: "ตารางเวลาเปิดให้บริการของแต่ละอาคารและชั้น" },
+      { label: "ระบบค้นหา",                 caption: "Fuzzy Search ครอบคลุม 200+ ห้อง ชั้น บันได และห้องพิเศษ พร้อม Keyboard Navigation" },
+      { label: "Dark / Light Mode",          caption: "สลับธีมด้วย CSS Variable ไม่มี Flash of Unstyled Content" },
+      { label: "Dashboard สถิติ",            caption: "แสดงข้อมูลความหนาแน่นแบบ Real-time ครอบคลุมทุกชั้นและอาคาร" },
     ],
   },
   footer: {

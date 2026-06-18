@@ -608,8 +608,11 @@ export const en = {
       caption: 'Restricted-access rare book archive — tap any shelf to view collection metadata.',
     },
     videos: [
-      { label: 'Full Walkthrough',  caption: 'End-to-end demo of the map navigation and room booking flow.' },
-      { label: 'Mobile View',       caption: 'Responsive design — navigating the map on a smartphone.' },
+      { label: 'Changing Building Floors', caption: 'SVG floor switching — navigate between buildings and floors in real time.' },
+      { label: 'Access Hours',             caption: 'Library opening hours and access schedule for each building and floor.' },
+      { label: 'Search Flow',              caption: 'Fuzzy search across 200+ rooms, floors, stairs, and special rooms with keyboard navigation.' },
+      { label: 'Dark / Light Mode',        caption: 'CSS Variable theme toggle — instant switch with no Flash of Unstyled Content.' },
+      { label: 'Occupancy Dashboard',      caption: 'Real-time statistics showing current occupancy across all floors and buildings.' },
     ],
   },
   footer: {
