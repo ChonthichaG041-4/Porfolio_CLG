@@ -899,3 +899,104 @@
   line-height: 1.7;
   margin: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE HERO + META  (≤ 640px)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── meta icon — hidden on desktop ── */
+.metaIcon { display: none; }
+
+@media (max-width: 640px) {
+
+  /* ── hero: stack banner → content ── */
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: unset;
+    padding-top: 0;
+    margin-bottom: var(--space-8);
+  }
+
+  .bannerWrap {
+    position: relative;
+    inset: unset;
+    width: 100%;
+    padding-top: var(--navbar-height);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .bannerOverlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(7,1,15,0.05) 40%,
+      rgba(7,1,15,0.85) 100%
+    );
+  }
+
+  .heroContent {
+    position: static;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-8);
+    background: var(--color-bg, #07010F);
+  }
+
+  .title {
+    font-size: clamp(var(--text-3xl), 9vw, var(--text-5xl));
+    margin-top: var(--space-2);
+  }
+
+  .description {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-5);
+  }
+
+  .softwareTags {
+    margin-top: 0;
+    margin-bottom: var(--space-5);
+  }
+
+  /* ── meta: bordered card with icon rows ── */
+  .meta {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+    border: 1px solid rgba(168,85,247,0.2);
+    border-radius: var(--radius-lg);
+    background: rgba(168,85,247,0.04);
+    overflow: hidden;
+  }
+
+  .metaItem {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid rgba(168,85,247,0.08);
+  }
+  .metaItem:last-child { border-bottom: none; }
+
+  .metaIcon {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-glow);
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .metaLabel {
+    font-size: var(--text-xs);
+    min-width: 68px;
+    flex-shrink: 0;
+    letter-spacing: 0.06em;
+  }
+
+  .metaValue {
+    font-size: var(--text-sm);
+    flex: 1;
+  }
+}

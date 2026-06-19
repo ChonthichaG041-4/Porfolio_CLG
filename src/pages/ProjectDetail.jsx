@@ -77,20 +77,21 @@ export default function ProjectDetail() {
             </span>
             <h1 className={styles.title}>{workTitle}</h1>
             <p  className={styles.description}>{workDesc}</p>
+            <TagList tags={work.software} className={styles.softwareTags} />
             <div className={styles.meta}>
               {[
-                { label: td.meta.role,   value: workRole   },
-                { label: td.meta.year,   value: work.year  },
-                { label: td.meta.client, value: workClient },
-                { label: td.meta.mood,   value: workMood   },
-              ].filter(m => m.value).map(({ label, value }) => (
+                { label: td.meta.role,   value: workRole,   icon: 'ti-user'      },
+                { label: td.meta.year,   value: work.year,  icon: 'ti-calendar'  },
+                { label: td.meta.client, value: workClient, icon: 'ti-briefcase' },
+                { label: td.meta.mood,   value: workMood,   icon: 'ti-palette'   },
+              ].filter(m => m.value).map(({ label, value, icon }) => (
                 <div key={label} className={styles.metaItem}>
+                  <i className={`ti ${icon} ${styles.metaIcon}`} aria-hidden="true" />
                   <span className={styles.metaLabel}>{label}</span>
                   <span className={styles.metaValue}>{value}</span>
                 </div>
               ))}
             </div>
-            <TagList tags={work.software} className={styles.softwareTags} />
           </div>
         </div>
       </section>
