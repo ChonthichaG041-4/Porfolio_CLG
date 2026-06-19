@@ -54,20 +54,20 @@ export function CharDesignPanel({ left, right, note }) {
               />
             )}
           </div>
-        </div>
 
-        {/* selete — animation selector floating panel */}
-        <div className={styles.animList}>
-          {anims.map(anim => (
-            <button type="button"
-              key={anim.id}
-              className={`${styles.animItem}${anim.id === activeId ? ' ' + styles.animActive : ''}`}
-              onClick={() => setActiveId(anim.id)}
-            >
-              {anim.id === activeId && <span className={styles.animDot} />}
-              {anim.label}
-            </button>
-          ))}
+          {/* selete — animation selector floating panel */}
+          <div className={styles.animList}>
+            {anims.map(anim => (
+              <button type="button"
+                key={anim.id}
+                className={`${styles.animItem}${anim.id === activeId ? ' ' + styles.animActive : ''}`}
+                onClick={() => setActiveId(anim.id)}
+              >
+                {anim.id === activeId && <span className={styles.animDot} />}
+                {anim.label}
+              </button>
+            ))}
+          </div>
         </div>
 
       </div>

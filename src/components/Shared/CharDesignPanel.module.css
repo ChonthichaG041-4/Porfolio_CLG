@@ -96,13 +96,13 @@
 }
 
 /* ── animList — selector (floats over videoBox top-right) ─── */
-/* spec: left 1262 of 1562 canvas → (1262-96)/1370 = 85.1%
-   height 119px → 119/524 = 22.7% from top */
+/* now inside videoBox: left = (85.1-49.6)/50.4*100 = 70.44%
+   width = 12.8% of panels / 50.4% = 25.4% of videoBox */
 .animList {
   position: absolute;
-  left:     85.1%;
+  left:     70.44%;
   top:      4.6%;
-  width:    12.8%;
+  width:    25.4%;
   min-width: 128px;
   box-sizing: border-box;
   background: #1D1B20;
