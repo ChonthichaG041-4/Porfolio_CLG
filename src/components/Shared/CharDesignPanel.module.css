@@ -195,42 +195,43 @@
 
   /* videoInner already absolute inside relative videoBox — works correctly */
 
-  /* ── anim selector: horizontal pill row ── */
+  /* ── anim selector: vertical overlay inside videoBox (top-right) ── */
   .animList {
-    position: static;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 8px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    width: auto;
+    min-width: 120px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 3px;
     padding: 10px 12px;
-    border-radius: 16px;
-    background: #1D1B20;
-    border: 1px solid rgba(105, 67, 255, 0.4);
+    border-radius: 14px;
+    background: rgba(22, 20, 28, 0.92);
+    border: 1px solid rgba(105, 67, 255, 0.35);
+    backdrop-filter: blur(8px);
+    z-index: 5;
     margin-top: 0;
-    min-width: unset;
   }
 
   .animItem {
-    flex: 0 0 auto;
-    font-size: 13px;
-    padding: 5px 14px;
-    background: rgba(105, 67, 255, 0.08);
-    border: 1px solid rgba(105, 67, 255, 0.2);
-    border-radius: 999px;
-    color: #9d8fff;
+    flex: unset;
+    font-size: 12px;
+    padding: 2px 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    color: #4E4B61;
     white-space: nowrap;
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    transition: color 0.15s;
   }
-  .animItem:hover {
-    background: rgba(105, 67, 255, 0.2);
-    color: #c4baff;
-    border-color: rgba(105, 67, 255, 0.5);
-  }
-  .animActive {
-    background: rgba(105, 67, 255, 0.25) !important;
-    color: #a78bfa !important;
-    border-color: #6943FF !important;
-  }
+  .animItem:hover { color: #9d8fff; }
+  .animActive     { color: #635BFF !important; }
 
-  .animDot { display: none; }
+  .animDot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+  }
 }
