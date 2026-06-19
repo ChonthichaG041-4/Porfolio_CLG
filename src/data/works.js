@@ -316,7 +316,7 @@ export const works = [
     client: 'Group Project — Game Design Class',
     year: 2022,
     featured: true,
-    thumbnail: kosGameStart,
+    thumbnail: kosMultiplayer,
     banner:    kosMultiplayer,
     description: '2D multiplayer browser platformer featuring DragonBones skeletal animation, real-time Socket.IO sync, and hand-crafted knight characters built in a group of four.',
     mood: 'Action, Medieval, Playful',
@@ -715,3 +715,4 @@ export const getWorksByCategory = (categoryId, showAll = false) => {
   if (categoryId === 'all') return base
   return base.filter(w => w.category === categoryId)
 }
+  
