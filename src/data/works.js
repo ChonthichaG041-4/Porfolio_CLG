@@ -715,4 +715,3 @@ export const getWorksByCategory = (categoryId, showAll = false) => {
   if (categoryId === 'all') return base
   return base.filter(w => w.category === categoryId)
 }
-  
